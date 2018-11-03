@@ -5,21 +5,21 @@ The Jailbreaking process has long been a mysterious process where the iOS system
 The nomenclature of the process likely comes from the Apple's "Jailed" approach. Applications and users are bound to use only what Apple provides which is a fraction of what the device is capable of. Breaking this Jail of restrictions is the scope of the entire Jailbreak Process.
 
 ### For the eta folk, reditter, nagger, et. al.
-No, Cydia has nothing to do with Jailbreaking itself. Cydia is a byproduct of the jailbreak "community" and a jailbreak is not considered a jailbreak if it has Cydia, just like a jailbreak that lacks Cydia is still a jailbreak. What differs is the target audience (or user base). 
+No, Cydia has nothing to do with Jailbreaking itself. Cydia is a byproduct of the jailbreak "community" and a jailbreak is not considered a jailbreak just because it has Cydia, just like a jailbreak that lacks Cydia is still a jailbreak. What differs is the target audience (or user base). 
 
-Cydia is a GUI (Graphical User Interface) application which uses dpkg and apt (amongst others) in the background to install .deb (Debian) Packages. These packages follow a very strict (way too strict if you ask me) format that I will be discussing later. As the astute might have figured out, you don't need Cydia to install packages. Since Cydia relies on apt and dpkg (etc), you can simply use these binaries via SSH or through a mobile terminal application on the device. Cydia is just there to make this process as fool-proof as possible. 
+Cydia is a GUI (Graphical User Interface) application which uses <code class="high">dpkg</code> and <code class="high">apt</code> (amongst others) in the background to install .deb (Debian) Packages. These packages follow a very strict (way too strict if you ask me) format that I will be discussing later. As the astute might have figured out, you don't need Cydia to install packages. Since Cydia relies on apt and dpkg (etc), you can simply use these binaries via <code class="high">SSH</code> or through a mobile terminal application on the device. Cydia is just there to make this process as fool-proof as possible. Sometimes it fails.
 
-So yes, my iOS 11.3.x/11.2.x Jailbreak, Osiris, released long before Electra was even a thing, was and is a jailbreak even tho I never bundled any GUI installer (Cydia or such) with it. The same thing applies for LiberiOS by Jonathan Levin (iOS 11 to 11.1.2) which was maybe the most stable iOS 11 Jailbreak to date. These jailbreaks are mostly destined for researchers and power users and not the random eta folk (who usually flames at the lack of Cydia).
+So yes, my iOS 11.3.x/11.2.x Jailbreak, Osiris, released long before Electra was even a thing, was and is a jailbreak even though I never bundled any GUI installer (Cydia or such) with it. The same thing applies for LiberiOS by Jonathan Levin (iOS 11 to 11.1.2) which was maybe the most stable iOS 11 Jailbreak to date. These jailbreaks are mostly destined for researchers and power users and not the random eta folk (who usually flames at the lack of Cydia).
 
 ### So how does it work?
 Before being able to open Cydia, Installer 5, Icy Project, or an SSH on the device, the jailbreak has to run.
-The stages of a jailbreak differ depending on the iOS version and the device. It used to be less reliant on the device type, but with the advent of KPP (Kernel Patch Protector) on iOS 9.0 and KTRR (allegedly Kernel Text Readonly Region) on iOS 10, that has become a thing more and more. For example, devices pre-iPhone 7 use KPP which is a software protection running in EL3 (ARM Exception LEVEL 3), but the iPhone 7 and newer are using KTRR which is hardware-based. In this case, a jailbreak containing a KPP bypass (like Yalu) would not work on iPhone 7 and newer because KPP itself isn't a thing there. For these devices a KTRR bypass of sorts is required, as siguza has explained in his write-up aptly called <a href="http://siguza.github.io/KTRR/">KTRR</a>. So this way, the jailbreak tool has to know very well with what kind of device it deals.
+The stages of a jailbreak differ depending on the iOS version and the device. It used to be less reliant on the device type, but with the advent of KPP (Kernel Patch Protector) on iOS 9.0 and KTRR (allegedly Kernel Text Readonly Region) on iOS 10, that has become a thing more and more. For example, devices pre-iPhone 7 use KPP which is a software protection running in EL3 (ARM Exception LEVEL 3), but the iPhone 7 and newer are using KTRR which is hardware-based. In this case, a jailbreak containing only a KPP bypass (like Yalu) would not work on iPhone 7 and newer because KPP itself isn't a thing there. Yalu, however, supports iPhone 7 thanks to @xerub and his "KPPLess" aproach. Normally, for these devices a KTRR bypass of sorts is required, as siguza has explained in his write-up aptly called <a href="http://siguza.github.io/KTRR/">KTRR</a>. So this way, the jailbreak tool has to know very well what kind of device it deals with.
 
 ### Jailbreak History? Look no further than Pangu for iOS 7.x.x
 
 Before anything can happen on the device, the jailbreak payload has to be somehow deployed to the device. This may sound very trivial today because anybody has access to a free Apple Developer Account to sign an IPA file and install it on the device with Cydia Impactor or something akin to this, but it did not use to be this simple. This self-signing with Provisioning Profiles was introduced to the masses by Apple by iOS 9.0 which is not even that far back in the jailbreak history.
 
-Long before that was a thing, codesign was bypassed in very interesting ways by the highly skilled Jailbreak teams which are unfortunately long gone now. If you still have an iPhone 4 just collecting dust around, chances are you are jailbroken with Pangu for iOS 7.1 - 7.1.2. The astute can easily see that since this is talking about iOS 7.1.x, self-signing with provisioning profiles for free and deploying the signed IPAs was not a thing. So what was their trick?
+Long before that was a thing, CodeSign was bypassed in very interesting ways by the highly skilled Jailbreak teams which are unfortunately long gone now. If you still have an iPhone 4 just collecting dust around, chances are you are jailbroken with Pangu for iOS 7.1 - 7.1.2. The astute can easily see that since this is talking about iOS 7.1.x, self-signing with provisioning profiles for free and deploying the signed IPAs was not a thing. So what was their trick?
 
 Pangu for iOS 7.1- 7.1.2 has its own Windows and macOS program that does the deployment for you. The application it installs, aptly called "Pangu", is signed with an enterprise certificate which existed at that point and was a powerful thing but it wasn't as easy to obtain on the black market as it is today (hence the advent of all these signing services like Ignition and AppValley).
 
@@ -90,13 +90,13 @@ LC 06: LC_SYMTAB
 
 Do you see the <code class="high">__TEXT.__objc_cons2 section</code>?
 
-If you do 0x10029ed87 - 0x10003dc04 = 2494851 bytes (decimal) => 2.494851 Megabyte.
+If you do <code class="high">0x10029ed87 - 0x10003dc04 = 2494851 bytes (decimal) => 2.494851 Megabyte</code>.
 That is hell of a big section. No wonder, It is the embedded IPA file. objc_cons1, objc_cons2 and objc_cons3 are all embedded parts of the jailbreak payload (the untether, plists, libraries etc).
 
 In fact, let's not talk about it, let's see it! 
 
-Jtool is a very powerful tool. It has the ability to extract whole sections from a binary. The command is jtool -e (extract) /path.
-If we do that to the Pangu binary we will get a new file called "pangu.__TEXT.__objc_cons2" which so happens to be identified by the file(1) as being a "gzip compressed data, from Unix", so a <code class="high">tar tvf</code> should be able to list the contents quite fine.
+Jtool is a very powerful tool. It has the ability to extract whole sections from a binary. The command is <code class="high">jtool -e (extract) /path</code>.
+If we do that to the Pangu binary we will get a new file called <code class="high">pangu.__TEXT.__objc_cons2</code> which so happens to be identified by the <code class="high">file(1)</code> as being a "gzip compressed data, from Unix", so a <code class="high">tar tvf</code> should be able to list the contents quite fine.
 It can and it does.
 
 ```bash
@@ -184,7 +184,7 @@ Of course, as an Application on iOS, not only you cannot see the File System and
 
 Some applications also provide uri schemes for you to communicate with them. Let's say you are in Chrome on iOS and you find a phone number to a company you wanna call. If you press it, you get asked if you really wanna call, and then you go straight to the Call app from iOS and the number is already being dialed. How? 
 
-Simple. the Phone application has registered an uri scheme that looks like this: <code class="high">tel://XXXXXXXXXXXX</code> so if you add tel://5552220001 to an HTML page and click it in Safari, the iOS knows who to open to handle that. Same goes for Facebook, Whatsapp, 
+Simple. The "Phone" application has registered an uri scheme that looks like this: <code class="high">tel://XXXXXXXXXXXX</code> so if you add tel://5552220001 to an HTML page and click it in Safari, the iOS knows who to open to handle that. Same goes for Facebook, Whatsapp, 
 
 To use the URI scheme from your app, you just have to call the right UIApplication method. That is 
 
@@ -210,7 +210,9 @@ Of course, QiLin saves our application's credentials and restores them before ex
 Electra for iOS 11.2.x -> iOS 11.3.1 also uses the same kernel credential method for sandbox bypass and other privs.
 
 ### Running fake-signed binaries, the Alpha and Omega of a Jailbreak
-A Jailbreak doesn't provide much of a value if it doesn't come with a binary pack. This binary pack can often contain Cydia and its dependencies, but also a long set of command-line binaries that one can use either programatically or via an SSH connection. These binaries include but are not limited to binaries that: rename, move, remove files, SSH clients like dropbear and their dependencies, various shells like <code class="high">ZSH</code>, archive utilities like <code class="high">gzip</code> and the standard <code class="high">chown</code>, <code class="high">chmod</code> and <code class="high">chflags</code> for messing with files permissions and such.
+A Jailbreak doesn't provide much of a value if it doesn't come with a binary pack, also known as base binaries. This binary pack can often contain a long set of command-line binaries that one can use either programatically or via an SSH connection. These binaries include but are not limited to binaries that: rename, move, remove files, SSH clients like dropbear and their dependencies, various shells like <code class="high">ZSH</code>, archive utilities like <code class="high">gzip</code> and the standard <code class="high">chown</code>, <code class="high">chmod</code> and <code class="high">chflags</code> for messing with files permissions and such.
+
+<b>NOTA BENE! Please do not confuse <code class="high">bootstrap</code> with <code class="high">bin pack</code> or <code class="high">base binaries</code>. The base binaries are the same thing as the bin pack and they represent the usual unix binaries used for moving files, changing file permissions and owners, SSH, process probing, shells, etc. A bootstrap contains usually everything else: maybe a jailbreakd daemon (very common on Meridian, Unc0ver, Electra and Electra 11.3.1 but not on Osiris or LiberiOS), Cydia and other applications that may be installed by default. These are not base binaries </b>
 
 Across the history of jailbreaks, various jailbreak teams have built their own binary packs in the .tar format which they deployed and extracted once they had access to the root file system which we discuss below.
 
@@ -842,7 +844,7 @@ On older jailbreaks patches to <code class="high">LightweightVolumeManager::_map
 iOS 11.3 took it a step further by involving APFS Snapshots. APFS has been used for quite a long time in iOS at the moment when Apple started using the snapshots, but when they did it broke the tried and true remount we had for iOS 11.2.x and even older. To fix this, a new bug needed to be found. the problem is that iOS would revert to a snapshot which is mounted read-only, so everything we install in terms of tweaks, binaries, etc is gone.
 
 At this point two things can be done: Change the whole jailbreaking and go ROOTless, or find a way around the snapshots.
-It is thanks to @Pwn20wnd and @umanghere that a proper remount has been created. Umang has found a bug that pwn20wnd has exploited in Electra.
+It is thanks to @pwn20wnd and @umanghere that a proper remount has been created. Umang has found a bug that pwn20wnd has exploited in Electra.
 
 Pwn20wnd's bypass for this snapshot problem is also a very straightforward one.
 Here is the function from the source code of Electra for iOS 11.3.1:
@@ -999,6 +1001,11 @@ const char *find_system_snapshot(const char *rootfsmnt) {
 With kernel's credentials in place, and with the proper name of the snapshot, Pwn20wnd returns back into rootfs_remount.c for the last part of this magnificent exploit - renaming the Snapshot. He renames it to "orig-fs", then he checks if the renaming succeeded. Then he restores his own credentials and drops kernel's. Finally, he reboots the device. That's why the first time you use Electra for iOS 11.3-11.3.1 your device will have a mandatory reboot no matter which exploit you use. 
 
 Now that the snapshot has been renamed, iOS has no snapshot to mount so it simply doesn't. Problem solved. 10/10 - IGN.
+
+### A note on the VFS exploit released by Ian Beer of Google Project Zero
+The issue with the VFS exploit called "empty_list" is that, due to the nature of the exploit it is usually pretty hard to get it to work reliably. It has been used, however, in both Electra and Unc0ver Jailbreaks because it doesn't require a paid Apple Developer Account compared to the other exploit released by Ian Beer called MPTCP which is almost bulletproof but requires the Multi-Path entitlement which is not available without a Paid developer account.
+
+Of course, not requiring a paid developer account, even though getting it to work is an exercise in futility sometimes, this seems to be prefered by the general public - that is until they learn about Ignition and other signing services who sign for free the MPTCP version.
 
 ### Special thanks
 <ul>
