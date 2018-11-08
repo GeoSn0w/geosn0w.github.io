@@ -800,7 +800,7 @@ This is the component that was missing back in July 2018 when Electra for iOS 11
 So, how do we do that?
 
 On QiLin (and therefore on LiberiOS and Osiris Jailbreak), the remounting up to iOS 11.2.6 works this way:
-As I said, by default the ROOT FS is mounted as read-only. Not only that, but the SandBox also has a hook that prevents you from remounting it as Read / Write. The hook is enforced through a MACF calls in mount_begin_update() and mount_common(). All the hook does it to check for the presence of the <code class="high">MNT_ROOTFS</code> flag in the mount flags. If it exists, the operation fails. So what QiLin does? Simple. It turns off the <code class="high">MNT_ROOTFS</code> flag. 
+As I said, by default the ROOT FS is mounted as read-only. Not only that, but the SandBox also has a hook that prevents you from remounting it as Read / Write. The hook is enforced through MACF calls in <code class="high">mount_begin_update()</code> and <code class="high">mount_common()</code>. All the hook does it to check for the presence of the <code class="high">MNT_ROOTFS</code> flag in the mount flags. If it exists, the operation fails. So what QiLin does? Simple. It turns off the <code class="high">MNT_ROOTFS</code> flag. 
 
 The following listing is the <code class="high">remountRootFS</code> in the QiLin Toolkit and was made publicly available by Jonathan Levin on newosxbook.com and in the Volume III of *OS Internals.
 
@@ -835,16 +835,18 @@ int remountRootFS (void)
    }
  return 0;
 ```
-Jonathan Levin's code is pretty straightforward. Flip the MNT_ROOTFS flag, call <code class="high">mount(2)</code> to refresh the kernel code paths for mounting, restore the flag and test. Done. You're R/W. 
+Jonathan Levin's code is pretty straightforward. Flip the <code class="high">MNT_ROOTFS</code> flag, call <code class="high">mount(2)</code> to refresh the kernel code paths for mounting, restore the flag and test. Done. You're R/W. 
 
 On older jailbreaks patches to <code class="high">LightweightVolumeManager::_mapForIO</code> were done. 
 
 ### Electra's remount
 
-iOS 11.3 took it a step further by involving APFS Snapshots. APFS has been used for quite a long time in iOS at the moment when Apple started using the snapshots, but when they did it broke the tried and true remount we had for iOS 11.2.x and even older. To fix this, a new bug needed to be found. the problem is that iOS would revert to a snapshot which is mounted read-only, so everything we install in terms of tweaks, binaries, etc is gone.
+iOS 11.3 took it a step further by involving APFS Snapshots. APFS has been used for quite a long time in iOS at the moment when Apple started using the snapshots, but when they did it broke the tried and true remount we had for iOS 11.2.x and even older. To fix this, a new bug needed to be found. The problem is that iOS would revert to a snapshot which is mounted read-only, so everything we install in terms of tweaks, binaries, etc is gone every time we reboot.
 
-At this point two things can be done: Change the whole jailbreaking and go ROOTless, or find a way around the snapshots.
-It is thanks to @pwn20wnd and @umanghere that a proper remount has been created. Umang has found a bug that pwn20wnd has exploited in Electra.
+At this point two things can be done: Change the whole jailbreaking and go "ROOTless", or find a way around the snapshots.
+It is thanks to @pwn20wnd and @umanghere that a proper remount has been created. Umang has found a "bug" that pwn20wnd has exploited in Electra.
+
+Well, to say that it was a bug it's a bit of a stretch. It isn't a bug but rather a feature of <code class = "high">fs_snapshot syscall</code>. Anyways, it works.
 
 Pwn20wnd's bypass for this snapshot problem is also a very straightforward one.
 Here is the function from the source code of Electra for iOS 11.3.1:
