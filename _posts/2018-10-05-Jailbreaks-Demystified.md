@@ -5,7 +5,7 @@ The Jailbreaking process has long been a mysterious process where the iOS system
 The nomenclature of the process likely comes from the Apple's "Jailed" approach. Applications and users are bound to use only what Apple provides which is a fraction of what the device is capable of. Breaking this Jail of restrictions is the scope of the entire Jailbreak Process.
 
 ### For the eta folk, reditter, nagger, et. al.
-No, Cydia has nothing to do with Jailbreaking itself. Cydia is a byproduct of the jailbreak "community" and a jailbreak is not considered a jailbreak just because it has Cydia, just like a jailbreak that lacks Cydia is still a jailbreak. What differs is the target audience (or user base). 
+No, Cydia has nothing to do with Jailbreaking itself. Cydia is a byproduct of the jailbreak "community" and a jailbreak is not considered a jailbreak just because it has Cydia, just like a jailbreak that lacks Cydia is still a jailbreak. What differs is the target audience (or user). 
 
 Cydia is a GUI (Graphical User Interface) application which uses <code class="high">dpkg</code> and <code class="high">apt</code> (amongst others) in the background to install .deb (Debian) Packages. These packages follow a very strict (way too strict if you ask me) format that I will be discussing later. As the astute might have figured out, you don't need Cydia to install packages. Since Cydia relies on apt and dpkg (etc), you can simply use these binaries via <code class="high">SSH</code> or through a mobile terminal application on the device. Cydia is just there to make this process as fool-proof as possible. Sometimes it fails.
 
@@ -19,14 +19,14 @@ The stages of a jailbreak differ depending on the iOS version and the device. It
 
 Before anything can happen on the device, the jailbreak payload has to be somehow deployed to the device. This may sound very trivial today because anybody has access to a free Apple Developer Account to sign an IPA file and install it on the device with Cydia Impactor or something akin to this, but it did not use to be this simple. This self-signing with Provisioning Profiles was introduced to the masses by Apple by iOS 9.0 which is not even that far back in the jailbreak history.
 
-Long before that was a thing, CodeSign was bypassed in very interesting ways by the highly skilled Jailbreak teams which are unfortunately long gone now. If you still have an iPhone 4 just collecting dust around, chances are you are jailbroken with Pangu for iOS 7.1 - 7.1.2. The astute can easily see that since this is talking about iOS 7.1.x, self-signing with provisioning profiles for free and deploying the signed IPAs was not a thing. So what was their trick?
+Long before that was a thing, <code class="high">CodeSign</code> was bypassed in very interesting ways by the highly skilled Jailbreak teams which are unfortunately long gone now. If you still have an iPhone 4 just collecting dust around, chances are you are jailbroken with Pangu for iOS 7.1 - 7.1.2. The astute can easily see that since this is talking about iOS 7.1.x, self-signing with provisioning profiles for free and deploying the signed IPAs was not a thing. So what was their trick?
 
 Pangu for iOS 7.1- 7.1.2 has its own Windows and macOS program that does the deployment for you. The application it installs, aptly called "Pangu", is signed with an enterprise certificate which existed at that point and was a powerful thing but it wasn't as easy to obtain on the black market as it is today (hence the advent of all these signing services like Ignition and AppValley).
 
 Their certificate was, however, expired. The Pangu program on the computer instructed the user to set the date and the time of the device way back to a date in 2014 (June 2, 2014, to be more specific).
 
 The dummy application is deployed by the Pangu program and its main purpose is to drop that sweet certificate. The IPA itself is actually part of the Pangu Windows / macOS binary itself. That can easily be spotted by using any disassembler (I use Jtool and IDA).
-Jtool by Jonathan Levin has a dope feature which can produce HTML output(!) which is very useful for when I build write-ups for my blog. 
+Jtool by Jonathan Levin has a dope feature which can produce HTML output(!!!) which is very useful for when I build write-ups for my blog. 
 
 Here's how the Pangu binary on macOS looks like. See the extra segments?
 
@@ -90,13 +90,13 @@ LC 06: LC_SYMTAB
 
 Do you see the <code class="high">__TEXT.__objc_cons2 section</code>?
 
-If you do <code class="high">0x10029ed87 - 0x10003dc04 = 2494851 bytes (decimal) => 2.494851 Megabyte</code>.
+If you do <code class="high">0x10029ed87 - 0x10003dc04 = 2494851 bytes (decimal) => 2.494851 Megabytes</code>.
 That is hell of a big section. No wonder, It is the embedded IPA file. objc_cons1, objc_cons2 and objc_cons3 are all embedded parts of the jailbreak payload (the untether, plists, libraries etc).
 
 In fact, let's not talk about it, let's see it! 
 
 Jtool is a very powerful tool. It has the ability to extract whole sections from a binary. The command is <code class="high">jtool -e (extract) /path</code>.
-If we do that to the Pangu binary we will get a new file called <code class="high">pangu.__TEXT.__objc_cons2</code> which so happens to be identified by the <code class="high">file(1)</code> as being a "gzip compressed data, from Unix", so a <code class="high">tar tvf</code> should be able to list the contents quite fine.
+If we do that to the Pangu binary we will get a new file called <code class="high">pangu.__TEXT.__objc_cons2</code> which so happens to be identified by the <code class="high">file(1)</code> as being a <code class="high">gzip compressed data, from Unix</code>, so a <code class="high">tar tvf</code> should be able to list the contents quite fine.
 It can and it does.
 
 ```bash
@@ -165,16 +165,15 @@ I have created the following diagram which should (in theory) show the flow of m
 So, as you can see from the diagram, the most important step is getting on the device. You cannot do much from outside the device. The entry vector can be different from jailbreak to jailbreak. Nowadays, most jailbreaks including my Osiris, Coolstar & Co's Electra and Jonathan's LiberiOS use the IPA applications signed with a temporary certificate and deployed with either Xcode or Cydia Impactor (or a signing service) to the device. From there, the application is executed by the user and the exploit is triggered.
 
 Other methods include but are not limited to WebKit exploits, mail exploits, etc. 
-The WebKit ones are more common. TotallyNotSpyware is a good example of an iOS 10.x to 10.3.3 64-Bit Jailbreak, and if we talk legacy, JailbreakMe series is probably the best example. These WebKit-based jailbreaks are usually deployed by accessing a website in Safari on the device. The website is crafted so that it exploits a webkit vulnerability (WebKit is at Safari's core), and thus gaining arbitrary code execution.
+The WebKit ones are more common. <i>TotallyNotSpyware*</i> is a good example of an iOS 10.x to 10.3.3 64-Bit Jailbreak, and if we talk legacy, JailbreakMe series is probably the best example. These WebKit-based jailbreaks are usually deployed by accessing a website in Safari on the device. The website is crafted so that it exploits a webkit vulnerability (WebKit is at Safari's core), and thus gaining arbitrary code execution.
 
-In the rest of this write-up, I will assume an IPA based Jailbreak like Osiris, LiberiOS or Electra. Also, this write-up assumes we already have a raw kernel exploit that gives us TFP0, and the KPPless approach.
+In the rest of this write-up, I will assume an IPA based Jailbreak like Osiris, LiberiOS or Electra. Also, this write-up assumes we already have a raw kernel exploit that gives us <code class="high">TFP0</code>, and the KPPless approach.
 
-After the application has been successfully installed and can run, CodeSign is no longer a problem, at least for the initial stage. We still cannot run unsigned or fake-signed binaries, but at least we can run ourselves (the exploit application) without being killed by AMFI. However, the problem is that we are still limited by the SandBox. The SandBox keeps us from accessing anything outside our container, so no R/W permissions for us. All we can see is our own data, nothing more. That has to change. We have to bestow ourselves the might of Shai Hulud!
+After the application has been successfully installed and can run, CodeSign is no longer a problem, at least for the initial stage. We still cannot run unsigned or fake-signed binaries, but at least we can run ourselves (the exploit application) without being killed by AMFI. However, the problem is that we are still limited by the SandBox. The SandBox keeps us from accessing anything outside our container, so no R/W permissions for us. All we can see is our own data, nothing more. That has to change. We have to bestow ourselves the might of ShaiHulud!
 
-The SandBox is a kernel extension (KEXT) which ensures that you do not access more than you're supposed to access. By default, everything in /var/mobile/Containers is sandboxed. Apple's own default applications are also sandboxed. When you install an application via Xcode, the App Store or via Cydia Impactor, you are automatically placing the application in /var/mobile/Containers/Bundle/Application/<UUID of the APP>. There is no other way to install an app, so our jailbreak application will be sandboxed by default, no matter what.
+The SandBox is a kernel extension (KEXT) which ensures that you do not access more than you're supposed to access. By default, everything in /var/mobile/Containers is sandboxed. Apple's own default applications are also sandboxed. When you install an application via Xcode, the App Store or via Cydia Impactor, you are automatically placing the application in <code class="high">/var/mobile/Containers/Bundle/Application/<UUID of the APP></code>. There is no other way to install an app, so our jailbreak application will be sandboxed by default, no matter what.
 
-So how do apps have access to the services required in order for them to run?! How can Deezer connect to my Bluetooth headset? How can YouTube decode frames? How can Twitter send me notifications? It's simple, through APIs. These APIs allow your containerized app to communicate in a controlled manner with Core Services (bluetoothd, wifid, mediaserverd, etc) which are also sandboxed, and these Core Services talk with the kexts / kernel through IOKit. So no, you don't directly talk to the kernel.
-The following diagram should help you see how this looks like.
+So how do apps have access to the services required in order for them to run?! How can Deezer connect to my Bluetooth headset? How can YouTube decode frames? How can Twitter send me notifications? It's simple, through APIs. These APIs allow your containerized app to communicate in a controlled manner with Core Services (<code class="high">bluetoothd</code>, <code class="high">wifid</code>, <code class="high">mediaserverd</code>, etc) which are also sandboxed, and these Core Services talk with the kexts / kernel through <code class="high">IOKit</code>. So no, you don't directly talk to the kernel. The following diagram should help you see how this looks like.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/15067741/46547236-4fd96980-c899-11e8-8d48-1947418eb777.png"/>
@@ -184,7 +183,7 @@ Of course, as an Application on iOS, not only you cannot see the File System and
 
 Some applications also provide uri schemes for you to communicate with them. Let's say you are in Chrome on iOS and you find a phone number to a company you wanna call. If you press it, you get asked if you really wanna call, and then you go straight to the Call app from iOS and the number is already being dialed. How? 
 
-Simple. The "Phone" application has registered an uri scheme that looks like this: <code class="high">tel://XXXXXXXXXXXX</code> so if you add tel://5552220001 to an HTML page and click it in Safari, the iOS knows who to open to handle that. Same goes for Facebook, Whatsapp, 
+Simple. The "Phone" application has registered an uri scheme that looks like this: <code class="high">tel://XXXXXXXXXXXX</code> so if you add <code class="high">tel://5552220001</code> to an HTML page and click it in Safari, the iOS knows who to open to handle that. Same goes for Facebook, WhatsApp, etc.
 
 To use the URI scheme from your app, you just have to call the right UIApplication method. That is 
 
@@ -205,14 +204,14 @@ Osiris Jailbreak uses QiLin's built-in SandBox escape which is called "ShaiHulud
 
 QiLin (and therefore LiberiOS and Osiris Jailbreak) escape the SandBox by assuming Kernel's credentials. Not only that, but since now we have the Kernel's credentials, we have access to whatever we want including syscalls like execve(), fork(), and posix_spawn()! Jonathan Levin has explained very well how QiLin proceeds in escaping the sandbox and assuming the kernel creds <a href="http://newosxbook.com/QiLin/qilin.pdf"> in this write-up</a>, part of the <code class="high"><a href="https://www.amazon.com/MacOS-iOS-Internals-III-Insecurity/dp/0991055535/ref=as_sl_pc_qf_sp_asin_til?tag=newosxbookcom-20&linkCode=w00&linkId=0b61c945365c9c37cd3cf88f10a5f629&creativeASIN=0991055535">*OS Internals Volume III</a></code>
 
-Of course, QiLin saves our application's credentials and restores them before exiting, that is to prevent creating panics due to the various locks that govern the kernel creds. 
+Of course, QiLin saves our application's credentials and restores them before exiting, that is to prevent creating panics due to the various locks that govern the kernel creds (and by increasing the wrong reference counters).
 
 Electra for iOS 11.2.x -> iOS 11.3.1 also uses the same kernel credential method for sandbox bypass and other privs.
 
 ### Running fake-signed binaries, the Alpha and Omega of a Jailbreak
-A Jailbreak doesn't provide much of a value if it doesn't come with a binary pack, also known as base binaries. This binary pack can often contain a long set of command-line binaries that one can use either programatically or via an SSH connection. These binaries include but are not limited to binaries that: rename, move, remove files, SSH clients like dropbear and their dependencies, various shells like <code class="high">ZSH</code>, archive utilities like <code class="high">gzip</code> and the standard <code class="high">chown</code>, <code class="high">chmod</code> and <code class="high">chflags</code> for messing with files permissions and such.
+A Jailbreak doesn't provide much of a value if it doesn't come with a binary pack, part of what is called the "bootstrap". This binary pack can often contain a long set of command-line (CLI) binaries that one can use either programatically or via an SSH connection. These binaries include but are not limited to binaries that: rename, move, remove files, SSH clients like dropbear and their dependencies, various shells like <code class="high">ZSH</code>, archive utilities like <code class="high">gzip</code> and the standard <code class="high">chown</code>, <code class="high">chmod</code> and <code class="high">chflags</code> for messing with files permissions and such.
 
-<b>NOTA BENE! Please do not confuse <code class="high">bootstrap</code> with <code class="high">bin pack</code> or <code class="high">base binaries</code>. The base binaries are the same thing as the bin pack and they represent the usual unix binaries used for moving files, changing file permissions and owners, SSH, process probing, shells, etc. A bootstrap contains usually everything else: maybe a jailbreakd daemon (very common on Meridian, Unc0ver, Electra and Electra 11.3.1 but not on Osiris or LiberiOS), Cydia and other applications that may be installed by default. These are not base binaries </b>
+<b>NOTA BENE! Please do not confuse <code class="high">bootstrap</code> with <code class="high">bin pack</code> or <code class="high">base binaries</code>. The base binaries are the jailbreak-specific daemons or additional binaries and may change from a jailbreak to another. The <code class="high">bin pack</code> is part of a <code class="high">Boostrap</code>, and a <code class="high">Bootstrap</code> contains Cydia, the CLI tools, Cydia dependencies and any other support files for it. Just like the <code class="high">base binaries</code>, the content of the <code class="high">Bootstrap</code> can also vary. For example, pwn20wnd's version of Osiris he rewrote from scratch doesn't contain Cydia in its bootstrap but it contains Filza.</b>
 
 Across the history of jailbreaks, various jailbreak teams have built their own binary packs in the .tar format which they deployed and extracted once they had access to the root file system which we discuss below.
 
@@ -1009,12 +1008,16 @@ The issue with the VFS exploit called "empty_list" is that, due to the nature of
 
 Of course, not requiring a paid developer account, even though getting it to work is an exercise in futility sometimes, this seems to be prefered by the general public - that is until they learn about Ignition and other signing services who sign for free the MPTCP version.
 
+### Stars
+Star 1: Not a real spyware, just a nice name because WebKitness.
+
 ### Special thanks
 <ul>
 <li>Jonathan Levin for his <a href="http://newosxbook.com/index.php">books</a>, tools and impressive patience with me and my odd questions - YOU ROCK!</li>
-<li>@Pwn20Wnd for pushing me to learn more (and more) and being supportive </li>
+<li>@pwn20wnd for pushing me to learn more (and more) being supportive, and findinding errors in the write-up :) </li>
 <li>ETA Folks / reditters / naggers for making me laugh from time to time </li>
 <li>IBSparkes for answering many of my questions during all these months</li>
+<li>stek29 for answering my weird memory related questions</li>
 </ul>
 
 ### License for the diagrams
