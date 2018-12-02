@@ -1,0 +1,5 @@
+Debugging the damn kernel is a very fun thing to do (until you provoke a serious exception, that is). Unfortunately, it's not an easy task nowadays and Apple seems to want to make harder and harder. At first, by hiding under lock and key the documnetation about the <code class "">debug</code> boot arguments, and then by moving the Kernel Development Kit under the Developer Account-only Downloads section. There are many write-ups on the internet about debugging the kernel on macOS but many of them are outdated as hell and the nvram boot arguments they tell you to set are no longer working. Some of them stop at just the "now you should have a working debug session" - so what? what do I do next? I wanna have fun Goddammit! In this write-up I am doing my best to provide the most accurate information for 2019, the right commands, the right boot-args and of course, practical examples you can begin with.
+
+### A note for the l33t h4xxors
+If you are going to say "well if people don't know what to do with a kernel debugger they shouldn't use one", please segfault. You've been a beginner once and wanted to have fun and learn so shut up.
+
