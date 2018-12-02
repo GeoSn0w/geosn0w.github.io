@@ -1,10 +1,10 @@
-Hi there! It's GeoSn0w. Debugging the damn kernel is a very fun thing to do (until you provoke a serious exception, that is). Unfortunately, it's not an easy task nowadays and Apple seems to want to make harder and harder. At first, by hiding under lock and key the documnetation about the <code class="high">debug</code> boot arguments, and then by moving the Kernel Debug Kit under the Developer Account-only Downloads section. There are many write-ups on the internet about debugging the kernel on macOS but many of them are outdated as hell and the nvram boot arguments they tell you to set are no longer working. Some of them stop at just the "now you should have a working debug session" - so what? what do I do next? I wanna have fun Goddammit! In this write-up I am doing my best to provide the most accurate information for 2019, the right commands, the right <code class="high">boot-args</code> and of course, practical examples you can begin with.
+Hi there! It's GeoSn0w. Debugging the damn kernel is a very fun thing to do (until you provoke a serious exception, that is). Unfortunately, it's not an easy task nowadays and Apple seems to want to make harder and harder. At first, by hiding under lock and key the documentation about the <code class="high">debug</code> boot arguments, and then by moving the Kernel Debug Kit under the Developer Account-only Downloads section. There are many write-ups on the internet about debugging the kernel on macOS but many of them are outdated as hell and the NVRAM boot arguments they tell you to set are no longer working. Some of them stop at just the "now you should have a working debug session" - so what? what do I do next? I wanna have fun Goddammit! In this write-up I am doing my best to provide the most accurate information for 2019, the right commands, the right <code class="high">boot-args</code> and of course, practical examples you can begin with.
 
 ### A note for the l33t h4xxors
 If you are going to say "well if people don't know what to do with a kernel debugger they shouldn't use one", please segfault. You've been a beginner once and wanted to have fun and learn so shut up.
 
 ### Getting started with Kernel debugging on macOS
-Okay, so the first things we need to sort out is the lab. You need to have a device of which kernel you want to debug (in my case I am using my iMac 2011 as a debugee) and a device from where you do the debugging (I am using my MacBook Pro 2009 for this). You can connect the two in various ways I will discuss in this write-up, but in my case the best method (and the most reliable) seems to be via a FireWare cable between the two (that is because both my machines have actual firewire ports, not USB-C bullshit).
+Okay, so the first things we need to sort out is the lab. You need to have a device of which kernel you want to debug (in my case I am using my iMac 2011 as a debuggee) and a device from where you do the debugging (I am using my MacBook Pro 2009 for this). You can connect the two in various ways I will discuss in this write-up, but in my case, the best method (and the most reliable) seems to be via a FireWare cable between the two (that is because both my machines have actual firewire ports, not USB-C bullshit).
 
 With the hardware part set up, we need some software. You CAN theoretically debug the <code class="high">RELEASE</code> kernel, but when you're a beginner the <code class="high">Development</code> one is much better. By default, macOS comes with a <code class="high">RELEASE</code> fused kernel located in <code class="high">/System/Library/Kernels/kernel</code> where <code class="high">kernel</code> is a <code class="high">Mach-O 64-bit executable x86_64</code>. We can get ourselves the <code class="high">Development</code> kernel for our macOS version by navigating to Apple Developer portal and downloading the Kernel Debug Kit. It's surprising that Apple only put the kit under a normal, free Apple Developer Account lock; I would have expected them to put it under the paid Apple Developer Account downloads by now.
 
@@ -17,24 +17,24 @@ Anyways, once you navigate to this <a href="https://developer.apple.com/download
 <b>VERY IMPORTANT!</b> You should get the appropriate kernel debug kit for your specific macOS version! You will boot the downloaded kernel later and if it doesn't match your macOS version, it will NOT boot! I am not responsible for any damages to your files, computer, life, cat, whatever. Proceed at your own risk.
 
 ### Finding the proper Kernel Debug Kit for your macOS version [!]
-In order to locate the proper Kernel Debug Kit, you must know your macOS version and the actual build number. You can easily see what macOS version you are running by going to the Apple logo, pressing "About This Mac", and reading the version in the window that appears, for example "Version 10.13.6". 
+In order to locate the proper Kernel Debug Kit, you must know your macOS version and the actual build number. You can easily see what macOS version you are running by going to the Apple logo, pressing "About This Mac", and reading the version in the window that appears, for example, "Version 10.13.6". 
 
-For the actual build number, you can either click once on the "Version" label in that "About This Mac" window, or you can run the terminal command <code class="high">sw_vers | grep BuildVersion</code>. In my case running the command outputs "BuildVersion:	17G65".
+For the actual build number, you can either click once on the "Version" label in that "About This Mac" window, or you can run the terminal command <code class="high">sw_vers | grep BuildVersion</code>. In my case running the command outputs "BuildVersion:    17G65".
 
 ```bash
 Last login: Sun Dec  2 03:58:16 on ttys000
 Isabella:~ geosn0w$ sw_vers | grep BuildVersion
-BuildVersion:	17G65
+BuildVersion:    17G65
 Isabella:~ geosn0w$ 
 ```
-So, in my case I am running macOS High Sierra (10.13.6) build number 17G65. Looking in the Downloads section I could immediately find my version listed so I can download the .DMG file containing the installation files. The download is pretty small.
+So, in my case, I am running macOS High Sierra (10.13.6) build number 17G65. Looking in the Downloads section I could immediately find my version listed so I can download the .DMG file containing the installation files. The download is pretty small.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/15067741/49338318-93c4c280-f5ed-11e8-84ef-5313af537f9a.png"/>
 </p>
 
-### Preparing the debugee for being debugged by the debugger ;)
-With the Debug Kit downloaded on the debugee (that is the machine you whose kernel you wanna debug), mount the DMG file by double-clicking on it. Inside the DMG you will find a file called <code class="high">KernelDebugKit.pkg</code>. Double-click that and follow the installation wizard. It will ask you for your macOS login password. If asked, do not move the installer to trash. You will need it later.
+### Preparing the debuggee for being debugged by the debugger ;)
+With the Debug Kit downloaded on the debuggee (that is the machine you whose kernel you wanna debug), mount the DMG file by double-clicking on it. Inside the DMG you will find a file called <code class="high">KernelDebugKit.pkg</code>. Double-click that and follow the installation wizard. It will ask you for your macOS login password. If asked, do not move the installer to trash. You will need it later.
 
 When the installation is complete it will look something like this.
 
@@ -46,7 +46,7 @@ After the installation completes, navigate to <code class="high">/Library/Develo
   
 Copy the <code class="high">kernel.development</code> and paste into <code class="high">/System/Library/Kernels/</code> alongside your release kernel binary. When you are done, you should have two kernels on your macOS installation, a <code class="high">RELEASE</code> one and a <code class="high">DEVELOPMENT</code> one.
 
-### Disabling SIP on the debugee
+### Disabling SIP on the debuggee
 For proper debugging, you may need to disable <code class="high">SIP (System Integrity Protection)</code> on the machine whose kernel you wanna debug. To do that, reboot the machine in <code class="high">Recovery Mode</code>. To do that, reboot the machine and when you hear the "BOONG!", or when the screen turns on, press <code class="high">CMD + R</code>. Wait a few seconds for it to boot into Recovery Mode user interface, and open "Terminal" from the top bar.
 
 In the Recovery Terminal, write <code class="high">csrutil disable</code>. Then reboot the machine and boot it normally to macOS.
@@ -73,7 +73,7 @@ sudo nvram boot-args="debug=0x8146 kdp_match_name=firewire fwkdp=0x8000 fwdebug=
 
 The difference is that <code class="high">fwkdp=0x8000</code> tells <code class="high">IOFireWireFamily.kext::AppleFWOHCI_KDP</code> to use the non-built-in firewire <-> thunderbolt adapter for the debugging session.
 
-This is pretty much it, the debugee is ready to be debuged after a reboot, but let me explain you a bit what the boot arguments do.
+This is pretty much it, the debuggee is ready to be debugged after a reboot, but let me explain you a bit what the boot arguments do.
 <ul>
   <li><code class="high">debug=0x8146</code> -> This enables the debugging and allows us to press the Power button to trigger a <code class="high">NMI</code> This stands for <code class="high">Non-Maskable Interrupt</code> and it is used to allow the debugger to connect.</li>
   <li><code class="high">kdp_match_name=firewire</code> -> This allows us to debug via <code class="high">FireWireKDP</code>.</li>
@@ -88,26 +88,26 @@ Aside from these boot arguments that we set, macOS supports more args that are d
 ```c
 ...
 /* Debug boot-args */
-#define DB_HALT		0x1
+#define DB_HALT        0x1
 //#define DB_PRT          0x2 -- obsolete
-#define DB_NMI		0x4
-#define DB_KPRT		0x8
-#define DB_KDB		0x10
+#define DB_NMI        0x4
+#define DB_KPRT        0x8
+#define DB_KDB        0x10
 #define DB_ARP          0x40
 #define DB_KDP_BP_DIS   0x80
 //#define DB_LOG_PI_SCRN  0x100 -- obsolete
 #define DB_KDP_GETC_ENA 0x200
 
-#define DB_KERN_DUMP_ON_PANIC		0x400 /* Trigger core dump on panic*/
-#define DB_KERN_DUMP_ON_NMI		0x800 /* Trigger core dump on NMI */
-#define DB_DBG_POST_CORE		0x1000 /*Wait in debugger after NMI core */
-#define DB_PANICLOG_DUMP		0x2000 /* Send paniclog on panic,not core*/
-#define DB_REBOOT_POST_CORE		0x4000 /* Attempt to reboot after
-						* post-panic crashdump/paniclog
-						* dump.
-						*/
-#define DB_NMI_BTN_ENA  	0x8000  /* Enable button to directly trigger NMI */
-#define DB_PRT_KDEBUG   	0x10000 /* kprintf KDEBUG traces */
+#define DB_KERN_DUMP_ON_PANIC        0x400 /* Trigger core dump on panic*/
+#define DB_KERN_DUMP_ON_NMI        0x800 /* Trigger core dump on NMI */
+#define DB_DBG_POST_CORE        0x1000 /*Wait in debugger after NMI core */
+#define DB_PANICLOG_DUMP        0x2000 /* Send paniclog on panic,not core*/
+#define DB_REBOOT_POST_CORE        0x4000 /* Attempt to reboot after
+                        * post-panic crashdump/paniclog
+                        * dump.
+                        */
+#define DB_NMI_BTN_ENA      0x8000  /* Enable button to directly trigger NMI */
+#define DB_PRT_KDEBUG       0x10000 /* kprintf KDEBUG traces */
 #define DB_DISABLE_LOCAL_CORE   0x20000 /* ignore local kernel core dump support */
 #define DB_DISABLE_GZIP_CORE    0x40000 /* don't gzip kernel core dumps */
 #define DB_DISABLE_CROSS_PANIC  0x80000 /* x86 only - don't trigger cross panics. Only
@@ -120,14 +120,14 @@ Aside from these boot arguments that we set, macOS supports more args that are d
 ```
 
 ### Preparing the debugger machine
-Okay, now that the debugee is ready, we need to configure the machine where the debugger will run. For that I am using another macOS machine running El Capitan, but that matters less. Remember that Kernel Debug Toolkit we installed on the debugee? We need to install it on the debugger machine too. The difference is that we will NOT move the kernels and we will not set any boot arguments on the debugger. We need the kernel because we are going to use <code class="high">ldid</code> to perform the debugging. If you're familiar with GDB instead, don't worry. There is a <a href ="https://lldb.llvm.org/lldb-gdb.html"> GDB -> LLDB command sheet available right here</a>.
+Okay, now that the debuggee is ready, we need to configure the machine where the debugger will run. For that, I am using another macOS machine running El Capitan, but that matters less. Remember that Kernel Debug Kit we installed on the debuggee? We need to install it on the debugger machine too. The difference is that we will NOT move the kernels and we will not set any boot arguments on the debugger. We need the kernel because we are going to use <code class="high">ldid</code> to perform the debugging. If you're familiar with GDB instead, don't worry. There is a <a href ="https://lldb.llvm.org/lldb-gdb.html"> GDB -> LLDB command sheet available right here</a>.
 
-Note: You should install the same macOS Kernel Debug toolkit ont he debugger even if it doesn't run the same macOS version as the debugee because we will not boot any kernel on the debugger.
+Note: You should install the same macOS Kernel Debug toolkit on the debugger even if it doesn't run the same macOS version as the debuggee because we will not boot any kernel on the debugger.
 
 After you installed the toolkit, it's time to connect.
 
 ### Debugging the kernel
-To begin, reboot the debugee. You will see that it boots into a text-mode console which spits out verbose boot information. Wait until you see "DSMOS has arrived!" on the screen and press the Power button once. Don't hold it pressed. On the debugee you will see that it is waiting for a debugger to be connected.
+To begin, reboot the debuggee. You will see that it boots into a text-mode console which spits out verbose boot information. Wait until you see "DSMOS has arrived!" on the screen and press the Power button once. Don't hold it pressed. On the debuggee, you will see that it is waiting for a debugger to be connected.
 
 <B>On the debugger machine:</B>
 
@@ -216,7 +216,7 @@ Process 1 stopped
     frame #0: 0xffffff802e97a8d3 kernel.development`DebuggerWithContext [inlined] current_cpu_datap at cpu_data.h:401 [opt]
 ```
 
-Now we are connected to the live kernel. You can see that the process is stopped, this means that the kernel is frozen, this is why the boot stopped right where you left it, but now that the debugger has been attached, we can safely continue the boot process into the normal macOS desktop. To do that we just have to unfreeze (continue) the process. To do that, type "c" for continue and press enter until the boot continues (more text is poured on the debugee screen)
+Now we are connected to the live kernel. You can see that the process is stopped, this means that the kernel is frozen, this is why the boot stopped right where you left it, but now that the debugger has been attached, we can safely continue the boot process into the normal macOS desktop. To do that we just have to unfreeze (continue) the process. To do that, type "c" for continue and press enter until the boot continues (more text is poured on the debuggee screen)
 
 ```bash
 (lldb) c
@@ -226,7 +226,7 @@ Process 1 stopped
     frame #0: 0xffffff802e97a8d3 kernel.development`DebuggerWithContext [inlined] current_cpu_datap at cpu_data.h:401 [opt]
 (lldb) c
 ```
-Once the debugee has fully booted into the macOS and you are on your desktop, you can pretty much do whatever debugging you want. To run a debugger command you will have to trigger again a <code class="high">NMI</code>, to do that you press the Power button once. The debugee screen will freeze but your debugger's lldb screen will be active and you can read / write registers, read / write memory, disassemble at address, disassemble functions, etc. on the live kernel. To unfreeze it back you type again "c" and press enter on the lldb screen.
+Once the debuggee has fully booted into the macOS and you are on your desktop, you can pretty much do whatever debugging you want. To run a debugger command you will have to trigger again a <code class="high">NMI</code>, to do that you press the Power button once. The debuggee screen will freeze but your debugger's lldb screen will be active and you can read/write registers, read/write memory, disassemble at address, disassemble functions, etc. on the live kernel. To unfreeze it back you type again "c" and press enter on the lldb screen.
 
 ### Practical examples of Kernel debugging
 
@@ -376,14 +376,14 @@ Exception State Registers:
 ```
 
 <b>NOTE:</b> Of course, when you wanna read a single register you don't have to run <code class="high">register read --all</code>, you can simply specify the register with <code class="high">register read <register></code> for example <code class="high">register read r13</code>.
-	
+    
 <B>Example 2: Changing the Kernel version and name when running <code class="high">uname -a</code></b>
 
-Time to do some real memory R/W to the kernel because we can. As you probably know, the command uname -a in the Terminal lists the name of the kernel, the version, the achitecture and the build date. What if we change that to whatever we want?
+Time to do some real memory R/W to the kernel because we can. As you probably know, the command <code class="high">uname -a</code> in the Terminal lists the name of the kernel, the version, the, and the build date. What if we change that to whatever we want?
 
-At frist, we have no idea where the kernel stores that information so we need to find that. To do that we can use any Disassembler like IDA Pro, Hopper Disassembler, Jtool, Binary Ninja, etc. 
+At first, we have no idea where the kernel stores that information so we need to find that. To do that we can use any Disassembler like IDA Pro, Hopper Disassembler, Jtool, Binary Ninja, etc. 
 
-I will use IDA Pro for this task. What we're going to do is to load the kernel.development file into IDA Pro and let IDA analyze it. The analysis may take a while so please be patient. The Kernel ain't small. When IDA finishes, the output should look like this, more or less. You will know when IDA finished because it will say "AU: idle" in the left bottom corner.
+I will use IDA Pro for this task. What we're going to do is to load the kernel. development file into IDA Pro and let IDA analyze it. The analysis may take a while so please be patient. The Kernel ain't small. When IDA finishes, the output should look like this, more or less. You will know when IDA finished because it will say "AU: idle" in the left bottom corner.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/15067741/49339255-3afd2600-f5fd-11e8-9104-231c46548fa3.png"/>
@@ -539,9 +539,9 @@ It looks like it continues to <code class="high">0xffffff802f0f6900</code>. Let'
 (lldb)
 ```
 
-Nice! See the <code class="high">44 61 72 77 69 6e</code>? That is the hexadecimal represenation of the word <code class="high">Darwin</code>. If we change that to let's say "GeoSn0w" in HEX, we can pretty much change the kernel name. Same goes for the version. Let's do it.
+Nice! See the <code class="high">44 61 72 77 69 6e</code>? That is the hexadecimal representation of the word <code class="high">Darwin</code>. If we change that to let's say "GeoSn0w" in HEX, we can pretty much change the kernel name. Same goes for the version. Let's do it.
 
-So, we need a Text to Hex convertor. Many are available online. <a href="http://www.unit-conversion.info/texttools/hexadecimal/">I used this one</a>. And we need to keep in mind that we CANNOT write a longer string without overwriting something else. The word can be smaller and we can pad it with <code class="high">NOPs</code> (0x90) but not longer because it will overwrite stuff. I crafted my text to remove some stuff and add some stuff but I stayed in the same boundary. Don't go past the character limit in the existing string.
+So, we need a Text to Hex converter. Many are available online. <a href="http://www.unit-conversion.info/texttools/hexadecimal/">I used this one</a>. And we need to keep in mind that we CANNOT write a longer string without overwriting something else. The word can be smaller and we can pad it with <code class="high">NOPs</code> (0x90) but not longer because it will overwrite stuff. I crafted my text to remove some stuff and add some stuff but I stayed in the same boundary. Don't go past the character limit in the existing string.
 
 <B>My final hex looks like this:</B>
 
