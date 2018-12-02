@@ -612,3 +612,10 @@ Isabella:~ geosn0w$
 ```
 ### Errare humanum est
 If you found any horrible mistakes in this write-up, let me know on Twitter. My handle is @FCE365 (GeoSn0w). Thank you a lot for reading this!
+
+### Contact me
+
+<ul>
+<li>Twitter: https://twitter/FCE365</li>
+<li>YouTube Channel: http://youtube.com/fce365official</li>
+</ul>
