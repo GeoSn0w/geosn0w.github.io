@@ -230,10 +230,385 @@ Once the debugee has fully booted into the macOS and you are on your desktop, yo
 
 ### Practical examples of Kernel debugging
 
-<B>Example 1: Reading all the registers with lldb and writing "AAAAAAAA" to one of them<B>
+<B>Example 1: Reading all the registers with lldb and writing "AAAAAAAA" to one of them</B>
   
 Okay, to read all the registers, trigger a <code class="high">NMI</code> by pressing the Power button and in the open lldb window type register <code class="high">read --all</code>
 
 ```bash
+(lldb) register read --all
+General Purpose Registers:
+      rax = 0xffffff802f40ba40  kernel.development`processor_master
+      rbx = 0x0000000000000000
+      rcx = 0xffffff802f40ba40  kernel.development`processor_master
+      rdx = 0x0000000000000000
+      rdi = 0x0000000000000004
+      rsi = 0xffffff7fb1483ff4
+      rbp = 0xffffff817e8ccd50
+      rsp = 0xffffff817e8ccd10
+       r8 = 0x0000000000000000
+       r9 = 0x0000000000000001
+      r10 = 0x00000000000004d1
+      r11 = 0x00000000000004d0
+      r12 = 0x0000000000000000
+      r13 = 0x0000000000000000
+      r14 = 0x0000000000000000
+      r15 = 0xffffff7fb1483ff4
+      rip = 0xffffff802e97a8d3  kernel.development`DebuggerWithContext + 403 [inlined] current_cpu_datap at cpu.c:220
+ kernel.development`DebuggerWithContext + 403 [inlined] current_processor at debug.c:463
+ kernel.development`DebuggerWithContext + 403 [inlined] DebuggerTrapWithState + 46 at debug.c:537
+ kernel.development`DebuggerWithContext + 357 at debug.c:537
+   rflags = 0x0000000000000046
+       cs = 0x0000000000000008
+       fs = 0x0000000000000000
+       gs = 0x0000000000000000
+ 
+Floating Point Registers:
+      fcw = 0x0000
+      fsw = 0x0000
+      ftw = 0x00
+      fop = 0x0000
+       ip = 0x00000000
+       cs = 0x0000
+       dp = 0x00000000
+       ds = 0x0000
+    mxcsr = 0x00000000
+ mxcsrmask = 0x00000000
+    stmm0 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    stmm1 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    stmm2 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    stmm3 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    stmm4 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    stmm5 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    stmm6 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    stmm7 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+     xmm0 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+     xmm1 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+     xmm2 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+     xmm3 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+     xmm4 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+     xmm5 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+     xmm6 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+     xmm7 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+     xmm8 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+     xmm9 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    xmm10 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    xmm11 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    xmm12 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    xmm13 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    xmm14 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    xmm15 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+ 
+Exception State Registers:
+3 registers were unavailable.
+(lldb)
+```
+Now let's write to one of the registers. DO NOT write to a register that is not set to <code class="high">0x0000000000000000</code> because you will overwrite something. Find one that is empty. In my case, <code class="high">R13</code> is empty (<code class="high">r13 = 0x0000000000000000</code>) so I can write garbage to it to prove my point. To write a string of AAAs to the register I can replace it's value to <code class="high">0x4141414141414141</code> where <code class="high">0x41</code> is the hex representation for ASCII character "A". To overwrite the register I can use the command <code class="high">register write r13 0x4141414141414141</code>. Sure enough, if we read the registers again the change is in place:
+
+```bash
+(lldb) register write R13 0x4141414141414141
+(lldb) register read --all
+General Purpose Registers:
+      rax = 0xffffff802f40ba40  kernel.development`processor_master
+      rbx = 0x0000000000000000
+      rcx = 0xffffff802f40ba40  kernel.development`processor_master
+      rdx = 0x0000000000000000
+      rdi = 0x0000000000000004
+      rsi = 0xffffff7fb1483ff4
+      rbp = 0xffffff817e8ccd50
+      rsp = 0xffffff817e8ccd10
+       r8 = 0x0000000000000000
+       r9 = 0x0000000000000001
+      r10 = 0x00000000000004d1
+      r11 = 0x00000000000004d0
+      r12 = 0x0000000000000000
+      r13 = 0x4141414141414141 <-- Yee overwritten this.
+      r14 = 0x0000000000000000
+      r15 = 0xffffff7fb1483ff4
+      rip = 0xffffff802e97a8d3  kernel.development`DebuggerWithContext + 403 [inlined] current_cpu_datap at cpu.c:220
+ kernel.development`DebuggerWithContext + 403 [inlined] current_processor at debug.c:463
+ kernel.development`DebuggerWithContext + 403 [inlined] DebuggerTrapWithState + 46 at debug.c:537
+ kernel.development`DebuggerWithContext + 357 at debug.c:537
+   rflags = 0x0000000000000046
+       cs = 0x0000000000000008
+       fs = 0x0000000000000000
+       gs = 0x0000000000000000
+ 
+Floating Point Registers:
+      fcw = 0x0000
+      fsw = 0x0000
+      ftw = 0x00
+      fop = 0x0000
+       ip = 0x00000000
+       cs = 0x0000
+       dp = 0x00000000
+       ds = 0x0000
+    mxcsr = 0x00000000
+ mxcsrmask = 0x00000000
+    stmm0 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    stmm1 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    stmm2 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    stmm3 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    stmm4 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    stmm5 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    stmm6 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    stmm7 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+     xmm0 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+     xmm1 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+     xmm2 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+     xmm3 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+     xmm4 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+     xmm5 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+     xmm6 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+     xmm7 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+     xmm8 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+     xmm9 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    xmm10 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    xmm11 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    xmm12 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    xmm13 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    xmm14 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+    xmm15 = {0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00}
+ 
+Exception State Registers:
+3 registers were unavailable.
+ 
+(lldb)
+```
+
+<b>NOTE:</b> Of course, when you wanna read a single register you don't have to run <code class="high">register read --all</code>, you can simply specify the register with <code class="high">register read <register></code> for example <code class="high">register read r13</code>.
+	
+<B>Example 2: Changing the Kernel version and name when running <code class="high">uname -a</code></b>
+
+Time to do some real memory R/W to the kernel because we can. As you probably know, the command uname -a in the Terminal lists the name of the kernel, the version, the achitecture and the build date. What if we change that to whatever we want?
+
+At frist, we have no idea where the kernel stores that information so we need to find that. To do that we can use any Disassembler like IDA Pro, Hopper Disassembler, Jtool, Binary Ninja, etc. 
+
+I will use IDA Pro for this task. What we're going to do is to load the kernel.development file into IDA Pro and let IDA analyze it. The analysis may take a while so please be patient. The Kernel ain't small. When IDA finishes, the output should look like this, more or less. You will know when IDA finished because it will say "AU: idle" in the left bottom corner.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/15067741/49339255-3afd2600-f5fd-11e8-9104-231c46548fa3.png"/>
+</p>
+
+Now, we have to find that string. We know that the kernel name is <code class="high">Darwin</code> when the uname -a command is executed in Terminal so in order to look for it in IDA, we go to the top bar -> View -> Open subviews -> Strings.
+A new Strings window will appear and if you press <code class="high">CTRL + F</code> inside it a search box will appear at the bottom where we can search for Darwin. And what do you know? The whole string is there.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/15067741/49339322-e312ef00-f5fd-11e8-957a-46965a3e288a.png"/>
+</p>
+
+Double-click that and you will be redirected to a constant called <code class="high">_version</code>. So now we know. The constant is called "version" and that is what we have to look for. You may be inclined to copy the address of the constant from the IDA disassembly but WRONG! The Kernel uses <code class="high">KASLR</code> or <code class="high">Kernel Address Space Layout Randomization</code> so the address will not be the same, it will be slid. But you don't need to know the address anyways, you can get it easily with lldb on the debugger machine. 
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/15067741/49339365-8e23a880-f5fe-11e8-9633-b35da9c79498.png"/>
+</p>
+
+<B>Let's get the address of the "version" constant.</B>
+
+It's actually very simple. Trigger a <code class="high">NMI</code> by pressing the Power Button (if you continued the process) and write <code class="high">print &(version)</code>.
+
+```bash
+(lldb) print &(version)
+(const char (*)[101]) $8 = 0xffffff802f0f68f0
+(lldb)
+```
+AHAM! So in my case the <code class="high">const char version</code> is at address <code class="high">0xffffff802f0f68f0</code>. Sure enough, if we list the character array it shows like this: 
+
+```bash
+(lldb) print version
+(const char [101]) $9 = {
+  [0] = 'D'
+  [1] = 'a'
+  [2] = 'r'
+  [3] = 'w'
+  [4] = 'i'
+  [5] = 'n'
+  [6] = ' '
+  [7] = 'K'
+  [8] = 'e'
+  [9] = 'r'
+  [10] = 'n'
+  [11] = 'e'
+  [12] = 'l'
+  [13] = ' '
+  [14] = 'V'
+  [15] = 'e'
+  [16] = 'r'
+  [17] = 's'
+  [18] = 'i'
+  [19] = 'o'
+  [20] = 'n'
+  [21] = ' '
+  [22] = '1'
+  [23] = '7'
+  [24] = '.'
+  [25] = '7'
+  [26] = '.'
+  [27] = '0'
+  [28] = ':'
+  [29] = ' '
+  [30] = 'W'
+  [31] = 'e'
+  [32] = 'd'
+  [33] = ' '
+  [34] = 'O'
+  [35] = 'c'
+  [36] = 't'
+  [37] = ' '
+  [38] = '1'
+  [39] = '0'
+  [40] = ' '
+  [41] = '2'
+  [42] = '3'
+  [43] = ':'
+  [44] = '0'
+  [45] = '6'
+  [46] = ':'
+  [47] = '1'
+  [48] = '4'
+  [49] = ' '
+  [50] = 'P'
+  [51] = 'D'
+  [52] = 'T'
+  [53] = ' '
+  [54] = '2'
+  [55] = '0'
+  [56] = '1'
+  [57] = '8'
+  [58] = ';'
+  [59] = ' '
+  [60] = 'r'
+  [61] = 'o'
+  [62] = 'o'
+  [63] = 't'
+  [64] = ':'
+  [65] = 'x'
+  [66] = 'n'
+  [67] = 'u'
+  [68] = '-'
+  [69] = '4'
+  [70] = '5'
+  [71] = '7'
+  [72] = '0'
+  [73] = '.'
+  [74] = '7'
+  [75] = '1'
+  [76] = '.'
+  [77] = '1'
+  [78] = '3'
+  [79] = '~'
+  [80] = '1'
+  [81] = '/'
+  [82] = 'D'
+  [83] = 'E'
+  [84] = 'V'
+  [85] = 'E'
+  [86] = 'L'
+  [87] = 'O'
+  [88] = 'P'
+  [89] = 'M'
+  [90] = 'E'
+  [91] = 'N'
+  [92] = 'T'
+  [93] = '_'
+  [94] = 'X'
+  [95] = '8'
+  [96] = '6'
+  [97] = '_'
+  [98] = '6'
+  [99] = '4'
+  [100] = '\0'
+}
+(lldb)
+```
+
+Actually, using the <code class="high">x <address></code> command we can dumpt the memory contents at that address. Let's do it.
+
+```bash
+(lldb) x 0xffffff802f0f68f0
+0xffffff802f0f68f0: 44 61 72 77 69 6e 20 4b 65 72 6e 65 6c 20 56 65  Darwin Kernel Ve
+0xffffff802f0f6900: 72 73 69 6f 6e 20 31 37 2e 37 2e 30 3a 20 57 65  rsion 17.7.0: We
+(lldb)
+```
+
+It looks like it continues to <code class="high">0xffffff802f0f6900</code>. Let's dump that too.
+
+```bash
+(lldb) x 0xffffff802f0f6900
+0xffffff802f0f6900: 65 72 73 69 6f 6e 20 36 39 2e 30 30 20 57 65 65  rsion 17.7.0: We
+0xffffff802f0f6910: 64 20 4f 63 74 20 31 30 20 32 33 3a 30 36 3a 31  d Oct 10 23:06:1
+(lldb)
+```
+
+Nice! See the <code class="high">44 61 72 77 69 6e</code>? That is the hexadecimal represenation of the word <code class="high">Darwin</code>. If we change that to let's say "GeoSn0w" in HEX, we can pretty much change the kernel name. Same goes for the version. Let's do it.
+
+So, we need a Text to Hex convertor. Many are available online. <a href="http://www.unit-conversion.info/texttools/hexadecimal/">I used this one</a>. And we need to keep in mind that we CANNOT write a longer string without overwriting something else. The word can be smaller and we can pad it with <code class="high">NOPs</code> (0x90) but not longer because it will overwrite stuff. I crafted my text to remove some stuff and add some stuff but I stayed in the same boundary. Don't go past the character limit in the existing string.
+
+<B>My final hex looks like this:</B>
 
 ```
+47 65 6f 53 6e 30 77 20 4b 65 72 6e 65 6c 20 56 = "GeoSn0w Kernel V"
+
+65 72 73 69 6f 6e 20 36 39 2e 30 30 20 57 65 65 = "ersion 69.00 Wee"
+```
+Now, we cannot write it to the two addresses like that. We have to add "0x" in front of all characters. The final result looks like this:
+
+```
+0x47 0x65 0x6f 0x53 0x6e 0x30 0x77 0x20 0x4b 0x65 0x72 0x6e 0x65 0x6c 0x20 0x56 = "GeoSn0w Kernel V"
+
+0x65 0x72 0x73 0x69 0x6f 0x6e 0x20 0x36 0x39 0x2e 0x30 0x30 0x20 0x57 0x65 0x65 = "ersion 69.00 Wee"
+```
+
+Now we can write the bytes to the memory. Let's start with the first address. In my case the command looks like this:
+
+```bash
+(lldb) memory write 0xffffff802f0f68f0 0x47 0x65 0x6f 0x53 0x6e 0x30 0x77 0x20 0x4b 0x65 0x72 0x6e 0x65 0x6c 0x20 0x56
+(lldb) x 0xffffff802f0f68f0
+0xffffff802f0f68f0: 47 65 6f 53 6e 30 77 20 4b 65 72 6e 65 6c 20 56  GeoSn0w Kernel V
+0xffffff802f0f6900: 72 73 69 6f 6e 20 31 37 2e 37 2e 30 3a 20 57 65  rsion 17.7.0: We
+(lldb)
+```
+
+Now for the <code class="high">0xffffff802f0f6900</code> address to complete the string nicely:
+
+```bash
+(lldb) memory write 0xffffff802f0f6900 0x65 0x72 0x73 0x69 0x6f 0x6e 0x20 0x36 0x39 0x2e 0x30 0x30 0x20 0x57 0x65 0x65
+(lldb) x 0xffffff802f0f6900
+0xffffff802f0f6900: 65 72 73 69 6f 6e 20 36 39 2e 30 30 20 57 65 65  ersion 69.00 Wee
+0xffffff802f0f6910: 64 20 4f 63 74 20 31 30 20 32 33 3a 30 36 3a 31  d Oct 10 23:06:1
+(lldb)
+```
+Now let's unfreeze the kernel on the debugee:
+
+```bash
+(lldb) c
+Process 1 resuming
+(lldb) Loading 1 kext modules warning: Can't find binary/dSYM for com.apple.driver.AppleXsanScheme (79D5E92F-789E-3C37-BE0E-7D1EAD697DD9)
+. done.
+Unloading 1 kext modules . done.
+Unloading 1 kext modules . done.
+(lldb)
+```
+And let's run the <code class="high">uname -a</code> command in the Terminal of the debugee:
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/15067741/49339564-0fc90580-f602-11e8-8142-49852c29a521.png"/>
+</p>
+
+And what do you know? It shows our string:
+
+```bash
+Last login: Sun Dec  2 07:12:19 on ttys000
+Isabella:~ geosn0w$ uname -a
+Darwin Isabella.local 17.7.0 GeoSn0w Kernel Version 69.00 Weed Oct 10 23:06:14 PDT 2018; root:xnu-4570.71.13~1/DEVELOPMENT_X86_64 x86_64
+Isabella:~ geosn0w$ 
+```
+
+And there you have it. Kernel debugging on macOS with some practical examples. I hope you enjoyed it. Do not forget that, after you're done debugging stuff you should set the <code class="high">boot-args</code> back again to stock to boot the normal <code class="high">RELEASE</code> kernel. You do that by running the following command in Terminal on the debugee: <code class="high">sudo nvram boot-args=""</code>. After this, perform a reboot and the computer will boot the normal <code class="high">RELEASE</code> kernel.
+
+```bash
+Isabella:~ geosn0w$ sudo nvram boot-args=""
+Password:
+Isabella:~ geosn0w$ 
+```
+### Errare humanum est
+If you found any horrible mistakes in this write-up, let me know on Twitter. My handle is @FCE365 (GeoSn0w). Thank you a lot for reading this!
