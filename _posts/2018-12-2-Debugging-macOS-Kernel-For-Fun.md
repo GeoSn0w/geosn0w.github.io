@@ -603,13 +603,26 @@ Darwin Isabella.local 17.7.0 GeoSn0w Kernel Version 69.00 Weed Oct 10 23:06:14 P
 Isabella:~ geosn0w$ 
 ```
 
-And there you have it. Kernel debugging on macOS with some practical examples. I hope you enjoyed it. Do not forget that, after you're done debugging stuff you should set the <code class="high">boot-args</code> back again to stock to boot the normal <code class="high">RELEASE</code> kernel. You do that by running the following command in Terminal on the debugee: <code class="high">sudo nvram boot-args=""</code>. After this, perform a reboot and the computer will boot the normal <code class="high">RELEASE</code> kernel.
+And there you have it. Kernel debugging on macOS with some practical examples. I hope you enjoyed it. Do not forget that, after you're done debugging stuff you should set the <code class="high">boot-args</code> back again to stock to boot the normal <code class="high">RELEASE</code> kernel. You do that by running the following command in Terminal on the debugee: <code class="high">sudo nvram boot-args=""</code>. Then go to <code class="high">/System/Library/Kernels/</code> and remove the <code class="high">kernel.development</code> file. 
 
 ```bash
 Isabella:~ geosn0w$ sudo nvram boot-args=""
 Password:
 Isabella:~ geosn0w$ 
 ```
+Now in the Terminal write the following two commands to invalidate the kextcache:
+
+```bash
+sudo touch /Library/Extensions
+```
+And
+
+```bash
+sudo touch /System/Library/Extensions
+```
+
+After this, perform a reboot and the computer will boot the normal <code class="high">RELEASE</code> kernel.
+
 ### Errare humanum est
 If you found any horrible mistakes in this write-up, let me know on Twitter. My handle is @FCE365 (GeoSn0w). Thank you a lot for reading this!
 
