@@ -120,7 +120,7 @@ Aside from these boot arguments that we set, macOS supports more args that are d
 ```
 
 ### Preparing the debugger machine
-Okay, now that the debuggee is ready, we need to configure the machine where the debugger will run. For that, I am using another macOS machine running El Capitan, but that matters less. Remember that Kernel Debug Kit we installed on the debuggee? We need to install it on the debugger machine too. The difference is that we will NOT move the kernels and we will not set any boot arguments on the debugger. We need the kernel because we are going to use <code class="high">ldid</code> to perform the debugging. If you're familiar with GDB instead, don't worry. There is a <a href ="https://lldb.llvm.org/lldb-gdb.html"> GDB -> LLDB command sheet available right here</a>.
+Okay, now that the debuggee is ready, we need to configure the machine where the debugger will run. For that, I am using another macOS machine running El Capitan, but that matters less. Remember that Kernel Debug Kit we installed on the debuggee? We need to install it on the debugger machine too. The difference is that we will NOT move the kernels and we will not set any boot arguments on the debugger. We need the kernel because we are going to use <code class="high">lldb</code> to perform the debugging. If you're familiar with GDB instead, don't worry. There is a <a href ="https://lldb.llvm.org/lldb-gdb.html"> GDB -> LLDB command sheet available right here</a>.
 
 Note: You should install the same macOS Kernel Debug toolkit on the debugger even if it doesn't run the same macOS version as the debuggee because we will not boot any kernel on the debugger.
 
