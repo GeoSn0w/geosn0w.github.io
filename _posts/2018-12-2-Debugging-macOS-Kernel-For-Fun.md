@@ -1,10 +1,10 @@
-Hi there! It's GeoSn0w. Debugging the damn kernel is a very fun thing to do (until you provoke a serious exception, that is). Unfortunately, it's not an easy task nowadays and Apple seems to want to make it harder and harder. At first, by hiding under lock and key the documentation about the <code class="high">debug</code> boot arguments, and then by moving the Kernel Debug Kit under the Developer Account-only Downloads section. There are many write-ups on the internet about debugging the kernel on macOS but many of them are outdated as hell and the NVRAM boot arguments they tell you to set are no longer working. Some of them stop at just the "now you should have a working debug session" - so what? what do I do next? I wanna have fun Goddammit! In this write-up I am doing my best to provide the most accurate information for 2019, the right commands, the right <code class="high">boot-args</code> and of course, practical examples you can begin with.
+Hi there! It's GeoSn0w. Debugging the damn kernel is a very entertaining thing to do (until you provoke a serious exception, that is, and the kernel crawls into a corner from which it refuses to get out). Unfortunately, it's not an easy task nowadays and Apple seems to want to make it harder and harder. At first, by hiding under lock and key the documentation about the <code class="high">debug</code> boot arguments, and then by moving the Kernel Debug Kit under the Developer Account-only Downloads section. There are many write-ups on the internet about debugging the kernel on macOS but many of them are outdated as hell and the NVRAM boot arguments they tell you to set are no longer working. Some of them stop at just the "now you should have a working debug session" - so what? what do I do next? I wanna have fun Goddammit! In this write-up I am doing my best to provide the most accurate information for 2019, the right commands, the right <code class="high">boot-args</code> and of course, practical examples you can begin with.
 
 ### A note for the l33t h4xxors
 If you are going to say "well if people don't know what to do with a kernel debugger they shouldn't use one", please segfault. You've been a beginner once and wanted to have fun and learn so shut up.
 
 ### Getting started with Kernel debugging on macOS
-Okay, so the first things we need to sort out is the lab. You need to have a device of which kernel you want to debug (in my case I am using my iMac 2011 as a debuggee) and a device from where you do the debugging (I am using my MacBook Pro 2009 for this). You can connect the two in various ways I will discuss in this write-up, but in my case, the best method (and the most reliable) seems to be via a FireWare cable between the two (that is because both my machines have actual firewire ports, not USB-C bullshit).
+Okay, so the first things we need to sort out is the lab. You need to have a device of which kernel you want to debug (in my case I am using my iMac 2011 as a debuggee) and a device from where you do the debugging (I am using my MacBook Pro 2009 for this). You can connect the two in various ways I will discuss in this write-up, but in my case, the best method (and the most reliable) seems to be via a Firewire cable between the two (that is because both my machines have actual firewire ports, not USB-C bullshit).
 
 With the hardware part set up, we need some software. You CAN theoretically debug the <code class="high">RELEASE</code> kernel, but when you're a beginner the <code class="high">Development</code> one is much better. By default, macOS comes with a <code class="high">RELEASE</code> fused kernel located in <code class="high">/System/Library/Kernels/kernel</code> where <code class="high">kernel</code> is a <code class="high">Mach-O 64-bit executable x86_64</code>. We can get ourselves the <code class="high">Development</code> kernel for our macOS version by navigating to Apple Developer portal and downloading the Kernel Debug Kit. It's surprising that Apple only put the kit under a normal, free Apple Developer Account lock; I would have expected them to put it under the paid Apple Developer Account downloads by now.
 
@@ -34,7 +34,7 @@ So, in my case, I am running macOS High Sierra (10.13.6) build number 17G65. Loo
 </p>
 
 ### Preparing the debuggee for being debugged by the debugger ;)
-With the Debug Kit downloaded on the debuggee (that is the machine you whose kernel you wanna debug), mount the DMG file by double-clicking on it. Inside the DMG you will find a file called <code class="high">KernelDebugKit.pkg</code>. Double-click that and follow the installation wizard. It will ask you for your macOS login password. If asked, do not move the installer to trash. You will need it later.
+With the Debug Kit downloaded on the debuggee (that is the machine whose kernel you wanna debug), mount the DMG file by double-clicking on it. Inside the DMG you will find a file called <code class="high">KernelDebugKit.pkg</code>. Double-click that and follow the installation wizard. It will ask you for your macOS login password. If asked, do not move the installer to trash. You will need it later.
 
 When the installation is complete it will look something like this.
 
@@ -54,7 +54,7 @@ In the Recovery Terminal, write <code class="high">csrutil disable</code>. Then 
 ### Setting the correct NVRAM boot-args as of 2018/2019
 The <code class="high">boot-args</code> have been changed during the years by Apple so what you find on the internet may or may not work depending on how old the write-up is. The following <code class="high">boot-args</code> have been tested and are working with macOS High Sierra as of 2018.
 
-<B>NOTE!</B> The following <code class="high">boot-args</code> assume you are doing this over FireWare or via FireWare through Thunderbolt adpter.
+<B>NOTE!</B> The following <code class="high">boot-args</code> assume you are doing this over Firewire or via Firewire through Thunderbolt adpter.
 
 <b>If you are using a FireWire cable through a real FireWire port (older Macs):</b>
 
@@ -77,7 +77,7 @@ This is pretty much it, the debuggee is ready to be debugged after a reboot, but
 <ul>
   <li><code class="high">debug=0x8146</code> -> This enables the debugging and allows us to press the Power button to trigger a <code class="high">NMI</code> This stands for <code class="high">Non-Maskable Interrupt</code> and it is used to allow the debugger to connect.</li>
   <li><code class="high">kdp_match_name=firewire</code> -> This allows us to debug via <code class="high">FireWireKDP</code>.</li>
-  <li>fwkdp=0x8000 -> As I explained earlier, this tells the kext to use the thunderbolt to fireware adapter. Don't set it if you use normal FireWare ports.</li>
+  <li>fwkdp=0x8000 -> As I explained earlier, this tells the kext to use the thunderbolt to firewire adapter. Don't set it if you use normal Firewire ports.</li>
   <li><code class="high">fwdebug=0x40</code> -> Enables more verbose output from the <code class="high">AppleFWOHCI_KDP</code> driver, it is useful for troubleshooting.</li>
   <li><code class="high">pmuflags=1</code> -> This one disables the <code class="high">Watchdog timer</code>.</li>
   <li><code class="high">-v</code> -> The simplest of birds. This one tells the computer to boot verbose instead of the normal Apple logo and progress bar. This is extremely useful for troubleshooting, not only when you debug but also when you have boot loops.</li>
