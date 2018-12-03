@@ -167,7 +167,7 @@ To run all discovered debug scripts in this session:
 Current executable set to '/Library/Developer/KDKs/KDK_10.13.6_17G65.kdk/System/Library/Kernels/kernel.development' (x86_64).
 ```
 
-AS you can see, <code class="high">lldb</code> says the kernel contains a debug script. In the lldb window that is now open, run <code class="high">settings set target.load-script-from-symbol-file true</code> to run the script.
+As you can see, <code class="high">lldb</code> says that the "kernel" contains a debug script. In the lldb window that is now open, run <code class="high">settings set target.load-script-from-symbol-file true</code> to run the script.
 
 ```bash
 Last login: Sun Dec  2 10:37:51 on ttys000
@@ -193,7 +193,7 @@ xnu debug macros loaded successfully. Run showlldbtypesummaries to enable type s
 settings set target.process.optimization-warnings false
 (lldb)
 ```
-Now we can finally connect <code class="high">lldb</code> to the live kernel by writing <code class="high">kdp-remote localhost</code>. If you've done everything right, the kernel should connect and you should have an output like this. A LOT of text will start to pour into your lldb window initially, then it should come to a rest state.
+Now we can finally connect <code class="high">lldb</code> to the live kernel by writing <code class="high">kdp-remote localhost</code>. If you did everything right, the kernel should connect and you should have an output like this. A LOT of text will start to pour into your lldb window initially, then it should come to a rest state.
 
 ```bash
 (lldb) kdp-remote localhost
