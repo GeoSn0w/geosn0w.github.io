@@ -375,7 +375,7 @@ Exception State Registers:
 (lldb)
 ```
 
-<b>NOTE:</b> Of course, when you wanna read a single register you don't have to run <code class="high">register read --all</code>, you can simply specify the register with <code class="high">register read <register></code> for example <code class="high">register read r13</code>.
+<b>NOTE:</b> Of course, when you wanna read a single register you don't have to run <code class="high">register read --all</code>, you can simply specify the register with <code class="high">register read [register]</code> for example <code class="high">register read r13</code>.
     
 <B>Example 2: Changing the Kernel version and name when running <code class="high">uname -a</code></b>
 
