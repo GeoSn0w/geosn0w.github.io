@@ -1,5 +1,5 @@
 ---
-title: Debugging MacOS Kernel For Fun
+title: Debugging macOS Kernel For Fun
 layout: post
 ---
 Hi there! It's GeoSn0w. Debugging the damn kernel is a very entertaining thing to do (until you provoke a serious exception, that is, and the kernel crawls into a corner from which it refuses to get out). Unfortunately, it's not an easy task nowadays and Apple seems to want to make it harder and harder. At first, by hiding under lock and key the documentation about the <code class="high">debug</code> boot arguments, and then by moving the Kernel Debug Kit under the Developer Account-only Downloads section. There are many write-ups on the internet about debugging the kernel on macOS but many of them are outdated as hell and the NVRAM boot arguments they tell you to set are no longer working. Some of them stop at just the "now you should have a working debug session" - so what? what do I do next? I wanna have fun Goddammit! In this write-up I am doing my best to provide the most accurate information for 2019, the right commands, the right <code class="high">boot-args</code> and of course, practical examples you can begin with.
