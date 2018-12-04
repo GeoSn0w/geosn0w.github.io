@@ -77,7 +77,7 @@ This is pretty much it, the debuggee is ready to be debugged after a reboot, but
 <ul>
   <li><code class="high">debug=0x8146</code> -> This enables the debugging and allows us to press the Power button to trigger a <code class="high">NMI</code> This stands for <code class="high">Non-Maskable Interrupt</code> and it is used to allow the debugger to connect.</li>
   <li><code class="high">kdp_match_name=firewire</code> -> This allows us to debug via <code class="high">FireWireKDP</code>.</li>
-  <li>fwkdp=0x8000 -> As I explained earlier, this tells the kext to use the thunderbolt to firewire adapter. Don't set it if you use normal Firewire ports.</li>
+  <li><code class="high">fwkdp=0x8000</code> -> As I explained earlier, this tells the kext to use the thunderbolt to firewire adapter. Don't set it if you use normal Firewire ports.</li>
   <li><code class="high">fwdebug=0x40</code> -> Enables more verbose output from the <code class="high">AppleFWOHCI_KDP</code> driver, it is useful for troubleshooting.</li>
   <li><code class="high">pmuflags=1</code> -> This one disables the <code class="high">Watchdog timer</code>.</li>
   <li><code class="high">-v</code> -> The simplest of birds. This one tells the computer to boot verbose instead of the normal Apple logo and progress bar. This is extremely useful for troubleshooting, not only when you debug but also when you have boot loops.</li>
