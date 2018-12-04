@@ -66,5 +66,6 @@ Others believe I took <code class="high">Sn0w</code> from another iOS developer,
   <li>SnapChat -> I don't have one. </li>
   <li>WhatsApp -> I don't have one. Owned by Facebook.</li>
   <li>Phone number -> I don't have one. I use ONLY Google Hangouts for calls.</li>
-  <li>E-Mail -> my nickname at my main website (fce365) dot info. If you send SPAM once, you are blocked permanently. :) This e-mail address is not a support ticket address. Don't ask me how to fix whatever.
- </ul>
+  <li>E-Mail -> my nickname at my main website (fce365) dot info. If you send SPAM once, you are blocked permanently. :) This e-mail address is not a support ticket address. Don't ask me how to fix whatever.</li>
+    
+</ul>
