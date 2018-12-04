@@ -78,5 +78,6 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
-
+plugins:
+   - ih8jekylltitles
 theme: jekyll-theme-hacker
