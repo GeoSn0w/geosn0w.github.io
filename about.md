@@ -61,7 +61,7 @@ Others believe I took <code class="high">Sn0w</code> from another iOS developer,
 <ul>
   <li>Tweet to me: <a href="https://twitter.com/FCE365">@FCE365</a></li>
   <li>YouTube Channel (iOS related): <a href="http://youtube.com/fce365official">F.C.E. 365 TV - iDevice Central</a></li>
-  <li>FaceBook -> I don't have one, I like my provate data to be private and not sold for advertisements on FB, Thanks:P</li>
+  <li>FaceBook -> I don't have one, I like my private data to be private and not sold for advertisements on FB, Thanks:P</li>
   <li>Instagram -> I don't have one.</li>
   <li>SnapChat -> I don't have one. </li>
   <li>WhatsApp -> I don't have one. Owned by Facebook.</li>
