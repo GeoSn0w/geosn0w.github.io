@@ -3,7 +3,7 @@ title: A long evening with iOS and macOS Sandbox
 layout: post
 ---
 
-The macOS Sandbox has always been a mysterious thing that I liked to poke at with various tools and with the knowledge I have gathered from reference books such as Jonathan Levin's &ast;OS Internals, and Apple's own not-so-detailed documentation. Of course, it's nothing new that Apple's documentation on their own security mechanisms isn't the best. The Sandbox has a very long history and it's been with us, macOS users for quite a long time, only to spin off to iOS and the rest of the &ast;OSes and to become more powerful over time. Apple's been doing their darn best to harden the Sandbox as well as many other security mechanisms in their operating systems, so let's grab a cup of coffee and dive a bit into the marvel that is the macOS Sandbox.
+The macOS Sandbox has always been a mysterious thing that I liked to poke at with various tools and with the knowledge I have gathered from reference books such as Jonathan Levin's \*OS Internals, and Apple's own not-so-detailed documentation. Of course, it's nothing new that Apple's documentation on their own security mechanisms isn't the best. The Sandbox has a very long history and it's been with us, macOS users for quite a long time, only to spin off to iOS and the rest of the \*OSes and to become more powerful over time. Apple's been doing their darn best to harden the Sandbox as well as many other security mechanisms in their operating systems, so let's grab a cup of coffee and dive a bit into the marvel that is the macOS Sandbox.
 
 ### A bit of historical value
 
