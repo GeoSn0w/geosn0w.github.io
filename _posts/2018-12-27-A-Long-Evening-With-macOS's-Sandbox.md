@@ -2,8 +2,8 @@
 title: A long evening with iOS and macOS Sandbox
 layout: post
 ---
-
-The macOS Sandbox has always been a mysterious thing that I liked to poke at with various tools and with the knowledge I have gathered from reference books such as Jonathan Levin's \*OS Internals, and Apple's own not-so-detailed documentation. Of course, it's nothing new that Apple's documentation on their own security mechanisms isn't the best. The Sandbox has a very long history and it's been with us, macOS users for quite a long time, only to spin off to iOS and the rest of the \*OSes and to become more powerful over time. Apple's been doing their darn best to harden the Sandbox as well as many other security mechanisms in their operating systems, so let's grab a cup of coffee and dive a bit into the marvel that is the macOS Sandbox.
+<div align="justify">
+Hi there! It's GeoSn0w. The macOS Sandbox has always been a mysterious thing that I liked to poke at with various tools and with the knowledge I have gathered from reference books such as Jonathan Levin's \*OS Internals, and Apple's own not-so-detailed documentation. Of course, it's nothing new that Apple's documentation on their own security mechanisms isn't the best. The Sandbox has a very long history and it's been with us, macOS users for quite a long time, only to spin off to iOS and the rest of the \*OSes and to become more powerful over time. Apple's been doing their darn best to harden the Sandbox as well as many other security mechanisms in their operating systems, so let's grab a cup of coffee and dive a bit into the marvel that is the macOS Sandbox.
 
 ### A bit of historical value
 
@@ -430,8 +430,8 @@ Thank you a lot for reading through this! I hope you find it useful. In the end,
 <ul>
   <li>2016 J. LEVIN, <i><a href="https://www.amazon.com/MacOS-iOS-Internals-III-Insecurity/dp/0991055535/ref=as_sl_pc_qf_sp_asin_til?tag=newosxbookcom-20&linkCode=w00&linkId=0b61c945365c9c37cd3cf88f10a5f629&creativeASIN=0991055535">*OS Internals Volume III Security & Insecurity</a></i>, NY, USA, TechnoloGeeks</li>
   <li>2016 J. LEVIN, <i>The Apple Sandbox: Deeper Into The Quagmire</i>, presentation at HITBGSEC 2016 conference</li>
-  <li>https://developer.apple.com/library/archive/documentation/Security/Conceptual/AppSandboxDesignGuide/AboutAppSandbox/AboutAppSandbox.html, accessed on December 27 2018</li>
-  <li>https://developer.apple.com/library/archive/documentation/Security/Conceptual/AppSandboxDesignGuide/AppSandboxInDepth/AppSandboxInDepth.html#//apple_ref/doc/uid/TP40011183-CH3-SW4, accessed on December 27 2018</li>
+  <li><a href="https://developer.apple.com/library/archive/documentation/Security/Conceptual/AppSandboxDesignGuide/AboutAppSandbox/AboutAppSandbox.html"><i>Apple Sandbox Design Guide</i></a>, accessed on December 27 2018</li>
+  <li><a href="https://developer.apple.com/library/archive/documentation/Security/Conceptual/AppSandboxDesignGuide/AppSandboxInDepth/AppSandboxInDepth.html"><i>App Sandbox In Depth</i></a>, accessed on December 27 2018</li>
   <li>2016 D. Thiel, <i>iOS Application Security The Definitive Guide for Hackers and Developers</i>, No Starch Press, San Francisco, USA</li>
 </ul>  
 
@@ -440,3 +440,4 @@ Thank you a lot for reading through this! I hope you find it useful. In the end,
   <li>Twitter: <a href="https://twitter.com/FCE365">GeoSn0w (@FCE365)</a></li>
   <li>YouTube: <a href="https://youtube.com/fce365official">F.C.E. 365 TV- iDevice Central</a></li>
 </ul>
+</div>
