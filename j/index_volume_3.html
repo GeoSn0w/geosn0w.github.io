@@ -1,0 +1,2658 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type='text/css'>
+.row {
+  display: table;
+}
+
+.title, .dots, .value {
+  display: table-cell;
+}
+
+.title, .value {
+  white-space: nowrap;
+}
+
+.table {
+  width: 500px;
+  margin: 10px;
+}
+
+.dots {
+  border-bottom: 1px dotted gray;
+  width: 100%;
+}
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="title"> <b>Jonathan Levin - *OS Internals Volume III: Security & Insecurity - Detailed index </b></div>
+  </div>
+  <div class="row">
+  <div class="title"> Book revision: 01/10/2017</div>
+  </br></br>
+  </div>
+  <div class="table">
+    <div class="row">
+      <div class="title"> <B> Part I: Defensive Techniques and Technologies </B></div>
+    </div>
+    <div class="row">
+      <div class="title"> The missing documentation for Apple's proprietary security mechanisms </div>
+    </div>
+    </br>
+    <div class="row">
+      <div class="title"><B>Chapter I: Authentication</B></div>
+      <div class="dots"></div>
+      <div class="value">1</div>
+    </div>
+    <div class="row">
+      <div class="title"> Password files (*OS)</div>
+      <div class="dots"></div>
+      <div class="value">2</div>
+    </div>
+    <div class="row">
+      <div class="title"> SetUID and SetGID (MacOS)</div>
+      <div class="dots"></div>
+      <div class="value">3</div>
+    </div>
+    <div class="row">
+      <div class="title"> The Pluggable Authentication Module (MacOS)</div>
+      <div class="dots"></div>
+      <div class="value">4</div>
+    </div>
+    <div class="row">
+      <div class="title"> - Function classes</div>
+      <div class="dots"></div>
+      <div class="value">5</div>
+    </div>
+    <div class="row">
+      <div class="title"> - Control Flags</div>
+      <div class="dots"></div>
+      <div class="value">5</div>
+    </div>
+    <div class="row">
+      <div class="title"> - Experiment: Tinkering with PAM configuration files</div>
+      <div class="dots"></div>
+      <div class="value">7</div>
+    </div>
+    <div class="row">
+      <div class="title"> opendirectoryd (MacOS)</div>
+      <div class="dots"></div>
+      <div class="value">8</div>
+    </div>
+    <div class="row">
+      <div class="title"> - Maintaining permissions</div>
+      <div class="dots"></div>
+      <div class="value">9</div>
+    </div>
+    <div class="row">
+      <div class="title"> - The data stores</div>
+      <div class="dots"></div>
+      <div class="value">9</div>
+    </div>
+    <div class="row">
+      <div class="title"> - Experiment: Manipulating local users using dscl(1)</div>
+      <div class="dots"></div>
+      <div class="value">10</div>
+    </div>
+    <div class="row">
+      <div class="title"> - Experiment: Manipulating local users using dscl(1) (cont.) </div>
+      <div class="dots"></div>
+      <div class="value">11</div>
+    </div>
+    <div class="row">
+      <div class="title"> Communicating with clients </div>
+      <div class="dots"></div>
+      <div class="value">12</div>
+    </div>
+    <div class="row">
+      <div class="title"> - Experiment: Domonstrating XPC behind the scenes of getXX APIs </div>
+      <div class="dots"></div>
+      <div class="value">13</div>
+    </div>
+    <div class="row">
+      <div class="title"> - com.apple.opendirectoryd.membership </div>
+      <div class="dots"></div>
+      <div class="value">14</div>
+    </div>
+    <div class="row">
+      <div class="title"> - com.apple.opendirectoryd.api</div>
+      <div class="dots"></div>
+      <div class="value">15</div>
+    </div>
+    <div class="row">
+      <div class="title"> - com.apple.opendirectoryd.rpc</div>
+      <div class="dots"></div>
+      <div class="value">15</div>
+    </div>
+    <div class="row">
+      <div class="title"> The LocalAuthentication Framework</div>
+      <div class="dots"></div>
+      <div class="value">16</div>
+    </div>
+    <div class="row">
+      <div class="title"> - coreauthd</div>
+      <div class="dots"></div>
+      <div class="value">17</div>
+    </div>
+    <div class="row">
+      <div class="title"> - XPC protocol</div>
+      <div class="dots"></div>
+      <div class="value">17</div>
+    </div>
+    <div class="row">
+      <div class="title"> - Entitlements</div>
+      <div class="dots"></div>
+      <div class="value">17</div>
+    </div>
+    <div class="row">
+      <div class="title"> Apple IDs</div>
+      <div class="dots"></div>
+      <div class="value">18</div>
+    </div>
+    <div class="row">
+      <div class="title"> - AppleIDAuthAgent</div>
+      <div class="dots"></div>
+      <div class="value">18</div>
+    </div>
+    <div class="row">
+      <div class="title"> External Accounts</div>
+      <div class="dots"></div>
+      <div class="value">19</div>
+    </div>
+    <div class="row">
+      <div class="title"> - External Profiles</div>
+      <div class="dots"></div>
+      <div class="value">19</div>
+    </div>
+    <div class="row">
+      <div class="title"> References</div>
+      <div class="dots"></div>
+      <div class="value">20</div>
+    </div>
+    </br>
+    <div class="row">
+      <div class="title"> <B> Chapter 2: Auditing (MacOS) </B> </div>
+      <div class="dots"></div>
+      <div class="value">21</div>
+    </div>
+    <div class="row">
+      <div class="title"> Design</div>
+      <div class="dots"></div>
+      <div class="value">22</div>
+    </div>
+    <div class="row">
+      <div class="title"> - A little history</div>
+      <div class="dots"></div>
+      <div class="value">22</div>
+    </div>
+    <div class="row">
+      <div class="title"> - Auditing Concepts (a refresher)</div>
+      <div class="dots"></div>
+      <div class="value">22</div>
+    </div>
+    <div class="row">
+      <div class="title"> - Experiment: Tweaking and viewing auditing in real time </div>
+      <div class="dots"></div>
+      <div class="value">24</div>
+    </div>
+    <div class="row">
+      <div class="title"> Audit Sessions</div>
+      <div class="dots"></div>
+      <div class="value">25</div>
+    </div>
+    <div class="row">
+      <div class="title"> Implementation</div>
+      <div class="dots"></div>
+      <div class="value">26</div>
+    </div>
+    <div class="row">
+      <div class="title"> - Figure 2-12: The implementation of auditing in the MacOS kernel</div>
+      <div class="dots"></div>
+      <div class="value">27</div>
+    </div>
+    <div class="row">
+      <div class="title"> - auditd</div>
+      <div class="dots"></div>
+      <div class="value">28</div>
+    </div>
+    <div class="row">
+      <div class="title"> System call interface </div>
+      <div class="dots"></div>
+      <div class="value">30</div>
+    </div>
+    <div class="row">
+      <div class="title"> - audit(#350)</div>
+      <div class="dots"></div>
+      <div class="value">30</div>
+    </div>
+    <div class="row">
+      <div class="title"> - audition(#351)</div>
+      <div class="dots"></div>
+      <div class="value">31</div>
+    </div>
+    <div class="row">
+      <div class="title"> - [get/set]auid (#353, #354)</div>
+      <div class="dots"></div>
+      <div class="value">31</div>
+    </div>
+    <div class="row">
+      <div class="title"> - [get/set]audit_addr (#357, #358)</div>
+      <div class="dots"></div>
+      <div class="value">31</div>
+    </div>
+    <div class="row">
+      <div class="title"> - auditctl (#359)</div>
+      <div class="dots"></div>
+      <div class="value">31</div>
+    </div>
+    <div class="row">
+      <div class="title"> OpenBSM APIs</div>
+      <div class="dots"></div>
+      <div class="value">32</div>
+    </div>
+    <div class="row">
+      <div class="title"> - Querying the policy</div>
+      <div class="dots"></div>
+      <div class="value">32</div>
+    </div>
+    <div class="row">
+      <div class="title"> - Reading Audit Records</div>
+      <div class="dots"></div>
+      <div class="value">32</div>
+    </div>
+    <div class="row">
+      <div class="title"> - Writing Audit Records</div>
+      <div class="dots"></div>
+      <div class="value">33</div>
+    </div>
+    <div class="row">
+      <div class="title"> Auditing Considerations</div>
+      <div class="dots"></div>
+      <div class="value">34</div>
+    </div>
+    <div class="row">
+      <div class="title"> References</div>
+      <div class="dots"></div>
+      <div class="value">34</div>
+    </div>
+    </br>
+    <div class="row">
+      <div class="title"> <B>Chapter 3: Authorization (KAuth)</B></div>
+      <div class="dots"></div>
+      <div class="value">35</div>
+    </div>
+    <div class="row">
+      <div class="title"> Design</div>
+      <div class="dots"></div>
+      <div class="value">36</div>
+    </div>
+    <div class="row">
+      <div class="title"> Implementation</div>
+      <div class="dots"></div>
+      <div class="value">37</div>
+    </div>
+    <div class="row">
+      <div class="title"> - KAuth Scopes</div>
+      <div class="dots"></div>
+      <div class="value">37</div>
+    </div>
+    <div class="row">
+      <div class="title"> - KAUTH_SCOPE_GENERIC</div>
+      <div class="dots"></div>
+      <div class="value">38</div>
+    </div>
+    <div class="row">
+      <div class="title"> - KAUTH_SCOPE_PROCESS</div>
+      <div class="dots"></div>
+      <div class="value">38</div>
+    </div>
+    <div class="row">
+      <div class="title"> - KAUTH_SCOPE_FILEOP</div>
+      <div class="dots"></div>
+      <div class="value">39</div>
+    </div>
+    <div class="row">
+      <div class="title"> - KAUTH_SCOPE_VNODE</div>
+      <div class="dots"></div>
+      <div class="value">39</div>
+    </div>
+    <div class="row">
+      <div class="title"> - Authorizing vnode operations</div>
+      <div class="dots"></div>
+      <div class="value">41</div>
+    </div>
+    <div class="row">
+      <div class="title"> KAuth Identity Resolvers (MacOS)</div>
+      <div class="dots"></div>
+      <div class="value">42</div>
+    </div>
+    <div class="row">
+      <div class="title"> - Experiment: Exploring the identitysvc() system call</div>
+      <div class="dots"></div>
+      <div class="value">43</div>
+    </div>
+    <div class="row">
+      <div class="title"> Debugging KAuth</div>
+      <div class="dots"></div>
+      <div class="value">44</div>
+    </div>
+    <div class="row">
+      <div class="title"> References</div>
+      <div class="dots"></div>
+      <div class="value">44</div>
+    </div>
+  </br>
+  <div class="row">
+    <div class="title"><B>Chapter 4: Mandatory Access Control Framework</B></div>
+    <div class="dots"></div>
+    <div class="value">45</div>
+  </div>
+  <div class="row">
+    <div class="title"> Background</div>
+    <div class="dots"></div>
+    <div class="value">46</div>
+  </div>
+  <div class="row">
+    <div class="title"> - Nomenclature</div>
+    <div class="dots"></div>
+    <div class="value">46</div>
+  </div>
+  <div class="row">
+    <div class="title"> - Experiment: Finding MAC Policy modules in MacOS and *OS</div>
+    <div class="dots"></div>
+    <div class="value">48</div>
+  </div>
+  <div class="row">
+    <div class="title"> MACF Policies</div>
+    <div class="dots"></div>
+    <div class="value">49</div>
+  </div>
+  <div class="row">
+    <div class="title"> - Experiment: Figuring out policy operations from a disassembly</div>
+    <div class="dots"></div>
+    <div class="value">52</div>
+  </div>
+  <div class="row">
+    <div class="title"> Setting up MACF</div>
+    <div class="dots"></div>
+    <div class="value">53</div>
+  </div>
+  <div class="row">
+    <div class="title"> MACF Callouts</div>
+    <div class="dots"></div>
+    <div class="value">54</div>
+  </div>
+  <div class="row">
+    <div class="title"> - expose_task (MacOS 10.11)</div>
+    <div class="dots"></div>
+    <div class="value">57</div>
+  </div>
+  <div class="row">
+    <div class="title"> - priv_check</div>
+    <div class="dots"></div>
+    <div class="value">58</div>
+  </div>
+  <div class="row">
+    <div class="title"> MACF System Calls</div>
+    <div class="dots"></div>
+    <div class="value">59</div>
+  </div>
+  <div class="row">
+    <div class="title"> Final Notes</div>
+    <div class="dots"></div>
+    <div class="value">60</div>
+  </div>
+  <div class="row">
+    <div class="title"> References</div>
+    <div class="dots"></div>
+    <div class="value">60</div>
+  </div>
+</br>
+  <div class="row">
+    <div class="title"> <B>Chapter 5: Code Signing</B></div>
+    <div class="dots"></div>
+    <div class="value">61</div>
+  </div>
+  <div class="row">
+    <div class="title"> The Code Signature Format</div>
+    <div class="dots"></div>
+    <div class="value">62</div>
+  </div>
+  <div class="row">
+    <div class="title"> - LC_CODE_SIGNATURE and the SuperBlob</div>
+    <div class="dots"></div>
+    <div class="value">62</div>
+  </div>
+  <div class="row">
+    <div class="title"> - Experiment: Code Signature Blobs</div>
+    <div class="dots"></div>
+    <div class="value">63</div>
+  </div>
+  <div class="row">
+    <div class="title"> - The Code Directory Blob</div>
+    <div class="dots"></div>
+    <div class="value">64</div>
+  </div>
+  <div class="row">
+    <div class="title"> - Code Page Slots</div>
+    <div class="dots"></div>
+    <div class="value">64</div>
+  </div>
+  <div class="row">
+    <div class="title"> Experiment: Viewing Code Signatures</div>
+    <div class="dots"></div>
+    <div class="value">65</div>
+  </div>
+  <div class="row">
+    <div class="title"> - Special Slots</div>
+    <div class="dots"></div>
+    <div class="value">67</div>
+  </div>
+  <div class="row">
+    <div class="title"> - Experiment: Demonstrating the special signature slots</div>
+    <div class="dots"></div>
+    <div class="value">68</div>
+  </div>
+  <div class="row">
+    <div class="title"> - Ad-Hoc Signatures</div>
+    <div class="dots"></div>
+    <div class="value">68</div>
+  </div>
+  <div class="row">
+    <div class="title"> - Experiment: Generating (self-signed) code signature</div>
+    <div class="dots"></div>
+    <div class="value">69</div>
+  </div>
+  <div class="row">
+    <div class="title"> - Code Signing Flags</div>
+    <div class="dots"></div>
+    <div class="value">70</div>
+  </div>
+  <div class="row">
+    <div class="title"> Code Signature Requirements</div>
+    <div class="dots"></div>
+    <div class="value">71</div>
+  </div>
+  <div class="row">
+    <div class="title"> - The Requirements Grammar</div>
+    <div class="dots"></div>
+    <div class="value">71</div>
+  </div>
+  <div class="row">
+    <div class="title"> - Encoding requirements</div>
+    <div class="dots"></div>
+    <div class="value">72</div>
+  </div>
+  <div class="row">
+    <div class="title"> - Experiment: Examining requirement blobs</div>
+    <div class="dots"></div>
+    <div class="value">73</div>
+  </div>
+  <div class="row">
+    <div class="title"> - Requirement validation</div>
+    <div class="dots"></div>
+    <div class="value">74</div>
+  </div>
+  <div class="row">
+    <div class="title"> Entitlements</div>
+    <div class="dots"></div>
+    <div class="value">75</div>
+  </div>
+  <div class="row">
+    <div class="title"> Code Signature Enforcement</div>
+    <div class="dots"></div>
+    <div class="value">77</div>
+  </div>
+  <div class="row">
+    <div class="title"> - Exceptions</div>
+    <div class="dots"></div>
+    <div class="value">79</div>
+  </div>
+  <div class="row">
+    <div class="title"> - Debugging</div>
+    <div class="dots"></div>
+    <div class="value">80</div>
+  </div>
+  <div class="row">
+    <div class="title"> - Code Signing Weaknesses</div>
+    <div class="dots"></div>
+    <div class="value">81</div>
+  </div>
+  <div class="row">
+    <div class="title"> - Jekyll Apps</div>
+    <div class="dots"></div>
+    <div class="value">81</div>
+  </div>
+  <div class="row">
+    <div class="title"> - Bait-and-Switch inode reuse (< iOS 9) </div>
+    <div class="dots"></div>
+    <div class="value">81</div>
+  </div>
+  <div class="row">
+    <div class="title"> - Locked memory</div>
+    <div class="dots"></div>
+    <div class="value">81</div>
+  </div>
+  <div class="row">
+    <div class="title"> - Lack of validation on __DATA sections and writable memory</div>
+    <div class="dots"></div>
+    <div class="value">82</div>
+  </div>
+  <div class="row">
+    <div class="title"> - Exploiting kernel bugs</div>
+    <div class="dots"></div>
+    <div class="value">82</div>
+  </div>
+  <div class="row">
+    <div class="title"> Code Signing APIs</div>
+    <div class="dots"></div>
+    <div class="value">83</div>
+  </div>
+  <div class="row">
+    <div class="title"> - System Calls</div>
+    <div class="dots"></div>
+    <div class="value">83</div>
+  </div>
+  <div class="row">
+    <div class="title"> - Framework-Level Wrappers</div>
+    <div class="dots"></div>
+    <div class="value">84</div>
+  </div>
+  <div class="row">
+    <div class="title"> - Experiment: Locating entitlement producing daemons</div>
+    <div class="dots"></div>
+    <div class="value">85</div>
+  </div>
+  <div class="row">
+    <div class="title"> - sysctl</div>
+    <div class="dots"></div>
+    <div class="value">86</div>
+  </div>
+  <div class="row">
+    <div class="title"> - DTrace probes (MacOS)</div>
+    <div class="dots"></div>
+    <div class="value">86</div>
+  </div>
+  <div class="row">
+    <div class="title"> References</div>
+    <div class="dots"></div>
+    <div class="value">87</div>
+  </div>
+</br>
+<div class="row">
+  <div class="title"> <B> Chapter 6: Software Restrictions (MacOS)</B></div>
+  <div class="dots"></div>
+  <div class="value">89</div>
+</div>
+<div class="row">
+  <div class="title"> Authorizations</div>
+  <div class="dots"></div>
+  <div class="value">90</div>
+</div>
+<div class="row">
+  <div class="title"> - The authorization database</div>
+  <div class="dots"></div>
+  <div class="value">90</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Examining the authorization database</div>
+  <div class="dots"></div>
+  <div class="value">91</div>
+</div>
+<div class="row">
+  <div class="title"> authd</div>
+  <div class="dots"></div>
+  <div class="value">92</div>
+</div>
+<div class="row">
+  <div class="title"> - Protocol</div>
+  <div class="dots"></div>
+  <div class="value">92</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Executing with privileges</div>
+  <div class="dots"></div>
+  <div class="value">93</div>
+</div>
+<div class="row">
+  <div class="title"> GateKeeper (MacOS)</div>
+  <div class="dots"></div>
+  <div class="value">94</div>
+</div>
+<div class="row">
+  <div class="title"> - Precursor: Quarantine</div>
+  <div class="dots"></div>
+  <div class="value">94</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Displaying the quarantine attributes of a file</div>
+  <div class="dots"></div>
+  <div class="value">95</div>
+</div>
+<div class="row">
+  <div class="title"> libquarantine </div>
+  <div class="dots"></div>
+  <div class="value">96</div>
+</div>
+<div class="row">
+  <div class="title"> Quarantine.kext</div>
+  <div class="dots"></div>
+  <div class="value">97</div>
+</div>
+<div class="row">
+  <div class="title"> - User mode interface</div>
+  <div class="dots"></div>
+  <div class="value">97</div>
+</div>
+<div class="row">
+  <div class="title"> Quarantine in action</div>
+  <div class="dots"></div>
+  <div class="value">98</div>
+</div>
+<div class="row">
+  <div class="title"> - CoreServicesUIAgent</div>
+  <div class="dots"></div>
+  <div class="value">98</div>
+</div>
+<div class="row">
+  <div class="title"> syspolicyd</div>
+  <div class="dots"></div>
+  <div class="value">100</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Making sense of the policy database</div>
+  <div class="dots"></div>
+  <div class="value">101</div>
+</div>
+<div class="row">
+  <div class="title"> - MacOS 13: Secure Kernel Extension Loading</div>
+  <div class="dots"></div>
+  <div class="value">102</div>
+</div>
+<div class="row">
+  <div class="title"> - XPC protocol</div>
+  <div class="dots"></div>
+  <div class="value">102</div>
+</div>
+<div class="row">
+  <div class="title"> - spctl(8)</div>
+  <div class="dots"></div>
+  <div class="value">103</div>
+</div>
+<div class="row">
+  <div class="title"> App Translocation</div>
+  <div class="dots"></div>
+  <div class="value">104</div>
+</div>
+<div class="row">
+  <div class="title"> - Testing translocation</div>
+  <div class="dots"></div>
+  <div class="value">104</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Behind the scenes of Path Translocation</div>
+  <div class="dots"></div>
+  <div class="value">105</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Behind the scenes of Path Translocation (cont.)</div>
+  <div class="dots"></div>
+  <div class="value">106</div>
+</div>
+<div class="row">
+  <div class="title"> Managed Clients (MacOS)</div>
+  <div class="dots"></div>
+  <div class="value">107</div>
+</div>
+<div class="row">
+  <div class="title"> - parentalcontrolsd</div>
+  <div class="dots"></div>
+  <div class="value">108</div>
+</div>
+<div class="row">
+  <div class="title"> - mdmclient</div>
+  <div class="dots"></div>
+  <div class="value">109</div>
+</div>
+<div class="row">
+  <div class="title"> - Startup</div>
+  <div class="dots"></div>
+  <div class="value">109</div>
+</div>
+<div class="row">
+  <div class="title"> - Arguments</div>
+  <div class="dots"></div>
+  <div class="value">110</div>
+</div>
+<div class="row">
+  <div class="title"> - Entitlements</div>
+  <div class="dots"></div>
+  <div class="value">110</div>
+</div>
+<div class="row">
+  <div class="title"> ManagedClient</div>
+  <div class="dots"></div>
+  <div class="value">111</div>
+</div>
+<div class="row">
+  <div class="title"> - Mach Messages</div>
+  <div class="dots"></div>
+  <div class="value">111</div>
+</div>
+<div class="row">
+  <div class="title"> - Plugins</div>
+  <div class="dots"></div>
+  <div class="value">112</div>
+</div>
+<div class="row">
+  <div class="title"> - ManagedClientAgent</div>
+  <div class="dots"></div>
+  <div class="value">112</div>
+</div>
+<div class="row">
+  <div class="title"> - Entitlements</div>
+  <div class="dots"></div>
+  <div class="value">112</div>
+</div>
+<div class="row">
+  <div class="title"> - APIs</div>
+  <div class="dots"></div>
+  <div class="value">113</div>
+</div>
+<div class="row">
+  <div class="title"> - Managed Preferences</div>
+  <div class="dots"></div>
+  <div class="value">113</div>
+</div>
+<div class="row">
+  <div class="title"> - Managed Apps</div>
+  <div class="dots"></div>
+  <div class="value">113</div>
+</div>
+<div class="row">
+  <div class="title"> - mcxalr.kext</div>
+  <div class="dots"></div>
+  <div class="value">114</div>
+</div>
+<div class="row">
+  <div class="title"> - sysctl MIBs</div>
+  <div class="dots"></div>
+  <div class="value">114</div>
+</div>
+<div class="row">
+  <div class="title"> - Plugins</div>
+  <div class="dots"></div>
+  <div class="value">115</div>
+</div>
+<div class="row">
+  <div class="title"> References</div>
+  <div class="dots"></div>
+  <div class="value">115</div>
+</div>
+</br>
+<div class="row">
+  <div class="title"> <B>Chapter 7: AppleMobileFileIntegrity</B></div>
+  <div class="dots"></div>
+  <div class="value">117</div>
+</div>
+<div class="row">
+  <div class="title"> AppleMobileFileIntegrity.kext</div>
+  <div class="dots"></div>
+  <div class="value">118</div>
+</div>
+<div class="row">
+  <div class="title"> - Initialization</div>
+  <div class="dots"></div>
+  <div class="value">118</div>
+</div>
+<div class="row">
+  <div class="title"> - boot-args</div>
+  <div class="dots"></div>
+  <div class="value">118</div>
+</div>
+<div class="row">
+  <div class="title"> The MACF Policy</div>
+  <div class="dots"></div>
+  <div class="value">120</div>
+</div>
+<div class="row">
+  <div class="title"> - proc_check_cpumon (*OS)</div>
+  <div class="dots"></div>
+  <div class="value">121</div>
+</div>
+<div class="row">
+  <div class="title"> - proc_check_inherit_ipc_ports </div>
+  <div class="dots"></div>
+  <div class="value">121</div>
+</div>
+<div class="row">
+  <div class="title"> - proc_check_get_task</div>
+  <div class="dots"></div>
+  <div class="value">122</div>
+</div>
+<div class="row">
+  <div class="title"> - proc_check_map_anon (*OS)</div>
+  <div class="dots"></div>
+  <div class="value">123</div>
+</div>
+<div class="row">
+  <div class="title"> - file_check_mmap </div>
+  <div class="dots"></div>
+  <div class="value">124</div>
+</div>
+<div class="row">
+  <div class="title"> - proc_check_library_validation </div>
+  <div class="dots"></div>
+  <div class="value">125</div>
+</div>
+<div class="row">
+  <div class="title"> - proc_check_mprotect (*OS)</div>
+  <div class="dots"></div>
+  <div class="value">126</div>
+</div>
+<div class="row">
+  <div class="title"> - proc_check_run_cs_invalid (*OS)</div>
+  <div class="dots"></div>
+  <div class="value">126</div>
+</div>
+<div class="row">
+  <div class="title"> - vnode_check_exec (*OS)</div>
+  <div class="dots"></div>
+  <div class="value">127</div>
+</div>
+<div class="row">
+  <div class="title"> - vnode_check_signature</div>
+  <div class="dots"></div>
+  <div class="value">128</div>
+</div>
+<div class="row">
+  <div class="title"> - cred_label_update_execve </div>
+  <div class="dots"></div>
+  <div class="value">129</div>
+</div>
+<div class="row">
+  <div class="title"> - Exception Handling hooks (MacOS 12+) </div>
+  <div class="dots"></div>
+  <div class="value">130</div>
+</div>
+<div class="row">
+  <div class="title"> - Kernel APIs</div>
+  <div class="dots"></div>
+  <div class="value">131</div>
+</div>
+<div class="row">
+  <div class="title"> amfid </div>
+  <div class="dots"></div>
+  <div class="value">132</div>
+</div>
+<div class="row">
+  <div class="title"> - Daemon-Kext communication</div>
+  <div class="dots"></div>
+  <div class="value">132</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Inspecting amfid Mach messages</div>
+  <div class="dots"></div>
+  <div class="value">134</div>
+</div>
+<div class="row">
+  <div class="title"> - MIG subsystem 1000</div>
+  <div class="dots"></div>
+  <div class="value">135</div>
+</div>
+<div class="row">
+  <div class="title"> Provisioning Profiles </div>
+  <div class="dots"></div>
+  <div class="value">139</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Examining provisioning profiles</div>
+  <div class="dots"></div>
+  <div class="value">141</div>
+</div>
+<div class="row">
+  <div class="title"> - libmis.dylib</div>
+  <div class="dots"></div>
+  <div class="value">142</div>
+</div>
+<div class="row">
+  <div class="title"> - The UDP functions</div>
+  <div class="dots"></div>
+  <div class="value">143</div>
+</div>
+<div class="row">
+  <div class="title"> - Profile/UDP "databases"</div>
+  <div class="dots"></div>
+  <div class="value">143</div>
+</div>
+<div class="row">
+  <div class="title"> - misagent</div>
+  <div class="dots"></div>
+  <div class="value">144</div>
+</div>
+<div class="row">
+  <div class="title"> - online-auth-agent</div>
+  <div class="dots"></div>
+  <div class="value">145</div>
+</div>
+<div class="row">
+  <div class="title"> The AMFI Trust Caches</div>
+  <div class="dots"></div>
+  <div class="value">147</div>
+</div>
+<div class="row">
+  <div class="title"> The AMFI User Client</div>
+  <div class="dots"></div>
+  <div class="value">148</div>
+</div>
+<div class="row">
+  <div class="title"> Final Notes</div>
+  <div class="dots"></div>
+  <div class="value">148</div>
+</div>
+<div class="row">
+  <div class="title"> References</div>
+  <div class="dots"></div>
+  <div class="value">148</div>
+</div>
+<div class="row">
+  <div class="title"> <B>Chapter 8: The SandBox</B></div>
+  <div class="dots"></div>
+  <div class="value">149</div>
+</div>
+<div class="row">
+  <div class="title"> The Evolution of the Sandbox</div>
+  <div class="dots"></div>
+  <div class="value">150</div>
+</div>
+<div class="row">
+  <div class="title"> App Sandbox (MacOS)</div>
+  <div class="dots"></div>
+  <div class="value">151</div>
+</div>
+<div class="row">
+  <div class="title"> - (semi)-Voluntary confinement</div>
+  <div class="dots"></div>
+  <div class="value">152</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Toying with the App Sandbox</div>
+  <div class="dots"></div>
+  <div class="value">153</div>
+</div>
+<div class="row">
+  <div class="title"> - Diagnosing and controlling the App Sandbox</div>
+  <div class="dots"></div>
+  <div class="value">154</div>
+</div>
+<div class="row">
+  <div class="title"> Mobile Containers (*OS)</div>
+  <div class="dots"></div>
+  <div class="value">155</div>
+</div>
+<div class="row">
+  <div class="title"> Sandbox Profiles</div>
+  <div class="dots"></div>
+  <div class="value">157</div>
+</div>
+<div class="row">
+  <div class="title"> - Sandbox profile language</div>
+  <div class="dots"></div>
+  <div class="value">157</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Exploring sandbox profiles with sandbox-exec</div>
+  <div class="dots"></div>
+  <div class="value">158</div>
+</div>
+<div class="row">
+  <div class="title"> - Sandbox operations</div>
+  <div class="dots"></div>
+  <div class="value">159</div>
+</div>
+<div class="row">
+  <div class="title"> - Table 8-9: Sandbox operations (as of v592)</div>
+  <div class="dots"></div>
+  <div class="value">161</div>
+</div>
+<div class="row">
+  <div class="title"> - Compiling profiles</div>
+  <div class="dots"></div>
+  <div class="value">162</div>
+</div>
+<div class="row">
+  <div class="title"> - Exploring: Steps to decompile a sandbox profile</div>
+  <div class="dots"></div>
+  <div class="value">163</div>
+</div>
+<div class="row">
+  <div class="title"> - Extensions</div>
+  <div class="dots"></div>
+  <div class="value">164</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Reversing the Sandbox extension token format</div>
+  <div class="dots"></div>
+  <div class="value">166</div>
+</div>
+<div class="row">
+  <div class="title"> User mode APIs</div>
+  <div class="dots"></div>
+  <div class="value">167</div>
+</div>
+<div class="row">
+  <div class="title"> - sandbox_check</div>
+  <div class="dots"></div>
+  <div class="value">167</div>
+</div>
+<div class="row">
+  <div class="title"> - sandbox_[un]suspend</div>
+  <div class="dots"></div>
+  <div class="value">167</div>
+</div>
+<div class="row">
+  <div class="title"> - sandbox tracing (460+)</div>
+  <div class="dots"></div>
+  <div class="value">168</div>
+</div>
+<div class="row">
+  <div class="title"> - Inspection (460+)</div>
+  <div class="dots"></div>
+  <div class="value">168</div>
+</div>
+<div class="row">
+  <div class="title"> - User state items (570+)</div>
+  <div class="dots"></div>
+  <div class="value">168</div>
+</div>
+<div class="row">
+  <div class="title"> mac_syscall</div>
+  <div class="dots"></div>
+  <div class="value">169</div>
+</div>
+<div class="row">
+  <div class="title"> Sandbox.kext</div>
+  <div class="dots"></div>
+  <div class="value">170</div>
+</div>
+<div class="row">
+  <div class="title"> - Flow</div>
+  <div class="dots"></div>
+  <div class="value">170</div>
+</div>
+<div class="row">
+  <div class="title"> - hook_policy_init</div>
+  <div class="dots"></div>
+  <div class="value">171</div>
+</div>
+<div class="row">
+  <div class="title"> - hook_policy_initbsd</div>
+  <div class="dots"></div>
+  <div class="value">172</div>
+</div>
+<div class="row">
+  <div class="title"> - hook_policy_syscall</div>
+  <div class="dots"></div>
+  <div class="value">173</div>
+</div>
+<div class="row">
+  <div class="title"> - The Sandbox MACF Hooks</div>
+  <div class="dots"></div>
+  <div class="value">173</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Reversing a sandbox hook implementation</div>
+  <div class="dots"></div>
+  <div class="value">174</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Reversing a sandbox hook implementation (cont.)</div>
+  <div class="dots"></div>
+  <div class="value">175</div>
+</div>
+<div class="row">
+  <div class="title"> - Handling process execution</div>
+  <div class="dots"></div>
+  <div class="value">176</div>
+</div>
+<div class="row">
+  <div class="title"> Profile Evaluation</div>
+  <div class="dots"></div>
+  <div class="value">178</div>
+</div>
+<div class="row">
+  <div class="title"> Sandboxd (MacOS)</div>
+  <div class="dots"></div>
+  <div class="value">179</div>
+</div>
+<div class="row">
+  <div class="title"> - Daemon-Kext Implementation</div>
+  <div class="dots"></div>
+  <div class="value">180</div>
+</div>
+<div class="row">
+  <div class="title"> References</div>
+  <div class="dots"></div>
+  <div class="value">180</div>
+</div>
+</br>
+<div class="row">
+  <div class="title"> <B>Chapter 9: System Integrity Protection (MacOS)</B></div>
+  <div class="dots"></div>
+  <div class="value">181</div>
+</div>
+<div class="row">
+  <div class="title"> Design</div>
+  <div class="dots"></div>
+  <div class="value">182</div>
+</div>
+<div class="row">
+  <div class="title"> Implementation</div>
+  <div class="dots"></div>
+  <div class="value">183</div>
+</div>
+<div class="row">
+  <div class="title"> - Filesystem protections</div>
+  <div class="dots"></div>
+  <div class="value">184</div>
+</div>
+<div class="row">
+  <div class="title"> - Debugging protections</div>
+  <div class="dots"></div>
+  <div class="value">184</div>
+</div>
+<div class="row">
+  <div class="title"> - Entitlements</div>
+  <div class="dots"></div>
+  <div class="value">185</div>
+</div>
+<div class="row">
+  <div class="title"> - Entitlement/Disablement</div>
+  <div class="dots"></div>
+  <div class="value">186</div>
+</div>
+<div class="row">
+  <div class="title"> APIs</div>
+  <div class="dots"></div>
+  <div class="value">188</div>
+</div>
+<div class="row">
+  <div class="title"> - csrctl (#483)</div>
+  <div class="dots"></div>
+  <div class="value">188</div>
+</div>
+<div class="row">
+  <div class="title"> - rootless_* APIs</div>
+  <div class="dots"></div>
+  <div class="value">189</div>
+</div>
+<div class="row">
+  <div class="title"> References</div>
+  <div class="dots"></div>
+  <div class="value">189</div>
+</div>
+</br>
+<div class="row">
+  <div class="title"> <B>Chapter 10: Privacy</B></div>
+  <div class="dots"></div>
+  <div class="value">191</div>
+</div>
+<div class="row">
+  <div class="title"> Transparency, Consent and Control</div>
+  <div class="dots"></div>
+  <div class="value">192</div>
+</div>
+<div class="row">
+  <div class="title"> - The TCC daemon(s)</div>
+  <div class="dots"></div>
+  <div class="value">192</div>
+</div>
+<div class="row">
+  <div class="title"> - Protected Information</div>
+  <div class="dots"></div>
+  <div class="value">192</div>
+</div>
+<div class="row">
+  <div class="title"> - The TCC Database(s)</div>
+  <div class="dots"></div>
+  <div class="value">193</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Examining the TCC database</div>
+  <div class="dots"></div>
+  <div class="value">194</div>
+</div>
+<div class="row">
+  <div class="title"> - Prompting for access</div>
+  <div class="dots"></div>
+  <div class="value">195</div>
+</div>
+<div class="row">
+  <div class="title"> - XPC API</div>
+  <div class="dots"></div>
+  <div class="value">195</div>
+</div>
+<div class="row">
+  <div class="title"> - TCCAccess* APIs</div>
+  <div class="dots"></div>
+  <div class="value">196</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Exploring tccd's XPC interface</div>
+  <div class="dots"></div>
+  <div class="value">197</div>
+</div>
+<div class="row">
+  <div class="title"> - Entitlements</div>
+  <div class="dots"></div>
+  <div class="value">198</div>
+</div>
+<div class="row">
+  <div class="title"> - Debugging Options</div>
+  <div class="dots"></div>
+  <div class="value">198</div>
+</div>
+<div class="row">
+  <div class="title"> Unique Device Identifiers</div>
+  <div class="dots"></div>
+  <div class="value">199</div>
+</div>
+<div class="row">
+  <div class="title"> Differential Privacy (MacOS 12/iOS 10)</div>
+  <div class="dots"></div>
+  <div class="value">201</div>
+</div>
+<div class="row">
+  <div class="title"> References</div>
+  <div class="dots"></div>
+  <div class="value">202</div>
+</div>
+</br>
+<div class="row">
+  <div class="title"> <B>Chapter 11: Data Protection</B></div>
+  <div class="dots"></div>
+  <div class="value">203</div>
+</div>
+<div class="row">
+  <div class="title"> Volume-level Encryption (MacOS)</div>
+  <div class="dots"></div>
+  <div class="value">204</div>
+</div>
+<div class="row">
+  <div class="title"> - Mounting Encrypted Volumes</div>
+  <div class="dots"></div>
+  <div class="value">206</div>
+</div>
+<div class="row">
+  <div class="title"> - corestorage daemons</div>
+  <div class="dots"></div>
+  <div class="value">207</div>
+</div>
+<div class="row">
+  <div class="title"> - CSDFE* APIs</div>
+  <div class="dots"></div>
+  <div class="value">209</div>
+</div>
+<div class="row">
+  <div class="title"> File-level Encryption (*OS)</div>
+  <div class="dots"></div>
+  <div class="value">210</div>
+</div>
+<div class="row">
+  <div class="title"> - com.apple.system.cprotect and protection classes</div>
+  <div class="dots"></div>
+  <div class="value">210</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Viewing data protection classes</div>
+  <div class="dots"></div>
+  <div class="value">212</div>
+</div>
+<div class="row">
+  <div class="title"> - Effaceable Storage</div>
+  <div class="dots"></div>
+  <div class="value">213</div>
+</div>
+<div class="row">
+  <div class="title"> - Device Lock/Unlock</div>
+  <div class="dots"></div>
+  <div class="value">214</div>
+</div>
+<div class="row">
+  <div class="title"> mobile_obliterator</div>
+  <div class="dots"></div>
+  <div class="value">215</div>
+</div>
+<div class="row">
+  <div class="title"> - Obliteration</div>
+  <div class="dots"></div>
+  <div class="value">216</div>
+</div>
+<div class="row">
+  <div class="title"> - Entitlements</div>
+  <div class="dots"></div>
+  <div class="value">216</div>
+</div>
+<div class="row">
+  <div class="title"> Keybag</div>
+  <div class="dots"></div>
+  <div class="value">218</div>
+</div>
+<div class="row">
+  <div class="title"> - KeyBagd</div>
+  <div class="dots"></div>
+  <div class="value">219</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Reversing the keybagd XPC interface</div>
+  <div class="dots"></div>
+  <div class="value">220</div>
+</div>
+<div class="row">
+  <div class="title"> The AppleKeyStore.kext</div>
+  <div class="dots"></div>
+  <div class="value">221</div>
+</div>
+<div class="row">
+  <div class="title"> - Entitlements</div>
+  <div class="dots"></div>
+  <div class="value">222</div>
+</div>
+<div class="row">
+  <div class="title"> - Hardware backing</div>
+  <div class="dots"></div>
+  <div class="value">222</div>
+</div>
+<div class="row">
+  <div class="title"> Keychains</div>
+  <div class="dots"></div>
+  <div class="value">223</div>
+</div>
+<div class="row">
+  <div class="title"> - System Keychain</div>
+  <div class="dots"></div>
+  <div class="value">223</div>
+</div>
+<div class="row">
+  <div class="title"> - The Login keychain</div>
+  <div class="dots"></div>
+  <div class="value">223</div>
+</div>
+<div class="row">
+  <div class="title"> - The iOS Keychain</div>
+  <div class="dots"></div>
+  <div class="value">224</div>
+</div>
+<div class="row">
+  <div class="title"> - Programmatic API</div>
+  <div class="dots"></div>
+  <div class="value">224</div>
+</div>
+<div class="row">
+  <div class="title"> - KeyChain Structure</div>
+  <div class="dots"></div>
+  <div class="value">225</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Inspecting KeyChain internals</div>
+  <div class="dots"></div>
+  <div class="value">227</div>
+</div>
+<div class="row">
+  <div class="title"> Final Notes</div>
+  <div class="dots"></div>
+  <div class="value">228</div>
+</div>
+<div class="row">
+  <div class="title"> References</div>
+  <div class="dots"></div>
+  <div class="value">228</div>
+</div>
+</br>
+<div class="row">
+  <div class="title"> <B> Part II: Vulnerabilities and Exploitation </B></div>
+</div>
+<div class="row">
+  <div class="title"> E pur si rompe </div>
+</div>
+<div class="row">
+  <div class="title"> A detailed exploration of bugs and their exploits </div>
+</div>
+</br>
+<div class="row">
+  <div class="title"> <B>Chapter 12: MacOS Vulnerabilities</B></div>
+  <div class="dots"></div>
+  <div class="value">231</div>
+</div>
+<div class="row">
+  <div class="title"> 10.1: The ntpd remote root (CVE-2014-9295)</div>
+  <div class="dots"></div>
+  <div class="value">232</div>
+</div>
+<div class="row">
+  <div class="title"> 10.2: The rootpipe privilege escalation (CVE-2015-1130)</div>
+  <div class="dots"></div>
+  <div class="value">234</div>
+</div>
+<div class="row">
+  <div class="title"> 10.3: Racing Kextd (CVE-2015-3708)</div>
+  <div class="dots"></div>
+  <div class="value">236</div>
+</div>
+<div class="row">
+  <div class="title"> 10.4: DYLD_PRINT_TO_FILE privilege escalation (CVE-2015-3760)</div>
+  <div class="dots"></div>
+  <div class="value">238</div>
+</div>
+<div class="row">
+  <div class="title"> 10.5: DYD_ROOT_PATH privilege escalation </div>
+  <div class="dots"></div>
+  <div class="value">240</div>
+</div>
+<div class="row">
+  <div class="title"> 11.0: tpwn privilege escalation and/or SIP neutering</div>
+  <div class="dots"></div>
+  <div class="value">242</div>
+</div>
+<div class="row">
+  <div class="title"> 11.3: "Mach Race" local privilege escalation (CVE-2016-1757)</div>
+  <div class="dots"></div>
+  <div class="value">244</div>
+</div>
+<div class="row">
+  <div class="title"> - Apple Fix</div>
+  <div class="dots"></div>
+  <div class="value">245</div>
+</div>
+<div class="row">
+  <div class="title"> 11.4: LokiHardt'S Trifecta (CVE-2016-1796,1797,1806)</div>
+  <div class="dots"></div>
+  <div class="value">246</div>
+</div>
+<div class="row">
+  <div class="title"> - Arbitrary Code Execution (CVE-2016-1796)</div>
+  <div class="dots"></div>
+  <div class="value">246</div>
+</div>
+<div class="row">
+  <div class="title"> - Sandbox Escape (CVE-2016-1797)</div>
+  <div class="dots"></div>
+  <div class="value">248</div>
+</div>
+<div class="row">
+  <div class="title"> - SubmitDiagInfo (CVE-2016-1806)</div>
+  <div class="dots"></div>
+  <div class="value">248</div>
+</div>
+<div class="row">
+  <div class="title"> - Getting root</div>
+  <div class="dots"></div>
+  <div class="value">249</div>
+</div>
+<div class="row">
+  <div class="title"> - Apple Fixes</div>
+  <div class="dots"></div>
+  <div class="value">250</div>
+</div>
+<div class="row">
+  <div class="title"> Final Notes</div>
+  <div class="dots"></div>
+  <div class="value">251</div>
+</div>
+<div class="row">
+  <div class="title"> References </div>
+  <div class="dots"></div>
+  <div class="value">252</div>
+</div>
+</br>
+<div class="row">
+  <div class="title"> <B>Chapter 13: Jailbreaking</B> </div>
+  <div class="dots"></div>
+  <div class="value">253</div>
+</div>
+<div class="row">
+  <div class="title"> Mythbusting </div>
+  <div class="dots"></div>
+  <div class="value">254</div>
+</div>
+<div class="row">
+  <div class="title"> Terminology </div>
+  <div class="dots"></div>
+  <div class="value">255</div>
+</div>
+<div class="row">
+  <div class="title"> The jailbreaking process </div>
+  <div class="dots"></div>
+  <div class="value">257</div>
+</div>
+<div class="row">
+  <div class="title"> - Running arbitrary (unsigned) code </div>
+  <div class="dots"></div>
+  <div class="value">257</div>
+</div>
+<div class="row">
+  <div class="title"> - Getting on the device </div>
+  <div class="dots"></div>
+  <div class="value">257</div>
+</div>
+<div class="row">
+  <div class="title"> - Bypassing code signing </div>
+  <div class="dots"></div>
+  <div class="value">258</div>
+</div>
+<div class="row">
+  <div class="title"> - Escaping the confines of the Application Sandbox </div>
+  <div class="dots"></div>
+  <div class="value">258</div>
+</div>
+<div class="row">
+  <div class="title"> - Elevating Privileges </div>
+  <div class="dots"></div>
+  <div class="value">259</div>
+</div>
+<div class="row">
+  <div class="title"> - Reading and Writing Kernel Memory </div>
+  <div class="dots"></div>
+  <div class="value">259</div>
+</div>
+<div class="row">
+  <div class="title"> Kernel Patches </div>
+  <div class="dots"></div>
+  <div class="value">261</div>
+</div>
+<div class="row">
+  <div class="title"> - MACF sysctl patches </div>
+  <div class="dots"></div>
+  <div class="value">261</div>
+</div>
+<div class="row">
+  <div class="title"> - setreuid </div>
+  <div class="dots"></div>
+  <div class="value">263</div>
+</div>
+<div class="row">
+  <div class="title"> - TFP0 </div>
+  <div class="dots"></div>
+  <div class="value">264</div>
+</div>
+<div class="row">
+  <div class="title"> - Kernel pmap </div>
+  <div class="dots"></div>
+  <div class="value">265</div>
+</div>
+<div class="row">
+  <div class="title"> - boot-args </div>
+  <div class="dots"></div>
+  <div class="value">266</div>
+</div>
+<div class="row">
+  <div class="title"> - Sandbox </div>
+  <div class="dots"></div>
+  <div class="value">267</div>
+</div>
+<div class="row">
+  <div class="title"> - AMFI</div>
+  <div class="dots"></div>
+  <div class="value">268</div>
+</div>
+<div class="row">
+  <div class="title"> - Root filesystem remount </div>
+  <div class="dots"></div>
+  <div class="value">268</div>
+</div>
+<div class="row">
+  <div class="title"> Kernel Patch Protection </div>
+  <div class="dots"></div>
+  <div class="value">269</div>
+</div>
+<div class="row">
+  <div class="title"> - Implementation </div>
+  <div class="dots"></div>
+  <div class="value">270</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Inspecting KPP with joker and jtool </div>
+  <div class="dots"></div>
+  <div class="value">271</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Inspecting KPP with joker and jtool (cont.) </div>
+  <div class="dots"></div>
+  <div class="value">272</div>
+</div>
+<div class="row">
+  <div class="title"> - Entry points </div>
+  <div class="dots"></div>
+  <div class="value">273</div>
+</div>
+<div class="row">
+  <div class="title"> - Cryptographic algorithm </div>
+  <div class="dots"></div>
+  <div class="value">274</div>
+</div>
+<div class="row">
+  <div class="title"> - iOS 10 kernel changes </div>
+  <div class="dots"></div>
+  <div class="value">275</div>
+</div>
+<div class="row">
+  <div class="title"> - KTRR (iPhone 7 and later) </div>
+  <div class="dots"></div>
+  <div class="value">275</div>
+</div>
+<div class="row">
+  <div class="title"> Evolution of iOS Jailbreaks </div>
+  <div class="dots"></div>
+  <div class="value">279</div>
+</div>
+<div class="row">
+  <div class="title"> References </div>
+  <div class="dots"></div>
+  <div class="value">280</div>
+</div>
+</br>
+<div class="row">
+  <div class="title"> <B>Chapter 14: Evasi0n </B> </div>
+  <div class="dots"></div>
+  <div class="value">281</div>
+</div>
+<div class="row">
+  <div class="title"> The Loader </div>
+  <div class="dots"></div>
+  <div class="value">282</div>
+</div>
+<div class="row">
+  <div class="title"> - Initial contact </div>
+  <div class="dots"></div>
+  <div class="value">283</div>
+</div>
+<div class="row">
+  <div class="title"> - Shebang Shenanigans</div>
+  <div class="dots"></div>
+  <div class="value">283</div>
+</div>
+<div class="row">
+  <div class="title"> - Picking lockdownd </div>
+  <div class="dots"></div>
+  <div class="value">284</div>
+</div>
+<div class="row">
+  <div class="title"> - Pièce de Résistance - Code Signing </div>
+  <div class="dots"></div>
+  <div class="value">285</div>
+</div>
+<div class="row">
+  <div class="title"> - Segment overlap </div>
+  <div class="dots"></div>
+  <div class="value">286</div>
+</div>
+<div class="row">
+  <div class="title"> - Persistence through /etc/launchd.conf </div>
+  <div class="dots"></div>
+  <div class="value">287</div>
+</div>
+<div class="row">
+  <div class="title"> The Untether </div>
+  <div class="dots"></div>
+  <div class="value">288</div>
+</div>
+<div class="row">
+  <div class="title"> Kernel-mode exploits</div>
+  <div class="dots"></div>
+  <div class="value">290</div>
+</div>
+<div class="row">
+  <div class="title"> - Kernel Memory Layout: I - Zone ("heap") Layout </div>
+  <div class="dots"></div>
+  <div class="value">290</div>
+</div>
+<div class="row">
+  <div class="title"> - Kernel Code Execution: IOUSBDeviceFamily's stallPipe() </div>
+  <div class="dots"></div>
+  <div class="value">292</div>
+</div>
+<div class="row">
+  <div class="title"> - Arbitrary Memory Read/Write with Mach OOL Descriptors </div>
+  <div class="dots"></div>
+  <div class="value">296</div>
+</div>
+<div class="row">
+  <div class="title"> - Kernel Memory Layout: II - Kernel base </div>
+  <div class="dots"></div>
+  <div class="value">298</div>
+</div>
+<div class="row">
+  <div class="title"> - Refinement: Read (small) Primitive </div>
+  <div class="dots"></div>
+  <div class="value">299</div>
+</div>
+<div class="row">
+  <div class="title"> - Refinement: Read (large) Primitive </div>
+  <div class="dots"></div>
+  <div class="value">299</div>
+</div>
+<div class="row">
+  <div class="title"> - Refinement: Write Gadget </div>
+  <div class="dots"></div>
+  <div class="value">300</div>
+</div>
+<div class="row">
+  <div class="title"> Apple Fixes </div>
+  <div class="dots"></div>
+  <div class="value">301</div>
+</div>
+<div class="row">
+  <div class="title"> References </div>
+  <div class="dots"></div>
+  <div class="value">302</div>
+</div>
+</br>
+<div class="row">
+  <div class="title"> <B>Chapter 15: Evasi0n 7</B> </div>
+  <div class="dots"></div>
+  <div class="value">303</div>
+</div>
+<div class="row">
+  <div class="title"> The Loader </div>
+  <div class="dots"></div>
+  <div class="value">304</div>
+</div>
+<div class="row">
+  <div class="title"> - Initial Contact </div>
+  <div class="dots"></div>
+  <div class="value">305</div>
+</div>
+<div class="row">
+  <div class="title"> - Injecting the Application </div>
+  <div class="dots"></div>
+  <div class="value">305</div>
+</div>
+<div class="row">
+  <div class="title"> - Unsandboxing afcd </div>
+  <div class="dots"></div>
+  <div class="value">306</div>
+</div>
+<div class="row">
+  <div class="title"> - Dyld Injection (I): Loading gameover.dylib </div>
+  <div class="dots"></div>
+  <div class="value">306</div>
+</div>
+<div class="row">
+  <div class="title"> - Privilege Escalation </div>
+  <div class="dots"></div>
+  <div class="value">307</div>
+</div>
+<div class="row">
+  <div class="title"> - Dylib Injection (II): Replacing xpcd_cache.dylib </div>
+  <div class="dots"></div>
+  <div class="value">308</div>
+</div>
+<div class="row">
+  <div class="title"> - Dylib Injection (III): Trojaning libmis.dylib </div>
+  <div class="dots"></div>
+  <div class="value">309</div>
+</div>
+<div class="row">
+  <div class="title"> - Reproducing the jailbreak </div>
+  <div class="dots"></div>
+  <div class="value">310</div>
+</div>
+<div class="row">
+  <div class="title"> The Untether </div>
+  <div class="dots"></div>
+  <div class="value">311</div>
+</div>
+<div class="row">
+  <div class="title"> Kernel Mode exploits </div>
+  <div class="dots"></div>
+  <div class="value">313</div>
+</div>
+<div class="row">
+  <div class="title"> - Exploitation </div>
+  <div class="dots"></div>
+  <div class="value">316</div>
+</div>
+<div class="row">
+  <div class="title"> Apple Fixes </div>
+  <div class="dots"></div>
+  <div class="value">319</div>
+</div>
+<div class="row">
+  <div class="title"> References </div>
+  <div class="dots"></div>
+  <div class="value">320</div>
+</div>
+</br>
+<div class="row">
+  <div class="title"> <B>Chapter 16: Pangu 7 (PanguAxe) (盘古斧)</B> </div>
+  <div class="dots"></div>
+  <div class="value">321</div>
+</div>
+<div class="row">
+  <div class="title"> The Loader </div>
+  <div class="dots"></div>
+  <div class="value">322</div>
+</div>
+<div class="row">
+  <div class="title"> - The Dummy App </div>
+  <div class="dots"></div>
+  <div class="value">322</div>
+</div>
+<div class="row">
+  <div class="title"> - Certificate Injection </div>
+  <div class="dots"></div>
+  <div class="value">323</div>
+</div>
+<div class="row">
+  <div class="title"> - The Jailbreak Payload</div>
+  <div class="dots"></div>
+  <div class="value">324</div>
+</div>
+<div class="row">
+  <div class="title"> - The Untether </div>
+  <div class="dots"></div>
+  <div class="value">325</div>
+</div>
+<div class="row">
+  <div class="title"> - Flow </div>
+  <div class="dots"></div>
+  <div class="value">326</div>
+</div>
+<div class="row">
+  <div class="title"> Kernel-mode Exploits </div>
+  <div class="dots"></div>
+  <div class="value">327</div>
+</div>
+<div class="row">
+  <div class="title"> - Leaking the kernel stack </div>
+  <div class="dots"></div>
+  <div class="value">327</div>
+</div>
+<div class="row">
+  <div class="title"> - Breaking early_random() </div>
+  <div class="dots"></div>
+  <div class="value">330</div>
+</div>
+<div class="row">
+  <div class="title"> - Kernel Memory Overwrite(1): IODataQueue </div>
+  <div class="dots"></div>
+  <div class="value">332</div>
+</div>
+<div class="row">
+  <div class="title"> - Kernel Memory Overwrite(2): IOHIDEventServiceUserClient </div>
+  <div class="dots"></div>
+  <div class="value">333</div>
+</div>
+<div class="row">
+  <div class="title"> - Refinement: Arbitrary kernel memory overwrite </div>
+  <div class="dots"></div>
+  <div class="value">334</div>
+</div>
+<div class="row">
+  <div class="title"> Apple Fixes </div>
+  <div class="dots"></div>
+  <div class="value">335</div>
+</div>
+<div class="row">
+  <div class="title"> References </div>
+  <div class="dots"></div>
+  <div class="value">336</div>
+</div>
+</br>
+<div class="row">
+  <div class="title"> <B>Chapter 17: Pangu 8 (軒轅劍) </B></div>
+  <div class="dots"></div>
+  <div class="value">337</div>
+</div>
+<div class="row">
+  <div class="title"> The Loader </div>
+  <div class="dots"></div>
+  <div class="value">338</div>
+</div>
+<div class="row">
+  <div class="title"> User mode exploits </div>
+  <div class="dots"></div>
+  <div class="value">339</div>
+</div>
+<div class="row">
+  <div class="title"> - Certificate Injection</div>
+  <div class="dots"></div>
+  <div class="value">339</div>
+</div>
+<div class="row">
+  <div class="title"> - Loading the Exploit Library </div>
+  <div class="dots"></div>
+  <div class="value">339</div>
+</div>
+<div class="row">
+  <div class="title"> - Bypassing code signatures </div>
+  <div class="dots"></div>
+  <div class="value">341</div>
+</div>
+<div class="row">
+  <div class="title"> The Untether </div>
+  <div class="dots"></div>
+  <div class="value">343</div>
+</div>
+<div class="row">
+  <div class="title"> Apple Fixes </div>
+  <div class="dots"></div>
+  <div class="value">344</div>
+</div>
+<div class="row">
+  <div class="title"> References </div>
+  <div class="dots"></div>
+  <div class="value">346</div>
+</div>
+</br>
+<div class="row">
+  <div class="title"> <B>Chapter 18: TaiG (太极)</B> </div>
+  <div class="dots"></div>
+  <div class="value">347</div>
+</div>
+<div class="row">
+  <div class="title"> The Loader </div>
+  <div class="dots"></div>
+  <div class="value">348</div>
+</div>
+<div class="row">
+  <div class="title"> - Sandbox Escape: AFC and BackupAgent </div>
+  <div class="dots"></div>
+  <div class="value">349</div>
+</div>
+<div class="row">
+  <div class="title"> - DDI Race Condition </div>
+  <div class="dots"></div>
+  <div class="value">350</div>
+</div>
+<div class="row">
+  <div class="title"> - The Fake DDI </div>
+  <div class="dots"></div>
+  <div class="value">351</div>
+</div>
+<div class="row">
+  <div class="title"> - libmis.dylib and overlapping segments (again) </div>
+  <div class="dots"></div>
+  <div class="value">353</div>
+</div>
+<div class="row">
+  <div class="title"> - Final steps </div>
+  <div class="dots"></div>
+  <div class="value">353</div>
+</div>
+<div class="row">
+  <div class="title"> The Untether </div>
+  <div class="dots"></div>
+  <div class="value">354</div>
+</div>
+<div class="row">
+  <div class="title"> Kernel-mode Exploits</div>
+  <div class="dots"></div>
+  <div class="value">356</div>
+</div>
+<div class="row">
+  <div class="title"> - KASLR Info Leak via OSBundleMachOHeaders (again)</div>
+  <div class="dots"></div>
+  <div class="value">356</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Observing the Get Loaded Kext Info exploited</div>
+  <div class="dots"></div>
+  <div class="value">357</div>
+</div>
+<div class="row">
+  <div class="title"> - mach_port_kobject strikes again</div>
+  <div class="dots"></div>
+  <div class="value">358</div>
+</div>
+<div class="row">
+  <div class="title"> - IOHIDFamily... Again...</div>
+  <div class="dots"></div>
+  <div class="value">360</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Obtaining a kernel dump using TaiG 1</div>
+  <div class="dots"></div>
+  <div class="value">365</div>
+</div>
+<div class="row">
+  <div class="title"> Apple Fixes</div>
+  <div class="dots"></div>
+  <div class="value">367</div>
+</div>
+<div class="row">
+  <div class="title"> References</div>
+  <div class="dots"></div>
+  <div class="value">369</div>
+</div>
+</br>
+<div class="row">
+  <div class="title"> <B>Chapter 19: TaiG 2 </B> </div>
+  <div class="dots"></div>
+  <div class="value">371</div>
+</div>
+<div class="row">
+  <div class="title"> Code Signing Bypass</div>
+  <div class="dots"></div>
+  <div class="value">372</div>
+</div>
+<div class="row">
+  <div class="title"> The Untether</div>
+  <div class="dots"></div>
+  <div class="value">379</div>
+</div>
+<div class="row">
+  <div class="title"> Kernel Exploit</div>
+  <div class="dots"></div>
+  <div class="value">380</div>
+</div>
+<div class="row">
+  <div class="title"> Apple Fixes</div>
+  <div class="dots"></div>
+  <div class="value">382</div>
+</div>
+<div class="row">
+  <div class="title"> References</div>
+  <div class="dots"></div>
+  <div class="value">384</div>
+</div>
+</br>
+<div class="row">
+  <div class="title"> <B>Chapter 20: Pangu 9 (伏羲琴)</B> </div>
+  <div class="dots"></div>
+  <div class="value">385</div>
+</div>
+<div class="row">
+  <div class="title"> The Loader</div>
+  <div class="dots"></div>
+  <div class="value">386</div>
+</div>
+<div class="row">
+  <div class="title"> - Loading the Jailbreak App (10-20%)</div>
+  <div class="dots"></div>
+  <div class="value">388</div>
+</div>
+<div class="row">
+  <div class="title"> - Backing up (30%)</div>
+  <div class="dots"></div>
+  <div class="value">388</div>
+</div>
+<div class="row">
+  <div class="title"> - Configuring the Environment (45%)</div>
+  <div class="dots"></div>
+  <div class="value">388</div>
+</div>
+<div class="row">
+  <div class="title"> - After reboot (55%)</div>
+  <div class="dots"></div>
+  <div class="value">389</div>
+</div>
+<div class="row">
+  <div class="title"> - Launching the Pangu App (75%)</div>
+  <div class="dots"></div>
+  <div class="value">390</div>
+</div>
+<div class="row">
+  <div class="title"> - WW..What?!</div>
+  <div class="dots"></div>
+  <div class="value">391</div>
+</div>
+<div class="row">
+  <div class="title"> The Jailbreak Payload</div>
+  <div class="dots"></div>
+  <div class="value">392</div>
+</div>
+<div class="row">
+  <div class="title"> Kernel-Mode Exploit</div>
+  <div class="dots"></div>
+  <div class="value">393</div>
+</div>
+<div class="row">
+  <div class="title"> - Old Faithful</div>
+  <div class="dots"></div>
+  <div class="value">393</div>
+</div>
+<div class="row">
+  <div class="title"> - The Exploit</div>
+  <div class="dots"></div>
+  <div class="value">394</div>
+</div>
+<div class="row">
+  <div class="title"> - Arbitrary Code Execution - I: Bypassing KASLR</div>
+  <div class="dots"></div>
+  <div class="value">396</div>
+</div>
+<div class="row">
+  <div class="title"> - Arbitrary Code Execution - II: Inspecting gadgets</div>
+  <div class="dots"></div>
+  <div class="value">396</div>
+</div>
+<div class="row">
+  <div class="title"> Code signing bypass</div>
+  <div class="dots"></div>
+  <div class="value">398</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Examining Pangu 9 shared cache </div>
+  <div class="dots"></div>
+  <div class="value">399</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Examining Pangu 9 shared cache (cont.) </div>
+  <div class="dots"></div>
+  <div class="value">400</div>
+</div>
+<div class="row">
+  <div class="title"> The Untether</div>
+  <div class="dots"></div>
+  <div class="value">401</div>
+</div>
+<div class="row">
+  <div class="title"> - Anti-Anti-Debugging</div>
+  <div class="dots"></div>
+  <div class="value">401</div>
+</div>
+<div class="row">
+  <div class="title"> Apple Fixes</div>
+  <div class="dots"></div>
+  <div class="value">403</div>
+</div>
+<div class="row">
+  <div class="title"> References </div>
+  <div class="dots"></div>
+  <div class="value">404</div>
+</div>
+</br>
+<div class="row">
+  <div class="title"> <B>Chapter 21: Pangu 9.3 (女娲石)</B> </div>
+  <div class="dots"></div>
+  <div class="value">405</div>
+</div>
+<div class="row">
+  <div class="title"> The Kernel Exploit </div>
+  <div class="dots"></div>
+  <div class="value">406</div>
+</div>
+<div class="row">
+  <div class="title"> - The Bug </div>
+  <div class="dots"></div>
+  <div class="value">406</div>
+</div>
+<div class="row">
+  <div class="title"> - The Exploit primitive </div>
+  <div class="dots"></div>
+  <div class="value">408</div>
+</div>
+<div class="row">
+  <div class="title"> - Defeating KASLR </div>
+  <div class="dots"></div>
+  <div class="value">408</div>
+</div>
+<div class="row">
+  <div class="title"> - Arbitrary Code Execution </div>
+  <div class="dots"></div>
+  <div class="value">409</div>
+</div>
+<div class="row">
+  <div class="title"> The Apple Fix </div>
+  <div class="dots"></div>
+  <div class="value">410</div>
+</div>
+</br>
+<div class="row">
+  <div class="title"> <B>Chapter 22: Pegasus (Trident)</B> </div>
+  <div class="dots"></div>
+  <div class="value">411</div>
+</div>
+<div class="row">
+  <div class="title"> Exploit Flow</div>
+  <div class="dots"></div>
+  <div class="value">412</div>
+</div>
+<div class="row">
+  <div class="title"> - Stage1 </div>
+  <div class="dots"></div>
+  <div class="value">412</div>
+</div>
+<div class="row">
+  <div class="title"> - Stage2</div>
+  <div class="dots"></div>
+  <div class="value">413</div>
+</div>
+<div class="row">
+  <div class="title"> - Stage3 </div>
+  <div class="dots"></div>
+  <div class="value">414</div>
+</div>
+<div class="row">
+  <div class="title"> Kernel Memory Read and KASLR Bypass </div>
+  <div class="dots"></div>
+  <div class="value">416</div>
+</div>
+<div class="row">
+  <div class="title"> Arbitrary Kernel Memory Write </div>
+  <div class="dots"></div>
+  <div class="value">418</div>
+</div>
+<div class="row">
+  <div class="title"> Persistence </div>
+  <div class="dots"></div>
+  <div class="value">419</div>
+</div>
+<div class="row">
+  <div class="title"> - Javascript payload </div>
+  <div class="dots"></div>
+  <div class="value">420</div>
+</div>
+<div class="row">
+  <div class="title"> Apple Fixes </div>
+  <div class="dots"></div>
+  <div class="value">422</div>
+</div>
+<div class="row">
+  <div class="title"> References </div>
+  <div class="dots"></div>
+  <div class="value">422</div>
+</div>
+</br>
+<div class="row">
+  <div class="title"> <a href="http://newosxbook.com/files/PhJB.pdf"><B>Chapter 22½: Phœnix</B> </a></div>
+  <div class="dots"></div>
+  <div class="value">423</div>
+</div>
+<div class="row">
+  <div class="title"> The Info Leak </div>
+  <div class="dots"></div>
+  <div class="value">424</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Figuring out what the leaked kernel address is</div>
+  <div class="dots"></div>
+  <div class="value">426</div>
+</div>
+<div class="row">
+  <div class="title"> Zone grooming </div>
+  <div class="dots"></div>
+  <div class="value">427</div>
+</div>
+<div class="row">
+  <div class="title"> mach_ports_register </div>
+  <div class="dots"></div>
+  <div class="value">428</div>
+</div>
+<div class="row">
+  <div class="title"> Putting it all together -  a Phœnix rises! </div>
+  <div class="dots"></div>
+  <div class="value">429</div>
+</div>
+<div class="row">
+  <div class="title"> Apple Fixes </div>
+  <div class="dots"></div>
+  <div class="value">431</div>
+</div>
+<div class="row">
+  <div class="title"> References </div>
+  <div class="dots"></div>
+  <div class="value">431</div>
+</div>
+<div class="row">
+  <div class="title"> mach_ports_register </div>
+  <div class="dots"></div>
+  <div class="value">428</div>
+</div>
+</br>
+<div class="row">
+  <div class="title"> <B>Chapter 23: mach_portal</B> </div>
+  <div class="dots"></div>
+  <div class="value">433</div>
+</div>
+<div class="row">
+  <div class="title"> Exploit Flow </div>
+  <div class="dots"></div>
+  <div class="value">434</div>
+</div>
+<div class="row">
+  <div class="title"> Mach port name urefs handling </div>
+  <div class="dots"></div>
+  <div class="value">435</div>
+</div>
+<div class="row">
+  <div class="title"> - Applying the attack to launchd </div>
+  <div class="dots"></div>
+  <div class="value">437</div>
+</div>
+<div class="row">
+  <div class="title"> Crashing powerd </div>
+  <div class="dots"></div>
+  <div class="value">438</div>
+</div>
+<div class="row">
+  <div class="title"> XNU UaF in set_dp_control_port </div>
+  <div class="dots"></div>
+  <div class="value">441</div>
+</div>
+<div class="row">
+  <div class="title"> Disabling protections </div>
+  <div class="dots"></div>
+  <div class="value">443</div>
+</div>
+<div class="row">
+  <div class="title"> - Defeating KASLR </div>
+  <div class="dots"></div>
+  <div class="value">443</div>
+</div>
+<div class="row">
+  <div class="title"> - Unsandboxing - The "ShaiHulud Maneuver" </div>
+  <div class="dots"></div>
+  <div class="value">443</div>
+</div>
+<div class="row">
+  <div class="title"> - Root filesystem r/w </div>
+  <div class="dots"></div>
+  <div class="value">443</div>
+</div>
+<div class="row">
+  <div class="title"> Bypassing code signatures </div>
+  <div class="dots"></div>
+  <div class="value">444</div>
+</div>
+<div class="row">
+  <div class="title"> Apple Fixes </div>
+  <div class="dots"></div>
+  <div class="value">446</div>
+</div>
+<div class="row">
+  <div class="title"> References </div>
+  <div class="dots"></div>
+  <div class="value">446</div>
+</div>
+</br>
+<div class="row">
+  <div class="title"> <B>Chapter 24: Yalu (10.0-10.2)</B> </div>
+  <div class="dots"></div>
+  <div class="value">447</div>
+</div>
+<div class="row">
+  <div class="title"> Primitives </div>
+  <div class="dots"></div>
+  <div class="value">448</div>
+</div>
+<div class="row">
+  <div class="title"> - [Read/Write]Anywhere64 </div>
+  <div class="dots"></div>
+  <div class="value">448</div>
+</div>
+<div class="row">
+  <div class="title"> - [FuncAnywhere32] </div>
+  <div class="dots"></div>
+  <div class="value">448</div>
+</div>
+<div class="row">
+  <div class="title"> - Platform Detection </div>
+  <div class="dots"></div>
+  <div class="value">450</div>
+</div>
+<div class="row">
+  <div class="title"> KPP Bypass </div>
+  <div class="dots"></div>
+  <div class="value">451</div>
+</div>
+<div class="row">
+  <div class="title"> - kppsh1 </div>
+  <div class="dots"></div>
+  <div class="value">452</div>
+</div>
+<div class="row">
+  <div class="title"> - e0 </div>
+  <div class="dots"></div>
+  <div class="value">453</div>
+</div>
+<div class="row">
+  <div class="title"> Post-Exploitation </div>
+  <div class="dots"></div>
+  <div class="value">454</div>
+</div>
+<div class="row">
+  <div class="title"> 10.2: A deadly trap and a recipe for disaster </div>
+  <div class="dots"></div>
+  <div class="value">455</div>
+</div>
+<div class="row">
+  <div class="title"> - The bug </div>
+  <div class="dots"></div>
+  <div class="value">455</div>
+</div>
+<div class="row">
+  <div class="title"> - The exploit (Beer) </div>
+  <div class="dots"></div>
+  <div class="value">456</div>
+</div>
+<div class="row">
+  <div class="title"> - Kernel read-write </div>
+  <div class="dots"></div>
+  <div class="value">458</div>
+</div>
+<div class="row">
+  <div class="title"> - Experiment: Adapting a PoC to a different kernel version </div>
+  <div class="dots"></div>
+  <div class="value">459</div>
+</div>
+<div class="row">
+  <div class="title"> - The exploit (Todesco & Grassi) </div>
+  <div class="dots"></div>
+  <div class="value">460</div>
+</div>
+<div class="row">
+  <div class="title"> - Constructing a fake Mach object </div>
+  <div class="dots"></div>
+  <div class="value">460</div>
+</div>
+<div class="row">
+  <div class="title"> - Triggering the overflow </div>
+  <div class="dots"></div>
+  <div class="value">462</div>
+</div>
+<div class="row">
+  <div class="title"> - Defeating KASLR </div>
+  <div class="dots"></div>
+  <div class="value">464</div>
+</div>
+<div class="row">
+  <div class="title"> - Getting the kernel task port </div>
+  <div class="dots"></div>
+  <div class="value">465</div>
+</div>
+<div class="row">
+  <div class="title"> Final Notes </div>
+  <div class="dots"></div>
+  <div class="value">466</div>
+</div>
+<div class="row">
+  <div class="title"> References </div>
+  <div class="dots"></div>
+  <div class="value">466</div>
+</div>
+</br>
+<div class="row">
+  <div class="title"> <B> <a href="http://newosxbook.com/QiLin/qilin.pdf">Chapter 25: async_wake & The QiLin Toolkit (11.0-11.1.2)</B> </a></div>
+  <div class="dots"></div>
+  <div class="value">469</div>
+</div>
+<div class="row">
+  <div class="title"> Bypassing KASLR </div>
+  <div class="dots"></div>
+  <div class="value">470</div>
+</div>
+<div class="row">
+  <div class="title"> - The Bug </div>
+  <div class="dots"></div>
+  <div class="value">470</div>
+</div>
+<div class="row">
+  <div class="title"> - The Exploit </div>
+  <div class="dots"></div>
+  <div class="value">471</div>
+</div>
+<div class="row">
+  <div class="title"> Kernel Memory Corruption </div>
+  <div class="dots"></div>
+  <div class="value">473</div>
+</div>
+<div class="row">
+  <div class="title"> - The Exploit </div>
+  <div class="dots"></div>
+  <div class="value">473</div>
+</div>
+<div class="row">
+  <div class="title"> - Kernel function call primitive </div>
+  <div class="dots"></div>
+  <div class="value">474</div>
+</div>
+<div class="row">
+  <div class="title"> Post-Exploitation: The Jailbreak Toolkit </div>
+  <div class="dots"></div>
+  <div class="value">476</div>
+</div>
+<div class="row">
+  <div class="title"> - Prerequisite: Manipulating the process and task lists </div>
+  <div class="dots"></div>
+  <div class="value">476</div>
+</div>
+<div class="row">
+  <div class="title"> - Rootify </div>
+  <div class="dots"></div>
+  <div class="value">478</div>
+</div>
+<div class="row">
+  <div class="title"> - Shai Hulud </div>
+  <div class="dots"></div>
+  <div class="value">479</div>
+</div>
+<div class="row">
+  <div class="title"> - Remounting the root filesystem as read-write </div>
+  <div class="dots"></div>
+  <div class="value">480</div>
+</div>
+<div class="row">
+  <div class="title"> - Entitlements </div>
+  <div class="dots"></div>
+  <div class="value">482</div>
+</div>
+<div class="row">
+  <div class="title"> - Injecting entitlements - I - The CS Blob </div>
+  <div class="dots"></div>
+  <div class="value">482</div>
+</div>
+<div class="row">
+  <div class="title"> - Injecting Entitlements - II - AMFI </div>
+  <div class="dots"></div>
+  <div class="value">483</div>
+</div>
+<div class="row">
+  <div class="title"> - Replacing entitlements </div>
+  <div class="dots"></div>
+  <div class="value">485</div>
+</div>
+<div class="row">
+  <div class="title"> - Borrowing entitlements </div>
+  <div class="dots"></div>
+  <div class="value">486</div>
+</div>
+<div class="row">
+  <div class="title"> - Platformize </div>
+  <div class="dots"></div>
+  <div class="value">487</div>
+</div>
+<div class="row">
+  <div class="title"> - Bypassing code signing </div>
+  <div class="dots"></div>
+  <div class="value">488</div>
+</div>
+<div class="row">
+  <div class="title"> - The AMFI Trust Cache </div>
+  <div class="dots"></div>
+  <div class="value">488</div>
+</div>
+<div class="row">
+  <div class="title"> - amfid </div>
+  <div class="dots"></div>
+  <div class="value">488</div>
+</div>
+<div class="row">
+  <div class="title"> - Code injection </div>
+  <div class="dots"></div>
+  <div class="value">488</div>
+</div>
+<div class="row">
+  <div class="title"> - More minutiae </div>
+  <div class="dots"></div>
+  <div class="value">488</div>
+</div>
+<div class="row">
+  <div class="title"> - Sandbox annoyances </div>
+  <div class="dots"></div>
+  <div class="value">490</div>
+</div>
+<div class="row">
+  <div class="title"> - References </div>
+  <div class="dots"></div>
+  <div class="value">490</div>
+</div>
+</br>
+<div class="row">
+  <div class="title"> <B>Appendix A: MacOS Hardening Guide</B> </div>
+  <div class="dots"></div>
+  <div class="value">497</div>
+</div>
+</br>
+<div class="row">
+  <div class="title"> <a href="http://newosxbook.com/free/security12deltae.pdf"><B>Appendix B: Darwin 19 (Beta) Changes</B> </a></div>
+  <div class="dots"></div>
+  <div class="value">511</div>
+</div>
+<div class="row">
+  <div class="title"> Mandatory Access Control (MACF) </div>
+  <div class="dots"></div>
+  <div class="value">511</div>
+</div>
+<div class="row">
+  <div class="title"> GateKeeper (MacOS) </div>
+  <div class="dots"></div>
+  <div class="value">512</div>
+</div>
+<div class="row">
+  <div class="title"> - Application Notary </div>
+  <div class="dots"></div>
+  <div class="value">512</div>
+</div>
+<div class="row">
+  <div class="title"> AMFI </div>
+  <div class="dots"></div>
+  <div class="value">512</div>
+</div>
+<div class="row">
+  <div class="title"> - CoreTrust (iOS 12) </div>
+  <div class="dots"></div>
+  <div class="value">512</div>
+</div>
+<div class="row">
+  <div class="title"> SandBox </div>
+  <div class="dots"></div>
+  <div class="value">513</div>
+</div>
+<div class="row">
+  <div class="title"> Privacy </div>
+  <div class="dots"></div>
+  <div class="value">513</div>
+</div>
+<div class="row">
+  <div class="title"> APFS Snapshot mount (iOS 11.3) </div>
+  <div class="dots"></div>
+  <div class="value">514</div>
+</div>
+  </div>
+</body>
+</html>
