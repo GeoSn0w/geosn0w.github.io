@@ -1,0 +1,236 @@
+* {
+    margin: 3px;
+    padding: 3px;
+}
+ html {
+    background: url('/imgres/lion.png') no-repeat center center fixed;
+    background-size : cover;
+}
+ @font-face {
+     font-family: "San Francisco";
+     font-weight: 700;
+     src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+#dock {
+    position: absolute;
+    bottom: 0;
+}
+ .finderWindow {
+    background-image: linear-gradient(#F8F8F8, #C8C8C8);
+    display: flex;
+    height: 58px;
+    margin: 0px;
+    padding: 0px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    top: -1px;
+    position: absolute;
+    left: 0px;
+    width: 100%;
+}
+ .finderWindowTitle {
+    display : inline;
+    padding-top : 0px;
+    font-family: San Francisco;
+    align-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    left: 46%;
+    top: -8px;
+}
+ .closebutton {
+     width: 11px;
+     height: 11px;
+     background-image: url('/imgres/Library/CoreServices/close.png');
+     position: absolute;
+     left: 2px;
+     top: -1px;
+}
+ #topBar{
+    min-width:600px;
+    top:0px;
+    font-size:12px;
+    height:18px;
+    left:0;
+    right:0;
+    padding:3px 10px 0 10px;
+    position:fixed;
+    overflow:hidden;
+    white-space:nowrap;
+    opacity: 0.9;
+    margin: 0px;
+    background-image: linear-gradient(#efefef, #c4c4c4);
+}
+ #quicklook {
+    float : right;
+    z-Index: 2400;
+    margin: 0px;
+    position: relative;
+    top: -4px;
+    bottom: 0px;
+    right: 23px;
+}
+ #AppleLogo {
+    float: left;
+    margin: 0px;
+    position: relative;
+    top: -4px;
+    bottom: 0px;
+    left: -1px;
+}
+ #Notifications {
+    float: right;
+    margin: 0px;
+    position: relative;
+    top: -4px;
+    bottom: 0px;
+    right: -26px;
+}
+ #footer{
+    min-width:578px;
+    background-image:url(/images/footerbg.jpg);
+    bottom:0;
+    font-size:12px;
+    height:15px;
+    left:0;
+    right:0;
+    padding:3px 10px 0 10px;
+    position:fixed;
+    z-index:2400;
+    overflow:hidden;
+    white-space:nowrap;
+    border-top:1px solid #2B334F;
+}
+ #audio {
+    float: right;
+    margin: 0px;
+    position: relative;
+    top: -4px;
+    bottom: 0px;
+    right: 42px;
+}
+ #battery {
+    float: right;
+    margin: 0px;
+    position: relative;
+    top: -8px;
+    bottom: 0px;
+    right: -16px;
+}
+ #wifi {
+    float: right;
+    margin: 0px;
+    position: relative;
+    top: -4px;
+    bottom: 0px;
+    right: 18px;
+}
+ #safari_btns {
+    float: right;
+    margin: 0px;
+    position: relative;
+    top: 19px;
+    bottom: 0px;
+    left: -297px;
+    width: 100px;
+    height: 35px;
+}
+ #volumeIII{
+     position: absolute;
+     top: 37px;
+     left: 22px;
+}
+ #volumeI{
+     position: absolute;
+     top: 37px;
+     left: 122px;
+}
+ #contentWindow {
+    background: white;
+    position : absolute;
+    min-height: 400px;
+    height: 740px;
+    width :90%;
+    left: 4.5%;
+    top: 70px;
+    border-radius: 6px;
+}
+ #content {
+     padding : 50px;
+     font-family : Verdana, Arial , Helvetica, sans-serif:
+}
+ #content {
+     font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
+ #iBooks {
+    background-image: url(/imgres/Applications/iBook/ibook_bg.png);
+    position : absolute;
+    min-height: 443px;
+    height: 809px;
+    width: 53%;
+    left: 24%;
+    top: 5.66%;
+    border-radius: 8px;
+}
+ #appleLogo {
+     height : 16px;
+     width: 16px;
+}
+ #navMenu{
+    list-style:none;
+    z-index : 2410;
+    font-family: San Francisco;
+    margin-bottom:10px;
+    float:left;
+    color: black;
+    width: 100%;
+    position:relative;
+    z-index: 5;
+    margin: 0px;
+    top: -16px;
+}
+ #navMenu li{
+    height : 10px;
+    display : block;
+    font-size: 10.9pt;
+    padding-top : 3px;
+    padding-bottom : 7px;
+    padding-left: 5px;
+    float:left;
+    position:relative;
+    margin: 0px;
+    left: 19px;
+}
+ #navMenu a{
+     text-decoration:none;
+}
+ #navMenu li ul{
+     list-style:none;
+     position : absolute;
+     top: -1px;
+     background : #ffffff;
+     opacity : 0.9;
+     padding : 10px;
+     color : black;
+     left:-1024px;
+}
+ #navMenu li ul li a {
+     color : black
+}
+ #navMenu ul li{
+     white-space : nowrap;
+     padding-top:0px;
+     float:none;
+}
+ #navMenu li:hover ul{
+     top: 20px;
+     left:0px;
+}
+
+ .Invisible {
+     display : none ;
+}
+ .Visible {
+     display : block;
+}
