@@ -3,7 +3,7 @@
     padding: 3px;
 }
  html {
-    background: url('/imgres/lion.png') no-repeat center center fixed;
+    background: url('./imgres/lion.png') no-repeat center center fixed;
     background-size : cover;
 }
  @font-face {
@@ -42,7 +42,7 @@
  .closebutton {
      width: 11px;
      height: 11px;
-     background-image: url('/imgres/Library/CoreServices/close.png');
+     background-image: url('./imgres/Library/CoreServices/close.png');
      position: absolute;
      left: 2px;
      top: -1px;
@@ -89,7 +89,7 @@
 }
  #footer{
     min-width:578px;
-    background-image:url(/images/footerbg.jpg);
+    background-image:url(./images/footerbg.jpg);
     bottom:0;
     font-size:12px;
     height:15px;
@@ -164,7 +164,7 @@
      font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
 }
  #iBooks {
-    background-image: url(/imgres/Applications/iBook/ibook_bg.png);
+    background-image: url(./imgres/Applications/iBook/ibook_bg.png);
     position : absolute;
     min-height: 443px;
     height: 809px;
