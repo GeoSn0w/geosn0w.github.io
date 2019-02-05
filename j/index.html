@@ -40,10 +40,13 @@ Y8a.    .a88  "8b,   ,aa  "8a,   ,a8"  Y8a     a8P  88       88   `8ba,  ,ad8'  
             <!-- Also fuck AMFI -->
         </div>
     </div>
-    <div class="hidden">
-	<script type="text/javascript">
-			var images = new Array()
-			function preload() {
+    
+</body>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        setTimeout(function() {
+		function preload() {
 				for (i = 0; i < preload.arguments.length; i++) {
 					images[i] = new Image()
 					images[i].src = preload.arguments[i]
@@ -67,14 +70,6 @@ Y8a.    .a88  "8b,   ,aa  "8a,   ,a8"  Y8a     a8P  88       88   `8ba,  ,ad8'  
                 "https://geosn0w.github.io/j/imgres/dock.png"
                 "https://geosn0w.github.io/j/imgres/Library/CoreServices/close.png"
 			)
-		//--><!]]>
-	</script>
-</div>
-</body>
-
-<script type="text/javascript">
-    $(document).ready(function() {
-        setTimeout(function() {
             window.location.href = "./desktest.html"
         }, 6000);
     });
