@@ -2,7 +2,7 @@ div.dockEnd {
     display: block;
     height: 100px;
     width: 31px;
-    background: url(/imgres/dock.png) bottom left no-repeat;
+    background: url(https://geosn0w.github.io/j/imgres/dock.png) bottom left no-repeat;
 }
  div.dockEnd.left {
     position: absolute;
