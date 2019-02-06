@@ -8,7 +8,7 @@ body {
    top: 35%;
    z-index: 1;
    margin: auto;
-   animation: moment-on 1s linear 5s;
+   animation: moment-on 1s linear 7s;
    animation-fill-mode: forwards;
    display: flex;
    justify-content: center;
@@ -27,6 +27,7 @@ body {
 }
 
 @keyframes moment-off {
-   from {opacity: 0;}
+  from {opacity: 0;}
+   10% {opacity: 0.1;}
    to {opacity: 1;}
 }
