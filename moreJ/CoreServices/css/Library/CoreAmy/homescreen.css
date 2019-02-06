@@ -85,7 +85,7 @@ div {
 	width:10.5vh;
 	height:10.5vh;
 	cursor:pointer;
-	border-radius:25px;
+	border-radius:16px;
 	-webkit-user-select: none !important;
 	-webkit-user-callout: none !important;
 	-webkit-touch-callout: none !important;
