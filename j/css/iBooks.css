@@ -141,6 +141,11 @@
      top: 37px;
      left: 22px;
 }
+ #volumeII{
+     position: absolute;
+     top: 126px;
+     left: 525px;
+}
  #volumeI{
      position: absolute;
      top: 37px;
@@ -155,7 +160,6 @@
     left: 4.5%;
     top: 70px;
     border-radius: 6px;
-}
  #content {
      padding : 50px;
      font-family : Verdana, Arial , Helvetica, sans-serif:
@@ -163,15 +167,19 @@
  #content {
      font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
 }
- #iBooks {
+#iBooks {
     background-image: url(https://geosn0w.github.io/j/imgres/Applications/iBook/ibook_bg.png);
-    position : absolute;
-    min-height: 443px;
-    height: 809px;
-    width: 53%;
-    left: 24%;
-    top: 5.66%;
+    position: relative;
+    max-height: 710px;
+    max-width: 794px;
+    height: 713px;
+    width: 794px;
+    top: 149.66%;
     border-radius: 8px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    top: 59px;
 }
  #appleLogo {
      height : 16px;
