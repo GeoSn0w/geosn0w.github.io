@@ -19,7 +19,7 @@
   top: 75%;
   left: 50%;
   margin: auto;
-  animation: moment-on 1s linear 5s;
+  animation: moment-on 1s linear 7s;
   animation-fill-mode: forwards;
 }
 .spinner .round-and-around-and-around-and-around-we-go {
