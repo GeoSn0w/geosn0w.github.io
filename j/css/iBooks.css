@@ -11,34 +11,6 @@
      font-weight: 700;
      src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
 }
-#dock {
-    position: absolute;
-    bottom: 0;
-}
- .finderWindow {
-    background-image: linear-gradient(#F8F8F8, #C8C8C8);
-    display: flex;
-    height: 58px;
-    margin: 0px;
-    padding: 0px;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    top: -1px;
-    position: absolute;
-    left: 0px;
-    width: 100%;
-}
- .finderWindowTitle {
-    display : inline;
-    padding-top : 0px;
-    font-family: San Francisco;
-    align-content: center;
-    text-align: center;
-    color: white;
-    position: relative;
-    left: 46%;
-    top: -8px;
-}
  .closebutton {
      width: 11px;
      height: 11px;
@@ -138,18 +110,18 @@
 }
  #volumeIII{
      position: absolute;
-     top: 37px;
-     left: 22px;
+     top: 126px;
+     left: 525px;
 }
  #volumeII{
      position: absolute;
      top: 126px;
-     left: 525px;
+     left: 304px;
 }
  #volumeI{
      position: absolute;
-     top: 37px;
-     left: 122px;
+     top: 126px;
+     left: 81px;
 }
  #contentWindow {
     background: white;
@@ -160,6 +132,7 @@
     left: 4.5%;
     top: 70px;
     border-radius: 6px;
+}
  #content {
      padding : 50px;
      font-family : Verdana, Arial , Helvetica, sans-serif:
@@ -167,7 +140,7 @@
  #content {
      font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
 }
-#iBooks {
+ #iBooks {
     background-image: url(https://geosn0w.github.io/j/imgres/Applications/iBook/ibook_bg.png);
     position: relative;
     max-height: 710px;
@@ -180,10 +153,6 @@
     display: flex;
     justify-content: center;
     top: 59px;
-}
- #appleLogo {
-     height : 16px;
-     width: 16px;
 }
  #navMenu{
     list-style:none;
@@ -198,7 +167,7 @@
     margin: 0px;
     top: -16px;
 }
- #navMenu li{
+#navMenu li{
     height : 10px;
     display : block;
     font-size: 10.9pt;
@@ -210,35 +179,10 @@
     margin: 0px;
     left: 19px;
 }
- #navMenu a{
-     text-decoration:none;
-}
- #navMenu li ul{
-     list-style:none;
-     position : absolute;
-     top: -1px;
-     background : #ffffff;
-     opacity : 0.9;
-     padding : 10px;
-     color : black;
-     left:-1024px;
-}
- #navMenu li ul li a {
-     color : black
-}
- #navMenu ul li{
-     white-space : nowrap;
-     padding-top:0px;
-     float:none;
-}
- #navMenu li:hover ul{
-     top: 20px;
-     left:0px;
-}
-
  .Invisible {
      display : none ;
 }
  .Visible {
      display : block;
 }
+ 
