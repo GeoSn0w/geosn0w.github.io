@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="./CoreServices/css/Library/Framework/framework7/framework7.ios.colors.min.css">
     <link rel="stylesheet" type="text/css" href="./CoreServices/css/Library/CoreAmy/homescreen.css">
     <script src="./CoreServices/js/swiper.min.js"></script>
+     <script src="https://framework7.io/packages/core/js/framework7.min.js"></script>
+   
     <style>
         .springboard {
             position: absolute;
@@ -92,7 +94,7 @@
                                             <img id="entitlementsDB" src="./CoreServices/imgres/Applications/filevault.png" class="icon" onclick="window.location.href = 'imAPlaceHolder'" alt="Entitlements">
                                             <div class="icon entitleMe" style="position:absolute; top:0; left:0; right:0; margin-left:auto; margin-right:auto; background-color:#000; opacity:0; pointer-events: none;"></div>
                                         </div>
-                                        <div class="icon-description">Entitlements</div>
+                                        <div class="icon-description"><a class="button button-raised open-callback-on-close" href="#">Entitlements</a></div>
                                     </div>
                                     <div id="springBoardIcon" class="icon-box" style="text-align:center;">
                                         <div style="width:11.75vh; height:11.75vh; margin:0 auto;">
@@ -176,6 +178,8 @@
     </div>
 
     <script>
+        var app = new Framework7();
+        var $$ = Dom7;
         var swiper = new Swiper('.swiper-container', {
             initialSlide: 0,
             pagination: '.swiper-pagination',
@@ -203,6 +207,20 @@
             if ((yMovement * 3) > xMovement) {
                 e.preventDefault();
             }
+        });
+   
+        var notificationCallbackOnClose = app.notification.create({
+          icon: '<i class="icon demo-icon">7</i>',
+          title: 'AMFI wants to know your location',
+          titleRightText: 'now',
+          subtitle: 'Haha, I refuse to compute your CDHash',
+          text: 'Swipe me up!',
+          closeOnClick: true,
+          on: {
+            close: function () {
+              app.dialog.alert('Good night, Jonathan');
+            },
+          },
         });
     </script>
 </body>
