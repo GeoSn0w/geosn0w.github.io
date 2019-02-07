@@ -211,17 +211,12 @@
         });
    
         var notificationCallbackOnClose = app.notification.create({
-          icon: '<i class="icon demo-icon">7</i>',
+          icon: '<i class="icon demo-icon"></i>',
           title: 'AMFI wants to know your location',
           titleRightText: 'now',
           subtitle: 'Haha, I refuse to compute your CDHash',
           text: 'Swipe me up!',
           closeOnClick: true,
-          on: {
-            close: function () {
-              app.dialog.alert('Good night, Jonathan');
-            },
-          },
         });
     </script>
 </body>
