@@ -1,3 +1,8 @@
+---
+title: Understanding iOS Tweaks and Battery Draining
+layout: post
+---
+
 Recently I got in a heated discussion with a friend about tweaks and how a seemingly benign tweak that does nothing but to change a <code class="high">.plist</code> file can actually become a vector for serious battery draining. While discussing with the person about TetherMe, a tweak which unlocks the cellular data tethering, in the context of battery drain, I realized that some people only see one single dimension of a specific action which could potentially be a problem when you install tweaks. Let's dive a bit into the idea of batter draining in the context of jailbreak tweaks.
 
 ### About the TetherMe discussion
