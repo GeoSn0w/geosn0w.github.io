@@ -1,0 +1,226 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" sizes="180x180" href="./CoreServices/icons/apple-touch-icon.png">
+    <meta name="format-detection" content="telephone=no">
+    <title>NewOSXBook</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./CoreServices/css/Library/Framework/framework7/framework7.ios.min.css">
+    <link rel="stylesheet" href="./CoreServices/css/Library/Framework/framework7/framework7.ios.colors.min.css">
+    <link rel="stylesheet" type="text/css" href="./CoreServices/css/Library/CoreAmy/homescreen.css">
+    <link rel="stylesheet" type="text/css" href="https://framework7.io/packages/core/css/framework7.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+   
+    <script src="./CoreServices/js/swiper.min.js"></script>
+     <script src="https://framework7.io/packages/core/js/framework7.min.js"></script>
+   
+    <style>
+        .springboard {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('./CoreServices/imgres/CoreWallpaper.png');
+            background-color: #000;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: bottom;
+            overflow: hidden;
+        }
+
+        .footer_background {
+            background-image: url('./CoreServices/imgres/CoreWallpaper.png');
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-position: bottom;
+        }
+
+        .home_page {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            overflow-x: hidden;
+            background: none !important;
+        }
+    </style>
+</head>
+
+<body class="theme-white layout-dark" style="background-color:#000; -webkit-user-select:none; -webkit-user-callout: none;">
+    <div id="background" class="springboard" style="opacity: 0.9; transition: all 0.5s ease 0s;"></div>
+    <div class="views" style="background:none !important;">
+        <div class="view view-main" style="background:none !important;">
+            <div class="pages" style="background:none;">
+                <div data-page="index" class="page toolbar-fixed" style="background:none !important;">
+                    <div id="loader" style="position:absolute; z-index:20001;"></div>
+                    <div id="home-page" class="page-content home_page" style="height: 758.266px; transform: scale(1); opacity: 1; transition: all 0.5s ease-out 0s;">
+                        <div id="swipper-box" class="swiper-container expand_box swiper-container-horizontal" style="position:relative; padding:0; margin:0; width:100%; height:100%; overflow:hidden; ">
+                            <div class="swiper-wrapper" style="position: relative; padding: 0px; margin: 0px; width: 100%; height: 100%; z-index: 1000; transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
+                                <div class="swiper-slide swiper-slide-active" style="position: relative; padding: 0px; margin-top: 0px; margin-left: 0px; width: 1146px; height: 100%;">
+                                    <div style="height:1vh;"></div>
+
+                                    <div id="springBoardIcon" class="icon-box-footer" style="text-align:center;">
+                                        <div style="width:11.75vh; height:11.75vh; margin:0 auto;">
+                                            <img id="jbooks" src="./CoreServices/imgres/Applications/ibooks.png" class="icon" onclick="window.location.href = 'imAPlaceHolder'" alt="jBooks">
+                                            <div class="icon jbooks" style="position:absolute; top:0; left:0; right:0; margin-left:auto; margin-right:auto; background-color:#000; opacity:0; pointer-events: none;"></div>
+                                        </div>
+                                        <div class="icon-description">jBooks</div>
+                                    </div>
+                                    <div id="springBoardIcon" class="icon-box-footer" style="text-align:center;">
+                                        <div style="width:11.75vh; height:11.75vh; margin:0 auto;">
+                                            <img id="buyBooks" src="./CoreServices/imgres/Applications/amazon.png" class="icon" onclick="window.location.href = 'imAPlaceHolder'" alt="Amazon">
+                                            <div class="icon buyBooks" style="position:absolute; top:0; left:0; right:0; margin-left:auto; margin-right:auto; background-color:#000; opacity:0; pointer-events: none;"></div>
+                                        </div>
+                                        <div class="icon-description">The Books</div>
+                                    </div>
+                                    <div id="springBoardIcon" class="icon-box-footer" style="text-align:center;">
+                                        <div style="width:11.75vh; height:11.75vh; margin:0 auto;">
+                                            <img id="jnews" src="./CoreServices/imgres/Applications/jnews.png" class="icon" onclick="window.location.href = 'imAPlaceHolder'" alt="Amazon">
+                                            <div class="icon jnews" style="position:absolute; top:0; left:0; right:0; margin-left:auto; margin-right:auto; background-color:#000; opacity:0; pointer-events: none;"></div>
+                                        </div>
+                                        <div class="icon-description">jNews</div>
+                                    </div>
+                                    <div id="springBoardIcon" class="icon-box-footer" style="text-align:center;">
+                                        <div style="width:11.75vh; height:11.75vh; margin:0 auto;">
+                                            <img id="jnotes" src="./CoreServices/imgres/Applications/notes.png" class="icon" onclick="window.location.href = 'imAPlaceHolder'" alt="Notes">
+                                            <div class="icon jnotes" style="position:absolute; top:0; left:0; right:0; margin-left:auto; margin-right:auto; background-color:#000; opacity:0; pointer-events: none;"></div>
+                                        </div>
+                                        <div class="icon-description">Notes</div>
+                                    </div>
+                                    <div id="springBoardIcon" class="icon-box-footer" style="text-align:center;">
+                                        <div style="width:11.75vh; height:11.75vh; margin:0 auto;">
+                                            <img id="entitlementsDB" src="./CoreServices/imgres/Applications/filevault.png" class="icon" onclick="notificationCallbackOnClose.open()" alt="Entitlements">
+                                            <div class="icon entitleMe" style="position:absolute; top:0; left:0; right:0; margin-left:auto; margin-right:auto; background-color:#000; opacity:0; pointer-events: none;"></div>
+                                        </div>
+                                        <div class="icon-description">Entitlements</div>
+                                    </div>
+                                    <div id="springBoardIcon" class="icon-box" style="text-align:center;">
+                                        <div style="width:11.75vh; height:11.75vh; margin:0 auto;">
+                                            <img id="twtr" src="./CoreServices/imgres/Applications/twitter.png" class="icon" onclick="window.location.href = 'imAPlaceHolder'" alt="Twitter">
+                                            <div class="icon twitterMeeeh" style="position:absolute; top:0; left:0; right:0; margin-left:auto; margin-right:auto; background-color:#000; opacity:0; pointer-events: none;"></div>
+                                        </div>
+                                        <div class="icon-description">My Twitter</div>
+                                    </div>
+                                    <div id="springBoardIcon" class="icon-box" style="text-align:center;">
+                                        <div style="width:11.75vh; height:11.75vh; margin:0 auto;">
+                                            <img id="hexley" src="./CoreServices/imgres/Applications/hexley.png" class="icon" onclick="window.location.href = 'imAPlaceHolder'" alt="XNU">
+                                            <div class="icon hexley" style="position:absolute; top:0; left:0; right:0; margin-left:auto; margin-right:auto; background-color:#000; opacity:0; pointer-events: none;"></div>
+                                        </div>
+                                        <div class="icon-description">XNU Stuff</div>
+                                    </div>
+                                    <div id="springBoardIcon" class="icon-box" style="text-align:center;">
+                                        <div style="width:11.75vh; height:11.75vh; margin:0 auto;">
+                                            <img id="downloads" src="./CoreServices/imgres/Applications/files.png" class="icon" onclick="window.location.href = 'imAPlaceHolder'" alt="Downloads">
+                                            <div class="icon files" style="position:absolute; top:0; left:0; right:0; margin-left:auto; margin-right:auto; background-color:#000; opacity:0; pointer-events: none;"></div>
+                                        </div>
+                                        <div class="icon-description">Downloads</div>
+                                    </div>
+                                    <div id="springBoardIcon" class="icon-box" style="text-align:center;">
+                                        <div style="width:11.75vh; height:11.75vh; margin:0 auto;">
+                                            <img id="xcode" src="./CoreServices/imgres/Applications/xcode.png" class="icon" onclick="window.location.href = 'imAPlaceHolder'" alt="Code Samples">
+                                            <div class="icon xcode" style="position:absolute; top:0; left:0; right:0; margin-left:auto; margin-right:auto; background-color:#000; opacity:0; pointer-events: none;"></div>
+                                        </div>
+                                        <div class="icon-description">Samples</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-next" style="width: 1146px;">
+                                    <div style="height:1vh;"></div>
+                                    <div id="springBoardIcon" class="icon-box" style="text-align:center;">
+                                        <div>
+                                            <img id="bookCHlog" src="./CoreServices/imgres/Applications/changelog.png" class="icon" onclick="window.location.href = 'imAPlaceHolder'" alt="FuckAmfi">
+                                            <div class="icon bookchangelog" style="position:absolute; top:0; left:0; right:0; margin-left:auto; margin-right:auto; background-color:#000; opacity:0; pointer-events: none;"></div>
+                                        </div>
+                                        <div class="icon-description">Changelog</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination theme-white swiper-pagination-bullets" style="bottom:15px;">
+                                <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                                <span class="swiper-pagination-bullet"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="footer" style="bottom: 31px; height: auto; width: 100%; overflow: hidden; transform: translate3d(0px, 0px, 0px); transition: all 0.75s ease 0s;">
+                        <div class="footer_background" style="position:absolute; top:0; right:0; bottom:0; left:0; z-index:99; width:100%; height:100%; -webkit-filter: blur(10px); overflow:hidden;"></div>
+                        <div style="position:relative; z-index: 100; background-color:rgba(34,34,34,0.6);">
+                            <div id="dockIcon" class="icon-box-footer">
+                                <div style="position:relative; width:100%; height:auto; overflow:visible; margin:auto;">
+                                    <div class="icon safari" style="position:absolute; top:0; left:0; right:0; margin-left:auto; margin-right:auto; background-color:#000; opacity:0; pointer-events: none;"></div>
+                                    <img id="safari" src="./CoreServices/imgres/Applications/safari.png" class="icon" onclick="window.location.href = 'imAPlaceHolder'" alt="FuckAmfi">
+                                </div>
+                            </div>
+                            <div id="dockIcon" class="icon-box-footer">
+                                <div style="position:relative; width:100%; height:auto; overflow:visible; margin:auto;">
+                                    <div class="icon camera-icon-select" style="position:absolute; top:0; left:0; right:0; margin-left:auto; margin-right:auto; background-color:#000; opacity:0; pointer-events: none;"></div>
+                                    <img id="camera" src="./CoreServices/imgres/Applications/camera.png" class="icon" onclick="window.location.href = 'imAPlaceHolder'" alt="FuckAmfi">
+
+                                </div>
+                            </div>
+                            <div id="dockIcon" class="icon-box-footer">
+                                <div style="position:relative; width:100%; height:auto; overflow:visible; margin:auto;">
+                                    <div class="icon chat-icon-select" style="position:absolute; top:0; left:0; right:0; margin-left:auto; margin-right:auto; background-color:#000; opacity:0; pointer-events: none;"></div>
+                                    <img id="chat" src="./CoreServices/imgres/Applications/forum.png" class="icon" onclick="window.location.href = 'imAPlaceHolder'" alt="FuckAmfi">
+                                </div>
+                            </div>
+                            <div id="dockIcon" class="icon-box-footer">
+                                <div style="position:relative; width:100%; height:auto; overflow:visible; margin:auto;">
+                                    <div class="icon settings-icon-select" style="position:absolute; top:0; left:0; right:0; margin-left:auto; margin-right:auto; background-color:#000; opacity:0; pointer-events: none;"></div>
+                                    <img id="settings" src="./CoreServices/imgres/Applications/settings.png" class="icon" onclick="window.location.href = 'imAPlaceHolder'" alt="FuckAmfi">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var app = new Framework7();
+        var $$ = Dom7;
+        var swiper = new Swiper('.swiper-container', {
+            initialSlide: 0,
+            pagination: '.swiper-pagination',
+            preloadImages: false,
+            lazyLoading: false
+        });
+
+        if ((/iphone|ipod|ipad.*os 5/gi).test(navigator.appVersion)) {
+            window.onpageshow = function(evt) {
+                if (evt.persisted) {
+                    document.body.style.display = "none";
+                    location.reload();
+                }
+            };
+        }
+        $("#home-page").height($(document).height() - ($("#footer").height()));
+        var xStart, yStart = 0;
+        document.addEventListener('touchstart', function(e) {
+            xStart = e.touches[0].screenX;
+            yStart = e.touches[0].screenY;
+        });
+        document.addEventListener('touchmove', function(e) {
+            var xMovement = Math.abs(e.touches[0].screenX - xStart);
+            var yMovement = Math.abs(e.touches[0].screenY - yStart);
+            if ((yMovement * 3) > xMovement) {
+                e.preventDefault();
+            }
+        });
+   
+        var notificationCallbackOnClose = app.notification.create({
+          icon: '<i class="fab fa-apple"></i>',
+          title: 'AMFI wants to know your location',
+          titleRightText: 'now',
+          subtitle: 'Haha, I refuse to compute your CDHash',
+          text: 'Swipe me up!',
+          closeOnClick: true,
+        });
+    </script>
+</body>
+
+</html>

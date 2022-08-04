@@ -1,0 +1,109 @@
+<head>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="./CoreServices/CoreServices.js"></script>
+<link rel="stylesheet" href="./CoreServices/CoreServices.css">
+<title>NewOSXBook - Recovery Mode</title>
+</head>
+<body>
+<header id="NSCocoaTopBar">
+	<nav id="menu">
+    	<ul style="list-style: none;">
+        <li class="apple">
+            <a href="#">J</a>
+        </li>
+        <li class="here">
+        	<a href="javascript:NSWindowOpen();">Recovery Mode</a>
+        </li>
+        <li>
+        	<a href="#">File</a>   
+        </li>
+        <li>
+        	<a href="#">Edit</a>
+        </li>
+        <li>
+        	<a href="#">Utilities</a>
+        </li> 
+        <li>
+        	<a href="#">Window</a>
+        </li>
+        </ul>
+	</nav>
+    <nav id="NSMenu">
+    	<ul style="list-style: none;">
+        <li class="NSBattery">
+            <a href="#"></a>
+        </li>
+            
+        <li class="NSAudio">
+            <a href="#"></a>
+        </li>
+            
+        <li class="NSNetwork">
+        	<a href="#"></a>
+        </li>
+            
+        <li class="NSTime">
+        	Sun, 09:41 AM
+        </li>
+            
+        <li class="NSUName">
+        	<a href="#">Jonathan Levin</a>
+        </li>
+		</ul>
+    </nav>
+</header>
+    
+<div id="recoveryMode" class="window NSAlertUI ui-draggable windows" style="display: block; z-index: 7; left: 779px; top: 257.344px;">
+	<div class="tab"></div>
+    <nav class="control-window">
+        <a href="javascript:NSAlertClose();" class="exit"></a>
+    </nav>
+    <div class="container">
+    	<div class="container-alert">
+        <img src="./CoreServices/warnx.png" alt="alert">
+        <div class="NSAlertContext">
+        <h2>NewOSXBook</h2>
+        <p>The NewOSXBook platform is currently running in Recovery Mode. Only the Newscast is available.</p>
+        </div>
+             <a href="javascript:NSWindowOpen();" class="NSButton"><center>View NewOSX Newscast</center></a>
+        </div>
+    </div>
+</div>
+    
+<div id="NewOSXInfo" class="window NSActiveWindow ui-draggable windows" style="display:none; z-index: 4; left: 845.391px; top: 217.141px;">
+    <nav class="control-window">
+        <a href="javascript:NSWindowClose();" class="exit"></a>
+        <a href="#" class="yellow"></a>
+        <a href="#" class="green"></a>
+    </nav>
+    <h1 class="NSWindowTitle">NewOSXBook Newscast</h1>
+    <div class="NSWindowContext">
+		<center><img src="./CoreServices/safari_logo.png" alt="" title="" border=0 width=64 height=64>
+        </center>
+        <ul style="">
+            <li><B>Volume I - User Mode - </B><B><a href="https://www.amazon.com/MacOS-iOS-Internals-User-Mode/dp/099105556X/ref=as_sl_pc_qf_sp_asin_til?tag=newosxbookcom-20&linkCode=w00&linkId=25d40cd80f346c76537ef5fb1ea1ed81&creativeASIN=099105556X" title="">Available, v1.3b4</a></B><B> - </B><B><a href="http://newosxbook.com/toc1.html" title="">See detailed ToC</a></B></li>
+            <li><B>Volume II - </B><B><a href="http://newosxbook.com/2ndUpdate.html" title="">Later this year (wrapping up notes for Darwin 19 betas)</a></B><B> - It takes time to write these books.</B></li>
+            <li><B>Volume III - Security &amp; Insecurity is </B><B><a href="https://www.amazon.com/MacOS-iOS-Internals-III-Insecurity/dp/0991055535/ref=as_sl_pc_qf_sp_asin_til?tag=newosxbookcom-20&linkCode=w00&linkId=0b61c945365c9c37cd3cf88f10a5f629&creativeASIN=0991055535" title="">available, v1.6</a></B></li>
+		</ul>
+        <center><img src="./CoreServices/books.png" alt="" title=""></center>
+    </div>
+</div>
+<script>
+        function NSWindowClose() { 
+	    document.getElementById("NewOSXInfo").style.display="none"; 
+        document.getElementById('recoveryMode').style.display = 'block';
+        }
+</script>
+<script>
+        function NSWindowOpen() { 
+	    document.getElementById("NewOSXInfo").style.display="block"; 
+        document.getElementById('recoveryMode').style.display = 'none';
+        }
+</script>
+<script>
+        function NSAlertClose() { 
+	    document.getElementById("recoveryMode").style.display="none"; 
+        }
+</script>    
+</body>

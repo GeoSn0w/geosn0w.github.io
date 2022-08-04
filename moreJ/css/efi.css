@@ -1,0 +1,33 @@
+body {
+   background-color: black;
+}
+
+#splash {
+   height: auto;
+   position: absolute;
+   top: 35%;
+   z-index: 1;
+   margin: auto;
+   animation: moment-on 1s linear 7s;
+   animation-fill-mode: forwards;
+   display: flex;
+   justify-content: center;
+}
+
+.one-edge-shadow {
+  -webkit-box-shadow: 0 8px 6px -6px black;
+     -moz-box-shadow: 0 8px 6px -6px black;
+          box-shadow: 0 8px 6px -6px black;
+}
+
+@keyframes moment-on {
+   from {opacity: 1;}
+   10% {opacity: 0.1;}
+   to {opacity: 0;}
+}
+
+@keyframes moment-off {
+  from {opacity: 0;}
+   10% {opacity: 0.1;}
+   to {opacity: 1;}
+}

@@ -1,0 +1,104 @@
+<!--
+,ad8888ba,                             ad88888ba                   ,a8888a,
+d8"'    `"8b                           d8"     "8b                ,8P"'  `"Y8,
+d8'                                     Y8,                       ,8P        Y8,
+88              ,adPPYba,   ,adPPYba,   `Y8aaaaa,    8b,dPPYba,   88          88  8b      db      d8
+88      88888  a8P_____88  a8"     "8a    `"""""8b,  88P'   `"8a  88          88  `8b    d88b    d8'
+Y8,        88  8PP"""""""  8b       d8          `8b  88       88  `8b        d8'   `8b  d8'`8b  d8'
+Y8a.    .a88  "8b,   ,aa  "8a,   ,a8"  Y8a     a8P  88       88   `8ba,  ,ad8'     `8bd8'  `8bd8'
+`"Y88888P"    `"Ybbd8"'   `"YbbdP"'    "Y88888P"   88       88     "Y8888P"         YP      YP
+
+-->
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="./css/dock.css">
+<link rel="stylesheet" type="text/css" href="./css/iBooks.css">
+<link href="https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script src="https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<style>
+    #content {
+        overflow: auto;
+    }
+</style>
+<title>*OS Internals: - Welcome!</title>
+</head>
+
+<body>
+
+    <div id="topBar"><img alt="search" title="" id="quicklook" src="./imgres/Library/CoreServices/search.png">
+        <img alt="AppleLogo" title="About this site" id="AppleLogo" src="./imgres/Library/CoreServices/apple.png"><img alt="Notifications" title="About this site" id="Notifications" src="./imgres/Library/CoreServices/notif.png"><img alt="Sound" title="" id="audio" src="./imgres/Library/CoreServices/audio.png"><img alt="Battery" title="" id="battery" src="./imgres/Library/CoreServices/batt.png"><img alt="WiFi" title="" id="wifi" src="./imgres/Library/CoreServices/wifi.png"></div>
+    <ul id="navMenu">
+        <b><li>Finder</li></b>
+        <li>Resources
+        </li>
+        <li>Downloads
+        </li>
+        <li>Help
+        </li>
+    </ul>
+
+    <div id="iBooks" class="">
+        <div class="closebutton">
+        </div>
+        <div id="volumeII">
+            <img src="./imgres/Books/vol2.png" style="width: 164px;height: 259px;">
+        </div>
+        <div id="volumeIII">
+           <a href="./bookreader/index.html" data-featherlight="iframe" data-featherlight-iframe-allowfullscreen="true" data-featherlight-iframe-width="1300" data-featherlight-iframe-height="800"><img src="./imgres/Books/vol3.png" style="width: 164px;height: 259px;"></a>
+        </div>
+        <div id="volumeI">
+            <img src="./imgres/Books/vol1.png" style="width: 164px;height: 259px;">
+        </div>
+    </div>
+
+  <div id="appDrawer">
+        <div id="wrBegin">
+            <div class="dockEnd left"></div>
+            <ul class="CoreUtilsDock">
+                <li class="active">
+                    <span>Home</span>
+                    <a href="/desktest.html" title="Home"><img alt="finder icon" src="./imgres/Applications/finder.png"></a>
+                </li>
+                <li class="">
+                    <span>jBooks</span>
+                    <a href="/ibooks.html" title="jBooks"><img alt="ibooks icon" src="./imgres/Applications/iBooks.png"></a>
+                </li>
+                <li class="">
+                    <span>NewsStand</span>
+                    <a href="/desktest.html" title="NewsStand"><img alt="NewsStand icon" src="./imgres/Applications/News.png"></a>
+                </li>
+                <li class="">
+                    <span>Code</span>
+                    <a href="/desktest.html" title="Code Samples"><img alt="xcode icon" src="./imgres/Applications/Xcode.png"></a>
+                </li>
+                <li class="">
+                    <span>Downloads</span>
+                    <a href="/desktest.html" title="Downloads"><img alt="dl icon" src="./imgres/Applications/Downloads.png"></a>
+                </li>
+                <li>
+                    <span>Forum</span>
+                    <a href="http://newosxbook.com/forum/index.php" title="Forum"><img alt="safari icon" src="./imgres/Applications/Safari.png"></a>
+                </li>
+                <li>
+                    <span>Notes</span>
+                    <a href="/desktest.html" title="Notes"><img alt="notes icon" src="./imgres/Applications/Notes.png"></a>
+                </li>
+                <li>
+                    <span>Entitlements</span>
+                    <a href="http://newosxbook.com/ent.jl" title="Entitlements DB"><img alt="fuckAMFI icon" src="./imgres/Applications/Entitlements.png"></a>
+                </li>
+                <li>
+                    <span>XNU</span>
+                    <a href="/desktest.html" title="XNU Cross Refs"><img alt="xnu icon" src="./imgres/Applications/XnuCross.png"></a>
+                </li>
+                <li>
+                    <span>Preferences</span>
+                    <a href="/desktest.html" title="Preferences"><img alt="preferences icon" src="./imgres/Applications/Preferences.png"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
